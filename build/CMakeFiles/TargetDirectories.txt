@@ -1,0 +1,3 @@
+/home/phone/Mission_Control/Projects/cpp_http_server/build/CMakeFiles/HttpServer.dir
+/home/phone/Mission_Control/Projects/cpp_http_server/build/CMakeFiles/edit_cache.dir
+/home/phone/Mission_Control/Projects/cpp_http_server/build/CMakeFiles/rebuild_cache.dir
