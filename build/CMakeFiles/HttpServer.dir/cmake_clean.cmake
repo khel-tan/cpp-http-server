@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/HttpServer.dir/src/Logger.cpp.o"
+  "CMakeFiles/HttpServer.dir/src/Logger.cpp.o.d"
   "CMakeFiles/HttpServer.dir/src/main.cpp.o"
   "CMakeFiles/HttpServer.dir/src/main.cpp.o.d"
   "HttpServer"

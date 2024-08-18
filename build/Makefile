@@ -129,6 +129,30 @@ HttpServer/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/HttpServer.dir/build.make CMakeFiles/HttpServer.dir/build
 .PHONY : HttpServer/fast
 
+src/Logger.o: src/Logger.cpp.o
+.PHONY : src/Logger.o
+
+# target to build an object file
+src/Logger.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HttpServer.dir/build.make CMakeFiles/HttpServer.dir/src/Logger.cpp.o
+.PHONY : src/Logger.cpp.o
+
+src/Logger.i: src/Logger.cpp.i
+.PHONY : src/Logger.i
+
+# target to preprocess a source file
+src/Logger.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HttpServer.dir/build.make CMakeFiles/HttpServer.dir/src/Logger.cpp.i
+.PHONY : src/Logger.cpp.i
+
+src/Logger.s: src/Logger.cpp.s
+.PHONY : src/Logger.s
+
+# target to generate assembly for a file
+src/Logger.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HttpServer.dir/build.make CMakeFiles/HttpServer.dir/src/Logger.cpp.s
+.PHONY : src/Logger.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -162,6 +186,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... HttpServer"
+	@echo "... src/Logger.o"
+	@echo "... src/Logger.i"
+	@echo "... src/Logger.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

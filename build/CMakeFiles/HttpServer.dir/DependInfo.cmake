@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/phone/Mission_Control/Projects/cpp_http_server/src/Logger.cpp" "CMakeFiles/HttpServer.dir/src/Logger.cpp.o" "gcc" "CMakeFiles/HttpServer.dir/src/Logger.cpp.o.d"
   "/home/phone/Mission_Control/Projects/cpp_http_server/src/main.cpp" "CMakeFiles/HttpServer.dir/src/main.cpp.o" "gcc" "CMakeFiles/HttpServer.dir/src/main.cpp.o.d"
   )
 

@@ -8,9 +8,6 @@ if [ ! -d "build" ]; then
 fi
 
 #Build stage
-cd build
-cmake ..
-make
-
+cd build && cmake .. && make
 #Run executable
 ./$PROJECT_NAME
