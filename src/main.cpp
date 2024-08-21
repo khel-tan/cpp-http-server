@@ -4,7 +4,7 @@
 #include <memory>
 
 int main() {
-  std::uint16_t port = 5021;
+  std::uint16_t port = 5022;
   auto socketPtr = std::make_unique<TCPSocket>(port);
   HttpServer server(std::move(socketPtr));
   server.run();

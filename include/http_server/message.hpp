@@ -1,10 +1,8 @@
 #ifndef MESSAGE_HPP
 #define MESSAGE_HPP
 #include <format>
-#include <stdexcept>
 #include <string>
 #include <unordered_map>
-namespace http_server {
 enum class HttpVersion {
   HTTP_1_1,
 };
@@ -14,6 +12,9 @@ enum class HttpMethod {
   PUT,
   DELETE,
 };
+
+std::string toString(const HttpVersion &version);
+std::string toString(const HttpMethod &method);
 
 class HttpMessage {
 public:
@@ -30,7 +31,7 @@ public:
     }
 
     // TODO: Maybe throw an error?
-    return header_value();
+    return header_value{};
   }
 
   virtual std::string toString() = 0;
@@ -46,15 +47,11 @@ public:
               HttpVersion version = HttpVersion::HTTP_1_1)
       : method_(method), HttpMessage(headers, version) {}
   std::string toString() override {
-    return std::format("Http method : {0}", "Hi");
+    return std::format("{0} / {1}", ::toString(method_), ::toString(version_));
   }
-
-  class Builder {};
-  Builder builder() { return Builder(); }
 
 protected:
   const HttpMethod method_;
 };
 
-} // namespace http_server
 #endif // !MESSAGE_HPP

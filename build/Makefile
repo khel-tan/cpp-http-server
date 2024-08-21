@@ -177,6 +177,30 @@ src/http_server/TCPSocket.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/HttpServer.dir/build.make CMakeFiles/HttpServer.dir/src/http_server/TCPSocket.cpp.s
 .PHONY : src/http_server/TCPSocket.cpp.s
 
+src/http_server/message.o: src/http_server/message.cpp.o
+.PHONY : src/http_server/message.o
+
+# target to build an object file
+src/http_server/message.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HttpServer.dir/build.make CMakeFiles/HttpServer.dir/src/http_server/message.cpp.o
+.PHONY : src/http_server/message.cpp.o
+
+src/http_server/message.i: src/http_server/message.cpp.i
+.PHONY : src/http_server/message.i
+
+# target to preprocess a source file
+src/http_server/message.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HttpServer.dir/build.make CMakeFiles/HttpServer.dir/src/http_server/message.cpp.i
+.PHONY : src/http_server/message.cpp.i
+
+src/http_server/message.s: src/http_server/message.cpp.s
+.PHONY : src/http_server/message.s
+
+# target to generate assembly for a file
+src/http_server/message.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HttpServer.dir/build.make CMakeFiles/HttpServer.dir/src/http_server/message.cpp.s
+.PHONY : src/http_server/message.cpp.s
+
 src/http_server/server.o: src/http_server/server.cpp.o
 .PHONY : src/http_server/server.o
 
@@ -240,6 +264,9 @@ help:
 	@echo "... src/http_server/TCPSocket.o"
 	@echo "... src/http_server/TCPSocket.i"
 	@echo "... src/http_server/TCPSocket.s"
+	@echo "... src/http_server/message.o"
+	@echo "... src/http_server/message.i"
+	@echo "... src/http_server/message.s"
 	@echo "... src/http_server/server.o"
 	@echo "... src/http_server/server.i"
 	@echo "... src/http_server/server.s"

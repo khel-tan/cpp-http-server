@@ -1,1 +1,1 @@
-/usr/bin/c++ CMakeFiles/HttpServer.dir/src/Logger.cpp.o CMakeFiles/HttpServer.dir/src/http_server/TCPSocket.cpp.o CMakeFiles/HttpServer.dir/src/http_server/server.cpp.o CMakeFiles/HttpServer.dir/src/main.cpp.o -o HttpServer 
+/usr/bin/c++ CMakeFiles/HttpServer.dir/src/Logger.cpp.o CMakeFiles/HttpServer.dir/src/http_server/TCPSocket.cpp.o CMakeFiles/HttpServer.dir/src/http_server/message.cpp.o CMakeFiles/HttpServer.dir/src/http_server/server.cpp.o CMakeFiles/HttpServer.dir/src/main.cpp.o -o HttpServer 
