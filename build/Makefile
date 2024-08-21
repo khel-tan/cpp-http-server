@@ -153,6 +153,54 @@ src/Logger.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/HttpServer.dir/build.make CMakeFiles/HttpServer.dir/src/Logger.cpp.s
 .PHONY : src/Logger.cpp.s
 
+src/http_server/TCPSocket.o: src/http_server/TCPSocket.cpp.o
+.PHONY : src/http_server/TCPSocket.o
+
+# target to build an object file
+src/http_server/TCPSocket.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HttpServer.dir/build.make CMakeFiles/HttpServer.dir/src/http_server/TCPSocket.cpp.o
+.PHONY : src/http_server/TCPSocket.cpp.o
+
+src/http_server/TCPSocket.i: src/http_server/TCPSocket.cpp.i
+.PHONY : src/http_server/TCPSocket.i
+
+# target to preprocess a source file
+src/http_server/TCPSocket.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HttpServer.dir/build.make CMakeFiles/HttpServer.dir/src/http_server/TCPSocket.cpp.i
+.PHONY : src/http_server/TCPSocket.cpp.i
+
+src/http_server/TCPSocket.s: src/http_server/TCPSocket.cpp.s
+.PHONY : src/http_server/TCPSocket.s
+
+# target to generate assembly for a file
+src/http_server/TCPSocket.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HttpServer.dir/build.make CMakeFiles/HttpServer.dir/src/http_server/TCPSocket.cpp.s
+.PHONY : src/http_server/TCPSocket.cpp.s
+
+src/http_server/server.o: src/http_server/server.cpp.o
+.PHONY : src/http_server/server.o
+
+# target to build an object file
+src/http_server/server.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HttpServer.dir/build.make CMakeFiles/HttpServer.dir/src/http_server/server.cpp.o
+.PHONY : src/http_server/server.cpp.o
+
+src/http_server/server.i: src/http_server/server.cpp.i
+.PHONY : src/http_server/server.i
+
+# target to preprocess a source file
+src/http_server/server.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HttpServer.dir/build.make CMakeFiles/HttpServer.dir/src/http_server/server.cpp.i
+.PHONY : src/http_server/server.cpp.i
+
+src/http_server/server.s: src/http_server/server.cpp.s
+.PHONY : src/http_server/server.s
+
+# target to generate assembly for a file
+src/http_server/server.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HttpServer.dir/build.make CMakeFiles/HttpServer.dir/src/http_server/server.cpp.s
+.PHONY : src/http_server/server.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -189,6 +237,12 @@ help:
 	@echo "... src/Logger.o"
 	@echo "... src/Logger.i"
 	@echo "... src/Logger.s"
+	@echo "... src/http_server/TCPSocket.o"
+	@echo "... src/http_server/TCPSocket.i"
+	@echo "... src/http_server/TCPSocket.s"
+	@echo "... src/http_server/server.o"
+	@echo "... src/http_server/server.i"
+	@echo "... src/http_server/server.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

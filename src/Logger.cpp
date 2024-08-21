@@ -6,7 +6,7 @@ Logger &Logger::getInstance() {
   return INSTANCE;
 }
 
-void Logger::log(const std::string &message, LogLevel level) {
+void Logger::log(const std::string &message, LogLevel level = LogLevel::INFO) {
   // TODO: Different logging for different levels
   std::cout << message << std::endl;
 }

@@ -1,8 +1,9 @@
 #ifndef MESSAGE_HPP
 #define MESSAGE_HPP
-#include <map>
+#include <format>
 #include <stdexcept>
 #include <string>
+#include <unordered_map>
 namespace http_server {
 enum class HttpVersion {
   HTTP_1_1,
@@ -14,27 +15,46 @@ enum class HttpMethod {
   DELETE,
 };
 
-// Abstract class at the root of the message hierarchy
 class HttpMessage {
-  // TODO: This class could benefit from a builder
 public:
+  using header_key = std::string;
+  using header_value = std::string;
+  using Headers = std::unordered_map<header_key, header_value>;
+  HttpMessage(Headers headers, HttpVersion version)
+      : headers_(headers), version_(version) {}
   virtual ~HttpMessage() = default;
+  HttpVersion getVersion() { return version_; }
+  header_value getHeader(const header_key &key) {
+    if (headers_.contains(key)) {
+      return headers_.at(key);
+    }
 
-  // getters
-  std::string getBody() const { return body_; }
-  std::string getHeader(const std::string &header) const {
-    throw std::logic_error("Not implemented");
+    // TODO: Maybe throw an error?
+    return header_value();
   }
 
+  virtual std::string toString() = 0;
+
 protected:
-  HttpVersion version_;
-  std::string body_;
-  std::map<std::string, std::string> headers_;
+  const HttpVersion version_;
+  const Headers headers_;
 };
 
 class HttpRequest : public HttpMessage {
 public:
-  ~HttpRequest() = default;
+  HttpRequest(HttpMethod method, Headers headers,
+              HttpVersion version = HttpVersion::HTTP_1_1)
+      : method_(method), HttpMessage(headers, version) {}
+  std::string toString() override {
+    return std::format("Http method : {0}", "Hi");
+  }
+
+  class Builder {};
+  Builder builder() { return Builder(); }
+
+protected:
+  const HttpMethod method_;
 };
+
 } // namespace http_server
 #endif // !MESSAGE_HPP
