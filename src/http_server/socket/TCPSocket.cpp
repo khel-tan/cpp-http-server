@@ -1,4 +1,4 @@
-#include "../../include/http_server/TCPSocket.hpp"
+#include "../../../include/http_server/socket/TCPSocket.hpp"
 #include <cstddef>
 #include <cstdint>
 #include <netinet/in.h>
@@ -37,6 +37,9 @@ void TCPSocket::acceptConnection() {
 std::vector<char> TCPSocket::receiveData() {
   std::vector<char> buffer(BUFFER_SIZE);
   int bytesReceived = recv(clientSocket_, buffer.data(), buffer.size(), 0);
+  if (bytesReceived <= 0) {
+    buffer.clear();
+  }
   return buffer;
 }
 
