@@ -5,6 +5,8 @@
 #include <stdexcept>
 #include <sys/socket.h>
 
+namespace HttpServer {
+
 TCPSocket::TCPSocket(std::uint16_t port)
     : serverSocket_(socket(AF_INET, SOCK_STREAM, 0)) {
   if (serverSocket_ == -1) {
@@ -51,3 +53,4 @@ void TCPSocket::closeSocket() {
     close(clientSocket_);
   }
 }
+} // namespace HttpServer

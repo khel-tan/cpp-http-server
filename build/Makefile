@@ -129,101 +129,101 @@ HttpServer/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/HttpServer.dir/build.make CMakeFiles/HttpServer.dir/build
 .PHONY : HttpServer/fast
 
-src/Logger.o: src/Logger.cpp.o
-.PHONY : src/Logger.o
+src/http_server/message/Message.o: src/http_server/message/Message.cpp.o
+.PHONY : src/http_server/message/Message.o
 
 # target to build an object file
-src/Logger.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/HttpServer.dir/build.make CMakeFiles/HttpServer.dir/src/Logger.cpp.o
-.PHONY : src/Logger.cpp.o
+src/http_server/message/Message.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HttpServer.dir/build.make CMakeFiles/HttpServer.dir/src/http_server/message/Message.cpp.o
+.PHONY : src/http_server/message/Message.cpp.o
 
-src/Logger.i: src/Logger.cpp.i
-.PHONY : src/Logger.i
+src/http_server/message/Message.i: src/http_server/message/Message.cpp.i
+.PHONY : src/http_server/message/Message.i
 
 # target to preprocess a source file
-src/Logger.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/HttpServer.dir/build.make CMakeFiles/HttpServer.dir/src/Logger.cpp.i
-.PHONY : src/Logger.cpp.i
+src/http_server/message/Message.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HttpServer.dir/build.make CMakeFiles/HttpServer.dir/src/http_server/message/Message.cpp.i
+.PHONY : src/http_server/message/Message.cpp.i
 
-src/Logger.s: src/Logger.cpp.s
-.PHONY : src/Logger.s
+src/http_server/message/Message.s: src/http_server/message/Message.cpp.s
+.PHONY : src/http_server/message/Message.s
 
 # target to generate assembly for a file
-src/Logger.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/HttpServer.dir/build.make CMakeFiles/HttpServer.dir/src/Logger.cpp.s
-.PHONY : src/Logger.cpp.s
+src/http_server/message/Message.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HttpServer.dir/build.make CMakeFiles/HttpServer.dir/src/http_server/message/Message.cpp.s
+.PHONY : src/http_server/message/Message.cpp.s
 
-src/http_server/TCPSocket.o: src/http_server/TCPSocket.cpp.o
-.PHONY : src/http_server/TCPSocket.o
+src/http_server/server/HttpServer.o: src/http_server/server/HttpServer.cpp.o
+.PHONY : src/http_server/server/HttpServer.o
 
 # target to build an object file
-src/http_server/TCPSocket.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/HttpServer.dir/build.make CMakeFiles/HttpServer.dir/src/http_server/TCPSocket.cpp.o
-.PHONY : src/http_server/TCPSocket.cpp.o
+src/http_server/server/HttpServer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HttpServer.dir/build.make CMakeFiles/HttpServer.dir/src/http_server/server/HttpServer.cpp.o
+.PHONY : src/http_server/server/HttpServer.cpp.o
 
-src/http_server/TCPSocket.i: src/http_server/TCPSocket.cpp.i
-.PHONY : src/http_server/TCPSocket.i
+src/http_server/server/HttpServer.i: src/http_server/server/HttpServer.cpp.i
+.PHONY : src/http_server/server/HttpServer.i
 
 # target to preprocess a source file
-src/http_server/TCPSocket.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/HttpServer.dir/build.make CMakeFiles/HttpServer.dir/src/http_server/TCPSocket.cpp.i
-.PHONY : src/http_server/TCPSocket.cpp.i
+src/http_server/server/HttpServer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HttpServer.dir/build.make CMakeFiles/HttpServer.dir/src/http_server/server/HttpServer.cpp.i
+.PHONY : src/http_server/server/HttpServer.cpp.i
 
-src/http_server/TCPSocket.s: src/http_server/TCPSocket.cpp.s
-.PHONY : src/http_server/TCPSocket.s
+src/http_server/server/HttpServer.s: src/http_server/server/HttpServer.cpp.s
+.PHONY : src/http_server/server/HttpServer.s
 
 # target to generate assembly for a file
-src/http_server/TCPSocket.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/HttpServer.dir/build.make CMakeFiles/HttpServer.dir/src/http_server/TCPSocket.cpp.s
-.PHONY : src/http_server/TCPSocket.cpp.s
+src/http_server/server/HttpServer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HttpServer.dir/build.make CMakeFiles/HttpServer.dir/src/http_server/server/HttpServer.cpp.s
+.PHONY : src/http_server/server/HttpServer.cpp.s
 
-src/http_server/message.o: src/http_server/message.cpp.o
-.PHONY : src/http_server/message.o
+src/http_server/socket/TCPSocket.o: src/http_server/socket/TCPSocket.cpp.o
+.PHONY : src/http_server/socket/TCPSocket.o
 
 # target to build an object file
-src/http_server/message.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/HttpServer.dir/build.make CMakeFiles/HttpServer.dir/src/http_server/message.cpp.o
-.PHONY : src/http_server/message.cpp.o
+src/http_server/socket/TCPSocket.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HttpServer.dir/build.make CMakeFiles/HttpServer.dir/src/http_server/socket/TCPSocket.cpp.o
+.PHONY : src/http_server/socket/TCPSocket.cpp.o
 
-src/http_server/message.i: src/http_server/message.cpp.i
-.PHONY : src/http_server/message.i
+src/http_server/socket/TCPSocket.i: src/http_server/socket/TCPSocket.cpp.i
+.PHONY : src/http_server/socket/TCPSocket.i
 
 # target to preprocess a source file
-src/http_server/message.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/HttpServer.dir/build.make CMakeFiles/HttpServer.dir/src/http_server/message.cpp.i
-.PHONY : src/http_server/message.cpp.i
+src/http_server/socket/TCPSocket.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HttpServer.dir/build.make CMakeFiles/HttpServer.dir/src/http_server/socket/TCPSocket.cpp.i
+.PHONY : src/http_server/socket/TCPSocket.cpp.i
 
-src/http_server/message.s: src/http_server/message.cpp.s
-.PHONY : src/http_server/message.s
+src/http_server/socket/TCPSocket.s: src/http_server/socket/TCPSocket.cpp.s
+.PHONY : src/http_server/socket/TCPSocket.s
 
 # target to generate assembly for a file
-src/http_server/message.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/HttpServer.dir/build.make CMakeFiles/HttpServer.dir/src/http_server/message.cpp.s
-.PHONY : src/http_server/message.cpp.s
+src/http_server/socket/TCPSocket.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HttpServer.dir/build.make CMakeFiles/HttpServer.dir/src/http_server/socket/TCPSocket.cpp.s
+.PHONY : src/http_server/socket/TCPSocket.cpp.s
 
-src/http_server/server.o: src/http_server/server.cpp.o
-.PHONY : src/http_server/server.o
+src/logger/Logger.o: src/logger/Logger.cpp.o
+.PHONY : src/logger/Logger.o
 
 # target to build an object file
-src/http_server/server.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/HttpServer.dir/build.make CMakeFiles/HttpServer.dir/src/http_server/server.cpp.o
-.PHONY : src/http_server/server.cpp.o
+src/logger/Logger.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HttpServer.dir/build.make CMakeFiles/HttpServer.dir/src/logger/Logger.cpp.o
+.PHONY : src/logger/Logger.cpp.o
 
-src/http_server/server.i: src/http_server/server.cpp.i
-.PHONY : src/http_server/server.i
+src/logger/Logger.i: src/logger/Logger.cpp.i
+.PHONY : src/logger/Logger.i
 
 # target to preprocess a source file
-src/http_server/server.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/HttpServer.dir/build.make CMakeFiles/HttpServer.dir/src/http_server/server.cpp.i
-.PHONY : src/http_server/server.cpp.i
+src/logger/Logger.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HttpServer.dir/build.make CMakeFiles/HttpServer.dir/src/logger/Logger.cpp.i
+.PHONY : src/logger/Logger.cpp.i
 
-src/http_server/server.s: src/http_server/server.cpp.s
-.PHONY : src/http_server/server.s
+src/logger/Logger.s: src/logger/Logger.cpp.s
+.PHONY : src/logger/Logger.s
 
 # target to generate assembly for a file
-src/http_server/server.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/HttpServer.dir/build.make CMakeFiles/HttpServer.dir/src/http_server/server.cpp.s
-.PHONY : src/http_server/server.cpp.s
+src/logger/Logger.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HttpServer.dir/build.make CMakeFiles/HttpServer.dir/src/logger/Logger.cpp.s
+.PHONY : src/logger/Logger.cpp.s
 
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
@@ -258,18 +258,18 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... HttpServer"
-	@echo "... src/Logger.o"
-	@echo "... src/Logger.i"
-	@echo "... src/Logger.s"
-	@echo "... src/http_server/TCPSocket.o"
-	@echo "... src/http_server/TCPSocket.i"
-	@echo "... src/http_server/TCPSocket.s"
-	@echo "... src/http_server/message.o"
-	@echo "... src/http_server/message.i"
-	@echo "... src/http_server/message.s"
-	@echo "... src/http_server/server.o"
-	@echo "... src/http_server/server.i"
-	@echo "... src/http_server/server.s"
+	@echo "... src/http_server/message/Message.o"
+	@echo "... src/http_server/message/Message.i"
+	@echo "... src/http_server/message/Message.s"
+	@echo "... src/http_server/server/HttpServer.o"
+	@echo "... src/http_server/server/HttpServer.i"
+	@echo "... src/http_server/server/HttpServer.s"
+	@echo "... src/http_server/socket/TCPSocket.o"
+	@echo "... src/http_server/socket/TCPSocket.i"
+	@echo "... src/http_server/socket/TCPSocket.s"
+	@echo "... src/logger/Logger.o"
+	@echo "... src/logger/Logger.i"
+	@echo "... src/logger/Logger.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

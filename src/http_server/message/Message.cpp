@@ -3,3 +3,5 @@
 using namespace HttpServer;
 
 void Request::validate() {}
+
+void Response::validate() {}

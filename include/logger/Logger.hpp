@@ -2,6 +2,8 @@
 #define LOGGER_HPP
 
 #include <string>
+namespace logger {
+
 enum class LogLevel { DEBUG, INFO, WARNING, ERROR, CRITICAL };
 enum class OutputType { CONSOLE, FILE };
 class Logger {
@@ -10,6 +12,7 @@ public:
   void log(const std::string &message, LogLevel level);
   void setOutput(OutputType output);
 
+  ~Logger() = default;
   // Delete move, copy and their corresponding assignment constructors
   Logger(const Logger &) = delete;
   Logger &operator=(const Logger &) = delete;
@@ -19,7 +22,6 @@ public:
 
 private:
   Logger();
-  ~Logger();
-  // TODO: Delete move, move assignment, copy and copy assignment
 };
+}; // namespace logger
 #endif

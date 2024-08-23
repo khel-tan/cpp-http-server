@@ -9,6 +9,8 @@
 #include <unistd.h>
 #include <vector>
 
+namespace HttpServer {
+
 class TCPSocket : public Socket {
 public:
   explicit TCPSocket(std::uint16_t port);
@@ -23,4 +25,5 @@ protected:
   int clientSocket_ = -1;
   void initialize();
 };
+} // namespace HttpServer
 #endif // !TCP_SOCKET_HPP_

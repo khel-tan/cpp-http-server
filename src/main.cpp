@@ -1,5 +1,8 @@
-#include "../include/http_server/message/Message.hpp"
+#include "../include/http_server/server/HttpServer.hpp"
+#include "../include/http_server/socket/TCPSocket.hpp"
+#include <memory>
 int main() {
-  HttpServer::Request req;
-  req = req.setHeader("Content-length", "153");
+  auto socket = std::make_unique<HttpServer::TCPSocket>(5100);
+  auto server = HttpServer::HttpServer(std::move(socket));
+  server.run();
 }

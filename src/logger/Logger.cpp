@@ -1,6 +1,7 @@
-#include "../include/Logger.hpp"
+#include "../../include/logger/Logger.hpp"
 #include <iostream>
 #include <stdexcept>
+namespace logger {
 Logger &Logger::getInstance() {
   static Logger INSTANCE;
   return INSTANCE;
@@ -15,4 +16,4 @@ void Logger::setOutput(OutputType output) {
 }
 
 Logger::Logger() {}
-Logger::~Logger() {}
+} // namespace logger

@@ -8,10 +8,10 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/phone/Mission_Control/Projects/cpp_http_server/src/Logger.cpp" "CMakeFiles/HttpServer.dir/src/Logger.cpp.o" "gcc" "CMakeFiles/HttpServer.dir/src/Logger.cpp.o.d"
-  "/home/phone/Mission_Control/Projects/cpp_http_server/src/http_server/TCPSocket.cpp" "CMakeFiles/HttpServer.dir/src/http_server/TCPSocket.cpp.o" "gcc" "CMakeFiles/HttpServer.dir/src/http_server/TCPSocket.cpp.o.d"
-  "/home/phone/Mission_Control/Projects/cpp_http_server/src/http_server/message.cpp" "CMakeFiles/HttpServer.dir/src/http_server/message.cpp.o" "gcc" "CMakeFiles/HttpServer.dir/src/http_server/message.cpp.o.d"
-  "/home/phone/Mission_Control/Projects/cpp_http_server/src/http_server/server.cpp" "CMakeFiles/HttpServer.dir/src/http_server/server.cpp.o" "gcc" "CMakeFiles/HttpServer.dir/src/http_server/server.cpp.o.d"
+  "/home/phone/Mission_Control/Projects/cpp_http_server/src/http_server/message/Message.cpp" "CMakeFiles/HttpServer.dir/src/http_server/message/Message.cpp.o" "gcc" "CMakeFiles/HttpServer.dir/src/http_server/message/Message.cpp.o.d"
+  "/home/phone/Mission_Control/Projects/cpp_http_server/src/http_server/server/HttpServer.cpp" "CMakeFiles/HttpServer.dir/src/http_server/server/HttpServer.cpp.o" "gcc" "CMakeFiles/HttpServer.dir/src/http_server/server/HttpServer.cpp.o.d"
+  "/home/phone/Mission_Control/Projects/cpp_http_server/src/http_server/socket/TCPSocket.cpp" "CMakeFiles/HttpServer.dir/src/http_server/socket/TCPSocket.cpp.o" "gcc" "CMakeFiles/HttpServer.dir/src/http_server/socket/TCPSocket.cpp.o.d"
+  "/home/phone/Mission_Control/Projects/cpp_http_server/src/logger/Logger.cpp" "CMakeFiles/HttpServer.dir/src/logger/Logger.cpp.o" "gcc" "CMakeFiles/HttpServer.dir/src/logger/Logger.cpp.o.d"
   "/home/phone/Mission_Control/Projects/cpp_http_server/src/main.cpp" "CMakeFiles/HttpServer.dir/src/main.cpp.o" "gcc" "CMakeFiles/HttpServer.dir/src/main.cpp.o.d"
   )
 

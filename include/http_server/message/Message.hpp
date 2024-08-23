@@ -7,14 +7,18 @@ namespace HttpServer {
 using header_key = std::string;
 using header_value = std::string;
 
-enum class HttpVersion {
+enum class Version {
+  HTTP_1_0,
   HTTP_1_1,
 };
 
-enum class HttpMethod {
+enum class Method {
   GET,
 };
 
+enum class StatusCode {
+  NOT_FOUND = 404,
+};
 template <class Derived> class Message {
 public:
   virtual ~Message() = default;
@@ -22,12 +26,12 @@ public:
 
   virtual Derived &setHeader(const header_key &key, header_value value) {
     headers_.insert_or_assign(key, value);
-    return *this;
+    return static_cast<Derived &>(*this);
   };
 
 protected:
   std::unordered_map<header_key, header_value> headers_;
-  HttpVersion version_;
+  Version version_;
 };
 
 class Request : public Message<Request> {
@@ -37,7 +41,17 @@ public:
   void validate() override;
 
 protected:
-  HttpMethod method_;
+  Method method_;
+};
+
+class Response : public Message<Response> {
+public:
+  ~Response() = default;
+
+  void validate() override;
+
+protected:
+  StatusCode status_code_;
 };
 }; // namespace HttpServer
 #endif
