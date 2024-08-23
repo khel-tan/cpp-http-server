@@ -2,6 +2,8 @@
 
 #define SERVER_HPP_
 
+#include "../message/Message.hpp"
+#include "../parser/Parser.hpp"
 #include "../socket/Socket.hpp"
 #include <iostream>
 #include <memory>
@@ -16,6 +18,7 @@ public:
 
 protected:
   std::unique_ptr<Socket> socket_;
+  std::unique_ptr<Parser<Request>> parser_;
 };
 } // namespace HttpServer
 #endif // !SERVER_HPP_

@@ -7,10 +7,11 @@ void HttpServer::run() {
   socket_->acceptConnection();
   while (true) {
     auto data = socket_->receiveData();
+    auto inputStr = std::string(data.begin(), data.end());
     if (data.size() == 0) {
       break;
     }
-    std::cout << std::string(data.begin(), data.end()) << std::endl;
+    std::cout << inputStr << std::endl;
   }
   socket_->closeSocket();
 }
