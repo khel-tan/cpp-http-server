@@ -153,6 +153,30 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/HttpServer.dir/build.make CMakeFiles/HttpServer.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/message/Message.o: src/message/Message.cpp.o
+.PHONY : src/message/Message.o
+
+# target to build an object file
+src/message/Message.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HttpServer.dir/build.make CMakeFiles/HttpServer.dir/src/message/Message.cpp.o
+.PHONY : src/message/Message.cpp.o
+
+src/message/Message.i: src/message/Message.cpp.i
+.PHONY : src/message/Message.i
+
+# target to preprocess a source file
+src/message/Message.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HttpServer.dir/build.make CMakeFiles/HttpServer.dir/src/message/Message.cpp.i
+.PHONY : src/message/Message.cpp.i
+
+src/message/Message.s: src/message/Message.cpp.s
+.PHONY : src/message/Message.s
+
+# target to generate assembly for a file
+src/message/Message.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HttpServer.dir/build.make CMakeFiles/HttpServer.dir/src/message/Message.cpp.s
+.PHONY : src/message/Message.cpp.s
+
 src/message/Request.o: src/message/Request.cpp.o
 .PHONY : src/message/Request.o
 
@@ -176,6 +200,30 @@ src/message/Request.s: src/message/Request.cpp.s
 src/message/Request.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/HttpServer.dir/build.make CMakeFiles/HttpServer.dir/src/message/Request.cpp.s
 .PHONY : src/message/Request.cpp.s
+
+src/parser/IterativeParser.o: src/parser/IterativeParser.cpp.o
+.PHONY : src/parser/IterativeParser.o
+
+# target to build an object file
+src/parser/IterativeParser.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HttpServer.dir/build.make CMakeFiles/HttpServer.dir/src/parser/IterativeParser.cpp.o
+.PHONY : src/parser/IterativeParser.cpp.o
+
+src/parser/IterativeParser.i: src/parser/IterativeParser.cpp.i
+.PHONY : src/parser/IterativeParser.i
+
+# target to preprocess a source file
+src/parser/IterativeParser.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HttpServer.dir/build.make CMakeFiles/HttpServer.dir/src/parser/IterativeParser.cpp.i
+.PHONY : src/parser/IterativeParser.cpp.i
+
+src/parser/IterativeParser.s: src/parser/IterativeParser.cpp.s
+.PHONY : src/parser/IterativeParser.s
+
+# target to generate assembly for a file
+src/parser/IterativeParser.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HttpServer.dir/build.make CMakeFiles/HttpServer.dir/src/parser/IterativeParser.cpp.s
+.PHONY : src/parser/IterativeParser.cpp.s
 
 src/server/HttpServer.o: src/server/HttpServer.cpp.o
 .PHONY : src/server/HttpServer.o
@@ -237,9 +285,15 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/message/Message.o"
+	@echo "... src/message/Message.i"
+	@echo "... src/message/Message.s"
 	@echo "... src/message/Request.o"
 	@echo "... src/message/Request.i"
 	@echo "... src/message/Request.s"
+	@echo "... src/parser/IterativeParser.o"
+	@echo "... src/parser/IterativeParser.i"
+	@echo "... src/parser/IterativeParser.s"
 	@echo "... src/server/HttpServer.o"
 	@echo "... src/server/HttpServer.i"
 	@echo "... src/server/HttpServer.s"

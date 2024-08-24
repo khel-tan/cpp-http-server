@@ -1,4 +1,4 @@
-#include "parser/SinglePassParser.hpp"
+#include "parser/IterativeParser.hpp"
 #include "server/HttpServer.hpp"
 #include "socket/TCPSocket.hpp"
 #include <iostream>
@@ -14,7 +14,7 @@ int main(int argc, char **argv) {
   const int PORT = argc > 1 ? parsePort(argv[1], DEFAULT_PORT) : DEFAULT_PORT;
 
   HttpServer server(std::make_unique<TCPSocket>(PORT),
-                    std::make_unique<SinglePassParser>());
+                    std::make_unique<IterativeParser>());
   server.run();
 }
 

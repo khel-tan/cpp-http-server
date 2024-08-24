@@ -6,6 +6,7 @@
  * INFO: Abstract class to consolidate data and operations common
  * to both http requests and responses
  */
+#include <stdexcept>
 #include <string>
 #include <unordered_map>
 
@@ -19,6 +20,10 @@ enum class Method {
   PUT,
   DELETE,
 };
+
+std::string toString(const Version &);
+std::string toString(const Method &);
+
 class Message {
 public:
   using header_key = std::string;

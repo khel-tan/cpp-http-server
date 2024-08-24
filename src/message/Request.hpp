@@ -3,11 +3,13 @@
 #define REQUEST_HPP_
 
 #include "Message.hpp"
+#include <string>
 class RequestBuilder;
 class Request : public Message {
 public:
   friend class RequestBuilder;
   static RequestBuilder getBuilder();
+  std::string toString() const;
 
 protected:
   Request(){};
@@ -24,8 +26,8 @@ public:
   void setVersion(const Version version) { request_.version_ = version; }
   void setMethod(const Method method) { request_.method_ = method; }
   // TODO: Validation logic
-  void validate() {}
-  Request build() {
+  void validate() const {}
+  Request build() const {
     validate();
     return request_;
   }

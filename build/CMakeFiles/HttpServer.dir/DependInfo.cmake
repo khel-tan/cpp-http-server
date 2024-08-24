@@ -9,7 +9,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/phone/Mission_Control/Projects/cpp_http_server/src/main.cpp" "CMakeFiles/HttpServer.dir/src/main.cpp.o" "gcc" "CMakeFiles/HttpServer.dir/src/main.cpp.o.d"
+  "/home/phone/Mission_Control/Projects/cpp_http_server/src/message/Message.cpp" "CMakeFiles/HttpServer.dir/src/message/Message.cpp.o" "gcc" "CMakeFiles/HttpServer.dir/src/message/Message.cpp.o.d"
   "/home/phone/Mission_Control/Projects/cpp_http_server/src/message/Request.cpp" "CMakeFiles/HttpServer.dir/src/message/Request.cpp.o" "gcc" "CMakeFiles/HttpServer.dir/src/message/Request.cpp.o.d"
+  "/home/phone/Mission_Control/Projects/cpp_http_server/src/parser/IterativeParser.cpp" "CMakeFiles/HttpServer.dir/src/parser/IterativeParser.cpp.o" "gcc" "CMakeFiles/HttpServer.dir/src/parser/IterativeParser.cpp.o.d"
   "/home/phone/Mission_Control/Projects/cpp_http_server/src/server/HttpServer.cpp" "CMakeFiles/HttpServer.dir/src/server/HttpServer.cpp.o" "gcc" "CMakeFiles/HttpServer.dir/src/server/HttpServer.cpp.o.d"
   "/home/phone/Mission_Control/Projects/cpp_http_server/src/socket/TCPSocket.cpp" "CMakeFiles/HttpServer.dir/src/socket/TCPSocket.cpp.o" "gcc" "CMakeFiles/HttpServer.dir/src/socket/TCPSocket.cpp.o.d"
   )

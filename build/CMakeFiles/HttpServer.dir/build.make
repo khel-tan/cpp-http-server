@@ -83,10 +83,24 @@ CMakeFiles/HttpServer.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/HttpServer.dir/src/main.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/phone/Mission_Control/Projects/cpp_http_server/src/main.cpp -o CMakeFiles/HttpServer.dir/src/main.cpp.s
 
+CMakeFiles/HttpServer.dir/src/message/Message.cpp.o: CMakeFiles/HttpServer.dir/flags.make
+CMakeFiles/HttpServer.dir/src/message/Message.cpp.o: /home/phone/Mission_Control/Projects/cpp_http_server/src/message/Message.cpp
+CMakeFiles/HttpServer.dir/src/message/Message.cpp.o: CMakeFiles/HttpServer.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/phone/Mission_Control/Projects/cpp_http_server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/HttpServer.dir/src/message/Message.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/HttpServer.dir/src/message/Message.cpp.o -MF CMakeFiles/HttpServer.dir/src/message/Message.cpp.o.d -o CMakeFiles/HttpServer.dir/src/message/Message.cpp.o -c /home/phone/Mission_Control/Projects/cpp_http_server/src/message/Message.cpp
+
+CMakeFiles/HttpServer.dir/src/message/Message.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/HttpServer.dir/src/message/Message.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/phone/Mission_Control/Projects/cpp_http_server/src/message/Message.cpp > CMakeFiles/HttpServer.dir/src/message/Message.cpp.i
+
+CMakeFiles/HttpServer.dir/src/message/Message.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/HttpServer.dir/src/message/Message.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/phone/Mission_Control/Projects/cpp_http_server/src/message/Message.cpp -o CMakeFiles/HttpServer.dir/src/message/Message.cpp.s
+
 CMakeFiles/HttpServer.dir/src/message/Request.cpp.o: CMakeFiles/HttpServer.dir/flags.make
 CMakeFiles/HttpServer.dir/src/message/Request.cpp.o: /home/phone/Mission_Control/Projects/cpp_http_server/src/message/Request.cpp
 CMakeFiles/HttpServer.dir/src/message/Request.cpp.o: CMakeFiles/HttpServer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/phone/Mission_Control/Projects/cpp_http_server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/HttpServer.dir/src/message/Request.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/phone/Mission_Control/Projects/cpp_http_server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/HttpServer.dir/src/message/Request.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/HttpServer.dir/src/message/Request.cpp.o -MF CMakeFiles/HttpServer.dir/src/message/Request.cpp.o.d -o CMakeFiles/HttpServer.dir/src/message/Request.cpp.o -c /home/phone/Mission_Control/Projects/cpp_http_server/src/message/Request.cpp
 
 CMakeFiles/HttpServer.dir/src/message/Request.cpp.i: cmake_force
@@ -97,10 +111,24 @@ CMakeFiles/HttpServer.dir/src/message/Request.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/HttpServer.dir/src/message/Request.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/phone/Mission_Control/Projects/cpp_http_server/src/message/Request.cpp -o CMakeFiles/HttpServer.dir/src/message/Request.cpp.s
 
+CMakeFiles/HttpServer.dir/src/parser/IterativeParser.cpp.o: CMakeFiles/HttpServer.dir/flags.make
+CMakeFiles/HttpServer.dir/src/parser/IterativeParser.cpp.o: /home/phone/Mission_Control/Projects/cpp_http_server/src/parser/IterativeParser.cpp
+CMakeFiles/HttpServer.dir/src/parser/IterativeParser.cpp.o: CMakeFiles/HttpServer.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/phone/Mission_Control/Projects/cpp_http_server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/HttpServer.dir/src/parser/IterativeParser.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/HttpServer.dir/src/parser/IterativeParser.cpp.o -MF CMakeFiles/HttpServer.dir/src/parser/IterativeParser.cpp.o.d -o CMakeFiles/HttpServer.dir/src/parser/IterativeParser.cpp.o -c /home/phone/Mission_Control/Projects/cpp_http_server/src/parser/IterativeParser.cpp
+
+CMakeFiles/HttpServer.dir/src/parser/IterativeParser.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/HttpServer.dir/src/parser/IterativeParser.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/phone/Mission_Control/Projects/cpp_http_server/src/parser/IterativeParser.cpp > CMakeFiles/HttpServer.dir/src/parser/IterativeParser.cpp.i
+
+CMakeFiles/HttpServer.dir/src/parser/IterativeParser.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/HttpServer.dir/src/parser/IterativeParser.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/phone/Mission_Control/Projects/cpp_http_server/src/parser/IterativeParser.cpp -o CMakeFiles/HttpServer.dir/src/parser/IterativeParser.cpp.s
+
 CMakeFiles/HttpServer.dir/src/server/HttpServer.cpp.o: CMakeFiles/HttpServer.dir/flags.make
 CMakeFiles/HttpServer.dir/src/server/HttpServer.cpp.o: /home/phone/Mission_Control/Projects/cpp_http_server/src/server/HttpServer.cpp
 CMakeFiles/HttpServer.dir/src/server/HttpServer.cpp.o: CMakeFiles/HttpServer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/phone/Mission_Control/Projects/cpp_http_server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/HttpServer.dir/src/server/HttpServer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/phone/Mission_Control/Projects/cpp_http_server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/HttpServer.dir/src/server/HttpServer.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/HttpServer.dir/src/server/HttpServer.cpp.o -MF CMakeFiles/HttpServer.dir/src/server/HttpServer.cpp.o.d -o CMakeFiles/HttpServer.dir/src/server/HttpServer.cpp.o -c /home/phone/Mission_Control/Projects/cpp_http_server/src/server/HttpServer.cpp
 
 CMakeFiles/HttpServer.dir/src/server/HttpServer.cpp.i: cmake_force
@@ -114,7 +142,7 @@ CMakeFiles/HttpServer.dir/src/server/HttpServer.cpp.s: cmake_force
 CMakeFiles/HttpServer.dir/src/socket/TCPSocket.cpp.o: CMakeFiles/HttpServer.dir/flags.make
 CMakeFiles/HttpServer.dir/src/socket/TCPSocket.cpp.o: /home/phone/Mission_Control/Projects/cpp_http_server/src/socket/TCPSocket.cpp
 CMakeFiles/HttpServer.dir/src/socket/TCPSocket.cpp.o: CMakeFiles/HttpServer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/phone/Mission_Control/Projects/cpp_http_server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/HttpServer.dir/src/socket/TCPSocket.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/phone/Mission_Control/Projects/cpp_http_server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/HttpServer.dir/src/socket/TCPSocket.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/HttpServer.dir/src/socket/TCPSocket.cpp.o -MF CMakeFiles/HttpServer.dir/src/socket/TCPSocket.cpp.o.d -o CMakeFiles/HttpServer.dir/src/socket/TCPSocket.cpp.o -c /home/phone/Mission_Control/Projects/cpp_http_server/src/socket/TCPSocket.cpp
 
 CMakeFiles/HttpServer.dir/src/socket/TCPSocket.cpp.i: cmake_force
@@ -128,7 +156,9 @@ CMakeFiles/HttpServer.dir/src/socket/TCPSocket.cpp.s: cmake_force
 # Object files for target HttpServer
 HttpServer_OBJECTS = \
 "CMakeFiles/HttpServer.dir/src/main.cpp.o" \
+"CMakeFiles/HttpServer.dir/src/message/Message.cpp.o" \
 "CMakeFiles/HttpServer.dir/src/message/Request.cpp.o" \
+"CMakeFiles/HttpServer.dir/src/parser/IterativeParser.cpp.o" \
 "CMakeFiles/HttpServer.dir/src/server/HttpServer.cpp.o" \
 "CMakeFiles/HttpServer.dir/src/socket/TCPSocket.cpp.o"
 
@@ -136,12 +166,14 @@ HttpServer_OBJECTS = \
 HttpServer_EXTERNAL_OBJECTS =
 
 HttpServer: CMakeFiles/HttpServer.dir/src/main.cpp.o
+HttpServer: CMakeFiles/HttpServer.dir/src/message/Message.cpp.o
 HttpServer: CMakeFiles/HttpServer.dir/src/message/Request.cpp.o
+HttpServer: CMakeFiles/HttpServer.dir/src/parser/IterativeParser.cpp.o
 HttpServer: CMakeFiles/HttpServer.dir/src/server/HttpServer.cpp.o
 HttpServer: CMakeFiles/HttpServer.dir/src/socket/TCPSocket.cpp.o
 HttpServer: CMakeFiles/HttpServer.dir/build.make
 HttpServer: CMakeFiles/HttpServer.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/phone/Mission_Control/Projects/cpp_http_server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable HttpServer"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/phone/Mission_Control/Projects/cpp_http_server/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable HttpServer"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/HttpServer.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
