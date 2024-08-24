@@ -1,8 +1,27 @@
-#include "../include/http_server/server/HttpServer.hpp"
-#include "../include/http_server/socket/TCPSocket.hpp"
+#include "parser/SinglePassParser.hpp"
+#include "server/HttpServer.hpp"
+#include "socket/TCPSocket.hpp"
+#include <iostream>
 #include <memory>
-int main() {
-  auto socket = std::make_unique<HttpServer::TCPSocket>(5100);
-  auto server = HttpServer::HttpServer(std::move(socket));
+#include <stdexcept>
+#include <string>
+
+int parsePort(const char *arg, const int DEFAULT);
+
+int main(int argc, char **argv) {
+  std::cout << "Hello world" << std::endl;
+  const int DEFAULT_PORT = 5100;
+  const int PORT = argc > 1 ? parsePort(argv[1], DEFAULT_PORT) : DEFAULT_PORT;
+
+  HttpServer server(std::make_unique<TCPSocket>(PORT),
+                    std::make_unique<SinglePassParser>());
   server.run();
+}
+
+int parsePort(const char *arg, const int DEFAULT) {
+  try {
+    return std::stoi(arg);
+  } catch (std::invalid_argument) {
+    return DEFAULT;
+  }
 }

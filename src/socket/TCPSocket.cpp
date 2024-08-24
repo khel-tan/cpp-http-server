@@ -1,11 +1,13 @@
-#include "../../../include/http_server/socket/TCPSocket.hpp"
+#include "TCPSocket.hpp"
+#include <algorithm>
 #include <cstddef>
 #include <cstdint>
+#include <iostream>
 #include <netinet/in.h>
 #include <stdexcept>
 #include <sys/socket.h>
-
-namespace HttpServer {
+#include <unistd.h>
+#include <vector>
 
 TCPSocket::TCPSocket(std::uint16_t port)
     : serverSocket_(socket(AF_INET, SOCK_STREAM, 0)) {
@@ -28,7 +30,12 @@ TCPSocket::TCPSocket(std::uint16_t port)
   }
 }
 
-TCPSocket::~TCPSocket() { closeSocket(); }
+TCPSocket::~TCPSocket() {
+  // BUG: Socket does not close properly
+  //  The binding is not released when the socket is destructed
+  closeSocket();
+  std::cout << "Closing" << std::endl;
+}
 void TCPSocket::acceptConnection() {
   clientSocket_ = accept(serverSocket_, NULL, NULL);
   if (clientSocket_ == -1) {
@@ -36,13 +43,16 @@ void TCPSocket::acceptConnection() {
   }
 }
 
-std::vector<char> TCPSocket::receiveData() {
+std::string TCPSocket::receiveData() {
+  // NOTE: Stop trimming the buffer of \n and \r.
+  //  The socket is not responsible for that.
   std::vector<char> buffer(BUFFER_SIZE);
   int bytesReceived = recv(clientSocket_, buffer.data(), buffer.size(), 0);
   if (bytesReceived <= 0) {
-    buffer.clear();
+    return std::string();
   }
-  return buffer;
+  buffer.resize(bytesReceived);
+  return std::string(buffer.begin(), buffer.end());
 }
 
 void TCPSocket::closeSocket() {
@@ -53,4 +63,3 @@ void TCPSocket::closeSocket() {
     close(clientSocket_);
   }
 }
-} // namespace HttpServer

@@ -10,4 +10,4 @@ fi
 #Build stage
 cd build && cmake .. && make
 #Run executable
-./$PROJECT_NAME
+./$PROJECT_NAME "$@"

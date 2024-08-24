@@ -1,22 +1,17 @@
 #ifndef TCP_SOCKET_HPP_
+
 #define TCP_SOCKET_HPP_
 
 #include "Socket.hpp"
-
-#include <arpa/inet.h>
 #include <cstdint>
-#include <sys/socket.h>
-#include <unistd.h>
-#include <vector>
-
-namespace HttpServer {
-
+#include <string>
 class TCPSocket : public Socket {
 public:
+  TCPSocket() = delete;
   explicit TCPSocket(std::uint16_t port);
   ~TCPSocket();
   void acceptConnection() override;
-  std::vector<char> receiveData() override;
+  std::string receiveData() override;
   void closeSocket() override;
 
 protected:
@@ -25,5 +20,5 @@ protected:
   int clientSocket_ = -1;
   void initialize();
 };
-} // namespace HttpServer
+
 #endif // !TCP_SOCKET_HPP_
