@@ -13,8 +13,9 @@ void HttpServer::run() {
     if (inputStr == "exit\r\n") {
       break;
     }
-    parser_->feedInput(inputStr);
-    auto request = parser_->getRequest();
+    std::cout << "Line : " << inputStr << std::endl;
+    // parser_->feedInput(inputStr);
+    // auto request = parser_->getRequest();
   }
 }
 

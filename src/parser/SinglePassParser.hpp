@@ -16,6 +16,7 @@ public:
     std::stringstream ss(input_);
     std::string line;
     while (std::getline(ss, line)) {
+      std::cout << "Line " << std::endl;
       std::cout << line << std::endl;
     }
 
