@@ -1,0 +1,9 @@
+# .clang-format
+BasedOnStyle: GNU
+IndentWidth: 4
+ColumnLimit: 60
+AllowShortFunctionsOnASingleLine: false
+BreakBeforeBraces: Stroustrup
+SpaceBeforeParens: ControlStatements
+
+
