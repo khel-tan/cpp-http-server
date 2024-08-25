@@ -39,6 +39,7 @@ class HttpServer : public Server {
                        URI::Hash, URI::Equality>
         requestHandlers_;
     void sanitizeString(std::string &str);
+    void handleRequest(const Request &);
 };
 
 #endif // !HTTP_SERVER_HPP_

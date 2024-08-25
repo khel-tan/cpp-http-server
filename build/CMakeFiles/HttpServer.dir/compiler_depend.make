@@ -4,11 +4,14 @@
 CMakeFiles/HttpServer.dir/src/main.cpp.o: /home/phone/Mission_Control/Projects/cpp_http_server/src/main.cpp \
   /home/phone/Mission_Control/Projects/cpp_http_server/src/message/Message.hpp \
   /home/phone/Mission_Control/Projects/cpp_http_server/src/message/Request.hpp \
+  /home/phone/Mission_Control/Projects/cpp_http_server/src/message/Response.hpp \
+  /home/phone/Mission_Control/Projects/cpp_http_server/src/message/URI.hpp \
+  /home/phone/Mission_Control/Projects/cpp_http_server/src/handlers/Handler.hpp \
+  /home/phone/Mission_Control/Projects/cpp_http_server/src/handlers/TestHandler.hpp \
+  /home/phone/Mission_Control/Projects/cpp_http_server/src/message/URI.hpp \
+  /home/phone/Mission_Control/Projects/cpp_http_server/src/message/Request.hpp \
   /home/phone/Mission_Control/Projects/cpp_http_server/src/parser/IterativeParser.hpp \
   /home/phone/Mission_Control/Projects/cpp_http_server/src/parser/RequestParser.hpp \
-  /home/phone/Mission_Control/Projects/cpp_http_server/src/message/Message.hpp \
-  /home/phone/Mission_Control/Projects/cpp_http_server/src/message/Request.hpp \
-  /home/phone/Mission_Control/Projects/cpp_http_server/src/message/Response.hpp \
   /home/phone/Mission_Control/Projects/cpp_http_server/src/handlers/Handler.hpp \
   /home/phone/Mission_Control/Projects/cpp_http_server/src/message/URI.hpp \
   /home/phone/Mission_Control/Projects/cpp_http_server/src/parser/RequestParser.hpp \
@@ -541,6 +544,7 @@ CMakeFiles/HttpServer.dir/src/message/Message.cpp.o: /home/phone/Mission_Control
 CMakeFiles/HttpServer.dir/src/message/Request.cpp.o: /home/phone/Mission_Control/Projects/cpp_http_server/src/message/Request.cpp \
   /home/phone/Mission_Control/Projects/cpp_http_server/src/message/Message.hpp \
   /home/phone/Mission_Control/Projects/cpp_http_server/src/message/Request.hpp \
+  /home/phone/Mission_Control/Projects/cpp_http_server/src/message/URI.hpp \
   /usr/include/alloca.h \
   /usr/include/asm-generic/errno-base.h \
   /usr/include/asm-generic/errno.h \
@@ -997,6 +1001,7 @@ CMakeFiles/HttpServer.dir/src/message/Response.cpp.o: /home/phone/Mission_Contro
 CMakeFiles/HttpServer.dir/src/parser/IterativeParser.cpp.o: /home/phone/Mission_Control/Projects/cpp_http_server/src/parser/IterativeParser.cpp \
   /home/phone/Mission_Control/Projects/cpp_http_server/src/message/Message.hpp \
   /home/phone/Mission_Control/Projects/cpp_http_server/src/message/Request.hpp \
+  /home/phone/Mission_Control/Projects/cpp_http_server/src/message/URI.hpp \
   /home/phone/Mission_Control/Projects/cpp_http_server/src/parser/IterativeParser.hpp \
   /home/phone/Mission_Control/Projects/cpp_http_server/src/parser/RequestParser.hpp \
   /usr/include/alloca.h \
@@ -1258,6 +1263,7 @@ CMakeFiles/HttpServer.dir/src/server/HttpServer.cpp.o: /home/phone/Mission_Contr
   /home/phone/Mission_Control/Projects/cpp_http_server/src/message/Message.hpp \
   /home/phone/Mission_Control/Projects/cpp_http_server/src/message/Request.hpp \
   /home/phone/Mission_Control/Projects/cpp_http_server/src/message/Response.hpp \
+  /home/phone/Mission_Control/Projects/cpp_http_server/src/message/URI.hpp \
   /home/phone/Mission_Control/Projects/cpp_http_server/src/handlers/Handler.hpp \
   /home/phone/Mission_Control/Projects/cpp_http_server/src/message/URI.hpp \
   /home/phone/Mission_Control/Projects/cpp_http_server/src/message/Request.hpp \
@@ -1913,10 +1919,6 @@ CMakeFiles/HttpServer.dir/src/socket/TCPSocket.cpp.o: /home/phone/Mission_Contro
 
 /usr/include/c++/14/bits/atomic_lockfree_defines.h:
 
-/usr/include/c++/14/bits/istream.tcc:
-
-/usr/include/c++/14/bits/algorithmfwd.h:
-
 /usr/include/bits/typesizes.h:
 
 /usr/include/c++/14/bit:
@@ -2013,10 +2015,6 @@ CMakeFiles/HttpServer.dir/src/socket/TCPSocket.cpp.o: /home/phone/Mission_Contro
 
 /usr/include/bits/byteswap.h:
 
-/usr/include/bits/types/struct_FILE.h:
-
-/usr/include/bits/environments.h:
-
 /usr/include/c++/14/bits/uses_allocator.h:
 
 /usr/include/bits/uintn-identity.h:
@@ -2047,6 +2045,10 @@ CMakeFiles/HttpServer.dir/src/socket/TCPSocket.cpp.o: /home/phone/Mission_Contro
 
 /usr/include/c++/14/bits/erase_if.h:
 
+/usr/include/alloca.h:
+
+/usr/include/bits/stdint-least.h:
+
 /usr/include/c++/14/bits/iterator_concepts.h:
 
 /usr/include/c++/14/pstl/glue_memory_defs.h:
@@ -2071,9 +2073,37 @@ CMakeFiles/HttpServer.dir/src/socket/TCPSocket.cpp.o: /home/phone/Mission_Contro
 
 /usr/include/c++/14/compare:
 
-/home/phone/Mission_Control/Projects/cpp_http_server/src/parser/IterativeParser.hpp:
+/usr/include/asm-generic/errno.h:
 
-/usr/include/bits/types.h:
+/usr/include/c++/14/x86_64-redhat-linux/bits/c++config.h:
+
+/usr/include/c++/14/bits/predefined_ops.h:
+
+/usr/include/c++/14/bits/char_traits.h:
+
+/usr/include/c++/14/bits/hash_bytes.h:
+
+/usr/lib/gcc/x86_64-redhat-linux/14/include/stdarg.h:
+
+/usr/include/asm-generic/errno-base.h:
+
+/usr/include/c++/14/bits/stl_algobase.h:
+
+/usr/include/c++/14/bits/stl_iterator.h:
+
+/usr/include/bits/environments.h:
+
+/usr/include/bits/types/struct_FILE.h:
+
+/home/phone/Mission_Control/Projects/cpp_http_server/src/handlers/TestHandler.hpp:
+
+/usr/include/bits/types/error_t.h:
+
+/usr/include/bits/types/clockid_t.h:
+
+/usr/include/bits/stdint-intn.h:
+
+/home/phone/Mission_Control/Projects/cpp_http_server/src/parser/IterativeParser.hpp:
 
 /home/phone/Mission_Control/Projects/cpp_http_server/src/server/HttpServer.hpp:
 
@@ -2111,23 +2141,7 @@ CMakeFiles/HttpServer.dir/src/socket/TCPSocket.cpp.o: /home/phone/Mission_Contro
 
 /usr/include/bits/getopt_posix.h:
 
-/usr/include/asm-generic/errno.h:
-
-/usr/include/c++/14/x86_64-redhat-linux/bits/c++config.h:
-
-/usr/include/c++/14/bits/predefined_ops.h:
-
-/usr/include/c++/14/bits/char_traits.h:
-
-/usr/include/c++/14/bits/hash_bytes.h:
-
-/usr/lib/gcc/x86_64-redhat-linux/14/include/stdarg.h:
-
-/usr/include/asm-generic/errno-base.h:
-
-/usr/include/c++/14/bits/stl_algobase.h:
-
-/usr/include/c++/14/bits/stl_iterator.h:
+/home/phone/Mission_Control/Projects/cpp_http_server/src/message/Response.hpp:
 
 /usr/include/bits/thread-shared-types.h:
 
@@ -2135,17 +2149,7 @@ CMakeFiles/HttpServer.dir/src/socket/TCPSocket.cpp.o: /home/phone/Mission_Contro
 
 /usr/include/c++/14/bits/stl_pair.h:
 
-/home/phone/Mission_Control/Projects/cpp_http_server/src/message/Response.hpp:
-
-/usr/include/bits/types/error_t.h:
-
-/usr/include/bits/types/clockid_t.h:
-
-/usr/include/bits/stdint-intn.h:
-
-/usr/include/alloca.h:
-
-/usr/include/bits/stdint-least.h:
+/usr/include/bits/types.h:
 
 /usr/include/wchar.h:
 
@@ -2199,6 +2203,12 @@ CMakeFiles/HttpServer.dir/src/socket/TCPSocket.cpp.o: /home/phone/Mission_Contro
 
 /usr/include/c++/14/bits/stl_raw_storage_iter.h:
 
+/home/phone/Mission_Control/Projects/cpp_http_server/src/main.cpp:
+
+/usr/include/bits/locale.h:
+
+/home/phone/Mission_Control/Projects/cpp_http_server/src/socket/TCPSocket.hpp:
+
 /usr/include/c++/14/optional:
 
 /usr/include/sys/types.h:
@@ -2213,11 +2223,9 @@ CMakeFiles/HttpServer.dir/src/socket/TCPSocket.cpp.o: /home/phone/Mission_Contro
 
 /usr/include/bits/types/FILE.h:
 
-/home/phone/Mission_Control/Projects/cpp_http_server/src/main.cpp:
+/usr/include/c++/14/bits/algorithmfwd.h:
 
-/usr/include/bits/locale.h:
-
-/home/phone/Mission_Control/Projects/cpp_http_server/src/socket/TCPSocket.hpp:
+/usr/include/c++/14/bits/istream.tcc:
 
 /usr/include/c++/14/bits/locale_classes.h:
 

@@ -11,7 +11,14 @@
  */
 class URI {
   public:
-    URI() = delete;
+    // TODO: This class will be safer if the default
+    // constructor is deleted NOTE: Default initialization
+    // of request depends on this constructor
+    URI()
+        : path_(""){
+
+          };
+
     ~URI() = default;
 
     URI(const std::string path) : path_(path)
@@ -41,7 +48,7 @@ class URI {
     };
 
   private:
-    const std::string path_;
+    std::string path_;
 };
 
 #endif // !DEBUG

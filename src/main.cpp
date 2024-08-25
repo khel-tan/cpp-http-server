@@ -3,6 +3,8 @@
 #include <stdexcept>
 #include <string>
 
+#include "handlers/TestHandler.hpp"
+#include "message/URI.hpp"
 #include "parser/IterativeParser.hpp"
 #include "server/HttpServer.hpp"
 #include "socket/TCPSocket.hpp"
@@ -19,6 +21,8 @@ main(int argc, char **argv)
 
     HttpServer server(std::make_unique<TCPSocket>(PORT),
                       std::make_unique<IterativeParser>());
+    server.mapHandler(URI("/algorithms"),
+                      std::make_unique<TestHandler>());
     server.run();
 }
 

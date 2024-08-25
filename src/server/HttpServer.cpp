@@ -1,6 +1,7 @@
 #include "HttpServer.hpp"
 #include <algorithm>
 #include <iostream>
+#include <stdexcept>
 #include <string>
 void
 HttpServer::run()
@@ -20,6 +21,7 @@ HttpServer::run()
             parser_->parse();
             auto request = parser_->getRequest();
             std::cout << request.toString() << std::endl;
+            handleRequest(request);
             return;
         }
         parser_->feedInput(inputStr);
@@ -36,4 +38,17 @@ HttpServer::sanitizeString(std::string &str)
                                         || c == '\n';
                              }),
               str.cend());
+}
+
+void
+HttpServer::handleRequest(const Request &request)
+{
+    if (requestHandlers_.contains(request.getURI())) {
+        requestHandlers_[request.getURI()]->handleRequest(
+            request);
+    }
+    else {
+        throw std::invalid_argument(
+            "Cannot find any handlers for URI");
+    }
 }

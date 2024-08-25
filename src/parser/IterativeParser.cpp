@@ -47,6 +47,7 @@ IterativeParser::processRequestLine(
             std::cout << "Match : " << m << std::endl;
         }
         builder_.setMethod(parseMethod(method));
+        builder_.setURI(URI(uri));
         builder_.setVersion(parseVersion(version));
     }
     else {

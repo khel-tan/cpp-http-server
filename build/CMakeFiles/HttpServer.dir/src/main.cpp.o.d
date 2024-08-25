@@ -168,9 +168,9 @@ CMakeFiles/HttpServer.dir/src/main.cpp.o: \
  /usr/include/c++/14/bits/ranges_algobase.h \
  /usr/include/c++/14/pstl/glue_memory_defs.h \
  /usr/include/c++/14/pstl/execution_defs.h \
- /home/phone/Mission_Control/Projects/cpp_http_server/src/parser/IterativeParser.hpp \
- /home/phone/Mission_Control/Projects/cpp_http_server/src/parser/../message/Request.hpp \
- /home/phone/Mission_Control/Projects/cpp_http_server/src/parser/../message/Message.hpp \
+ /home/phone/Mission_Control/Projects/cpp_http_server/src/handlers/TestHandler.hpp \
+ /home/phone/Mission_Control/Projects/cpp_http_server/src/handlers/../message/Request.hpp \
+ /home/phone/Mission_Control/Projects/cpp_http_server/src/handlers/../message/Message.hpp \
  /usr/include/c++/14/unordered_map \
  /usr/include/c++/14/bits/unordered_map.h \
  /usr/include/c++/14/bits/hashtable.h \
@@ -178,6 +178,12 @@ CMakeFiles/HttpServer.dir/src/main.cpp.o: \
  /usr/include/c++/14/bits/enable_special_members.h \
  /usr/include/c++/14/bits/node_handle.h \
  /usr/include/c++/14/bits/erase_if.h \
+ /home/phone/Mission_Control/Projects/cpp_http_server/src/handlers/../message/URI.hpp \
+ /home/phone/Mission_Control/Projects/cpp_http_server/src/handlers/../message/Response.hpp \
+ /home/phone/Mission_Control/Projects/cpp_http_server/src/handlers/Handler.hpp \
+ /home/phone/Mission_Control/Projects/cpp_http_server/src/message/URI.hpp \
+ /home/phone/Mission_Control/Projects/cpp_http_server/src/parser/IterativeParser.hpp \
+ /home/phone/Mission_Control/Projects/cpp_http_server/src/parser/../message/Request.hpp \
  /home/phone/Mission_Control/Projects/cpp_http_server/src/parser/RequestParser.hpp \
  /usr/include/c++/14/regex /usr/include/c++/14/bitset \
  /usr/include/c++/14/locale \
@@ -212,9 +218,6 @@ CMakeFiles/HttpServer.dir/src/main.cpp.o: \
  /usr/include/c++/14/bits/regex_executor.tcc \
  /home/phone/Mission_Control/Projects/cpp_http_server/src/server/HttpServer.hpp \
  /home/phone/Mission_Control/Projects/cpp_http_server/src/server/../handlers/Handler.hpp \
- /home/phone/Mission_Control/Projects/cpp_http_server/src/server/../handlers/../message/Request.hpp \
- /home/phone/Mission_Control/Projects/cpp_http_server/src/server/../handlers/../message/Response.hpp \
- /home/phone/Mission_Control/Projects/cpp_http_server/src/server/../handlers/../message/Message.hpp \
  /home/phone/Mission_Control/Projects/cpp_http_server/src/server/../message/URI.hpp \
  /home/phone/Mission_Control/Projects/cpp_http_server/src/server/../parser/RequestParser.hpp \
  /home/phone/Mission_Control/Projects/cpp_http_server/src/server/../socket/Socket.hpp \
