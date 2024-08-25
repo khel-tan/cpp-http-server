@@ -211,9 +211,15 @@ CMakeFiles/HttpServer.dir/src/main.cpp.o: \
  /usr/include/c++/14/bits/regex_executor.h \
  /usr/include/c++/14/bits/regex_executor.tcc \
  /home/phone/Mission_Control/Projects/cpp_http_server/src/server/HttpServer.hpp \
+ /home/phone/Mission_Control/Projects/cpp_http_server/src/server/../handlers/Handler.hpp \
+ /home/phone/Mission_Control/Projects/cpp_http_server/src/server/../handlers/../message/Request.hpp \
+ /home/phone/Mission_Control/Projects/cpp_http_server/src/server/../handlers/../message/Response.hpp \
+ /home/phone/Mission_Control/Projects/cpp_http_server/src/server/../handlers/../message/Message.hpp \
+ /home/phone/Mission_Control/Projects/cpp_http_server/src/server/../message/URI.hpp \
  /home/phone/Mission_Control/Projects/cpp_http_server/src/server/../parser/RequestParser.hpp \
  /home/phone/Mission_Control/Projects/cpp_http_server/src/server/../socket/Socket.hpp \
  /usr/include/c++/14/vector \
  /home/phone/Mission_Control/Projects/cpp_http_server/src/server/Server.hpp \
+ /usr/include/c++/14/utility /usr/include/c++/14/bits/stl_relops.h \
  /home/phone/Mission_Control/Projects/cpp_http_server/src/socket/TCPSocket.hpp \
  /home/phone/Mission_Control/Projects/cpp_http_server/src/socket/Socket.hpp

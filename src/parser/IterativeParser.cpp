@@ -1,4 +1,5 @@
 #include "IterativeParser.hpp"
+#include <iostream>
 #include <regex>
 #include <stdexcept>
 

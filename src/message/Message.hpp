@@ -6,7 +6,6 @@
  * INFO: Abstract class to consolidate data and operations
  * common to both http requests and responses
  */
-#include <stdexcept>
 #include <string>
 #include <unordered_map>
 

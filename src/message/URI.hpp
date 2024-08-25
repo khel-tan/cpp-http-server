@@ -18,12 +18,6 @@ class URI {
     {
     }
 
-    bool
-    operator==(const URI &other)
-    {
-        return this->path_ == other.path_;
-    }
-
     std::string
     toString() const
     {
@@ -35,6 +29,14 @@ class URI {
         operator()(const URI &uri) const
         {
             return std::hash<std::string>{}(uri.toString());
+        }
+    };
+
+    struct Equality {
+        bool
+        operator()(const URI &lhs, const URI &rhs) const
+        {
+            return lhs.path_ == rhs.path_;
         }
     };
 

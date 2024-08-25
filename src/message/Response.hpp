@@ -8,6 +8,8 @@ enum class StatusCode {
     NOT_FOUND = 404,
 };
 
+std::string toString(const StatusCode &);
+
 class ResponseBuilder;
 class Response : public Message {
   public:
@@ -27,21 +29,24 @@ class ResponseBuilder {
     ResponseBuilder() : response_(Response())
     {
     }
-    void
+    ResponseBuilder
     setHeaders(const Response::header_key key,
                const Response::header_value value)
     {
         response_.headers_.insert_or_assign(key, value);
+        return *this;
     }
-    void
+    ResponseBuilder
     setVersion(const Version version)
     {
         response_.version_ = version;
+        return *this;
     }
-    void
+    ResponseBuilder
     setStatusCode(const StatusCode statusCode)
     {
         response_.statusCode_ = statusCode;
+        return *this;
     }
     void
     validate() const

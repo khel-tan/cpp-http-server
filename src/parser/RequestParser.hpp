@@ -3,7 +3,6 @@
 #define PARSER_HPP_
 
 #include "../message/Request.hpp"
-#include <regex>
 class RequestParser {
   public:
     virtual void feedInput(std::string input) = 0;

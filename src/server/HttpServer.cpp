@@ -1,4 +1,5 @@
 #include "HttpServer.hpp"
+#include <algorithm>
 #include <iostream>
 #include <string>
 void

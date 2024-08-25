@@ -10,6 +10,7 @@
 
 #include <memory>
 #include <unordered_map>
+#include <utility>
 
 /*
  * TODO: Write responsibilities for this class
@@ -25,11 +26,17 @@ class HttpServer : public Server {
     {
     }
     void run() override;
+    void
+    mapHandler(const URI &u, std::unique_ptr<Handler> &&h)
+    {
+        requestHandlers_.insert_or_assign(u, std::move(h));
+    }
 
   protected:
     const std::unique_ptr<Socket> socket_;
     const std::unique_ptr<RequestParser> parser_;
-    const std::unordered_map<URI, Handler, URI::Hash>
+    std::unordered_map<URI, std::unique_ptr<Handler>,
+                       URI::Hash, URI::Equality>
         requestHandlers_;
     void sanitizeString(std::string &str);
 };
