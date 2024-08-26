@@ -21,9 +21,7 @@ class URI {
 
     ~URI() = default;
 
-    URI(const std::string path) : path_(path)
-    {
-    }
+    URI(const std::string path) : path_(path) {}
 
     std::string
     toString() const

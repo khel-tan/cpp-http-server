@@ -40,7 +40,6 @@ IterativeParser::processRequestLine(
                          REQUEST_LINE_PATTERN)) {
         const auto method = matches[1];
         const auto uri = matches[2];
-        // TODO: Get rid of the magic constant below
         const auto version = matches[3];
 
         for (const auto &m : matches) {

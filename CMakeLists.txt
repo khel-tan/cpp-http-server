@@ -12,5 +12,11 @@ file(GLOB_RECURSE SOURCES "src/*.cpp")
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
-
+find_package(SQLite3 REQUIRED)
 add_executable(${PROJECT_NAME} ${SOURCES})
+if (SQLite3_FOUND)
+  include_directories(${SQLite3_INCLUDE_DIRS})
+  target_link_libraries(${PROJECT_NAME} ${SQLite3_LIBRARIES})
+else()
+  message(FATAL_ERROR "SQLite3 library not found.")
+endif()

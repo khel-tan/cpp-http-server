@@ -6,9 +6,9 @@
  * Abstract server with run() performing some service
  */
 class Server {
-public:
-  virtual ~Server() = default;
-  virtual void run() = 0;
+  public:
+    virtual ~Server() = default;
+    virtual void run() = 0;
 };
 
 #endif // !SERVER_HPP_

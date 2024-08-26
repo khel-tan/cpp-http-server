@@ -2,7 +2,7 @@
 BasedOnStyle: GNU
 IndentWidth: 4
 ColumnLimit: 60
-AllowShortFunctionsOnASingleLine: false
+AllowShortFunctionsOnASingleLine: true
 BreakBeforeBraces: Stroustrup
 SpaceBeforeParens: ControlStatements
 
