@@ -58,6 +58,12 @@ toMethod(const std::string &input)
     else if (input == "POST") {
         return Method::POST;
     }
+    else if (input == "PUT") {
+        return Method::PUT;
+    }
+    else if (input == "DELETE") {
+        return Method::PUT;
+    }
     else {
         throw std::invalid_argument(std::format(
             "{0} is not a valid Http method string!",

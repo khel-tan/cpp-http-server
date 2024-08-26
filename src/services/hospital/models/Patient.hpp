@@ -2,6 +2,7 @@
 
 #define PATIENT_HPP_
 
+#include <format>
 #include <string>
 class Patient {
   private:
@@ -24,6 +25,14 @@ class Patient {
     {
         return name_;
     };
+
+    std::string
+    toString() const
+    {
+        return std::format("Our esteemed customer {0}, "
+                           "Identification number : {1}",
+                           name_, id_);
+    }
 };
 
 #endif // !PATIENT_HPP_

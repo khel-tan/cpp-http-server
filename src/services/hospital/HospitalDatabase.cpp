@@ -1,13 +1,16 @@
 #include "HospitalDatabase.hpp"
 #include "models/Patient.hpp"
+#include <stdexcept>
 #include <string>
+#include <vector>
 
 void
 HospitalDatabase::insertPatient(const Patient &p) const
 {
     const std::string query
-        = "INSERT INTO Patients (name) VALUES ('"
-          + p.getName() + "');";
+        = "INSERT INTO Patients (id, name) VALUES ("
+          + std::to_string(p.getId()) + ", '" + p.getName()
+          + "');";
     runQuery(query);
 }
 
@@ -27,24 +30,26 @@ HospitalDatabase::initialize()
     runQuery(CREATE_PATIENTS_TABLE);
 }
 
-void
-HospitalDatabase::test() const
+std::vector<Patient>
+HospitalDatabase::getPatients() const
 {
     sqlite3_stmt *statement;
     const char *query = "SELECT * FROM PATIENTS";
+
+    std::vector<Patient> patients;
     int returnCode = sqlite3_prepare_v2(db_, query, -1,
                                         &statement, NULL);
     if (returnCode != SQLITE_OK) {
-        std::cout << "Error" << std::endl;
-        return;
+        throw std::runtime_error("Query failed");
     }
     while ((returnCode = sqlite3_step(statement))
            == SQLITE_ROW) {
         int id = sqlite3_column_int(statement, 0);
-        const unsigned char *name
-            = sqlite3_column_text(statement, 1);
-        std::cout << "Printing row -> id : " << id
-                  << " ,name : " << name << std::endl;
+        std::string name
+            = (const char *)sqlite3_column_text(statement,
+                                                1);
+        patients.push_back(Patient(id, name));
     }
     sqlite3_finalize(statement);
+    return patients;
 }

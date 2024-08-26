@@ -10,21 +10,27 @@ HttpServer::run()
     std::cout << "Server is accepting requests..."
               << std::endl;
     while (true) {
+        std::cout << "Before" << std::endl;
         auto data = socket_->receiveData();
+        std::cout << "After" << std::endl;
         std::string inputStr(data.begin(), data.end());
+        std::cout << "Data : " << inputStr << std::endl;
         // TODO: Properly sanitize the input
-
-        if (inputStr == "exit\r\n") {
-            break;
-        }
-        if (inputStr == "\r\n") {
+        //        if (inputStr.length() == 0) {
+        //            break;
+        //        }
+        //
+        //        if (inputStr == "exit\r\n") {
+        //            break;
+        //        }
+        if (inputStr.length() != 0) {
+            parser_->feedInput(inputStr);
             parser_->parse();
             auto request = parser_->getRequest();
             std::cout << request.toString() << std::endl;
             handleRequest(request);
             return;
         }
-        parser_->feedInput(inputStr);
         // auto request = parser_->getRequest();
     }
 }
@@ -44,8 +50,9 @@ void
 HttpServer::handleRequest(const Request &request)
 {
     if (requestHandlers_.contains(request.getURI())) {
-        requestHandlers_[request.getURI()]->handleRequest(
-            request);
+        auto response = requestHandlers_[request.getURI()]
+                            ->handleRequest(request);
+        socket_->sendData(response.toString() + LINE_BREAK);
     }
     else {
         throw std::invalid_argument(

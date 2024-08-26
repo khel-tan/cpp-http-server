@@ -79,6 +79,24 @@ TCPSocket::receiveData()
 }
 
 void
+TCPSocket::sendData(const std::string &data)
+{
+    if (clientSocket_ == -1) {
+        throw std::runtime_error(
+            "No client connected to send the data!");
+    }
+
+    std::size_t bytesSent
+        = send(clientSocket_, data.c_str(), data.size(), 0);
+    std::cout << "Sending : " << bytesSent << std::endl;
+    std::cout << data << std::endl;
+    if (bytesSent == -1) {
+        throw std::runtime_error(
+            "Error sending data to client!");
+    }
+}
+
+void
 TCPSocket::closeSocket()
 {
     if (serverSocket_ != -1) {

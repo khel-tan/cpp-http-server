@@ -17,6 +17,7 @@ class TCPSocket : public Socket {
     // TCPSocket &operator=(TCPSocket &&);
     void acceptConnection() override;
     std::string receiveData() override;
+    void sendData(const std::string &data) override;
     void closeSocket() override;
 
   protected:

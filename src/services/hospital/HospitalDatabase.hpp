@@ -4,6 +4,8 @@
 
 #include "../SQLDatabase.hpp"
 #include "models/Patient.hpp"
+
+#include <vector>
 class HospitalDatabase : public SQLDatabase {
   public:
     HospitalDatabase() = delete;
@@ -15,6 +17,7 @@ class HospitalDatabase : public SQLDatabase {
     void insertPatient(const Patient &) const;
     void reset() override;
     void test() const;
+    std::vector<Patient> getPatients() const;
 
   protected:
     void initialize() override;

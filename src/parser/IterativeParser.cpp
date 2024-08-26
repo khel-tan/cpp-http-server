@@ -19,10 +19,21 @@ IterativeParser::parse()
     processRequestLine(requestLine);
 
     std::string line;
-    while (std::getline(ss, line)) {
-        std::cout << "Line " << std::endl;
-        std::cout << line << std::endl;
+
+    // INFO: Works only with "\r" at the moment for insomnia
+    while (std::getline(ss, line) && line != "\r") {
+        // TODO: Trim key and value of whitespaces
+        std::size_t colonPos = line.find(':');
+        std::string key = line.substr(0, colonPos);
+        std::string value = line.substr(colonPos + 1);
+
+        builder_.setHeaders(key, value);
     }
+    std::string body{};
+    while (std::getline(ss, line)) {
+        body += line;
+    }
+    builder_.setBody(body);
 }
 
 Request

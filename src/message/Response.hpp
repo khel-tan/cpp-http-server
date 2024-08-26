@@ -5,10 +5,12 @@
 #include "Message.hpp"
 enum class StatusCode {
     OK = 200,
+    BAD_REQUEST = 400,
     NOT_FOUND = 404,
 };
 
 std::string toString(const StatusCode &);
+int toInt(const StatusCode &);
 
 class ResponseBuilder;
 class Response : public Message {
@@ -18,17 +20,13 @@ class Response : public Message {
     std::string toString() const;
 
   protected:
-    Response()
-    {
-    }
+    Response() {}
     StatusCode statusCode_;
 };
 
 class ResponseBuilder {
   public:
-    ResponseBuilder() : response_(Response())
-    {
-    }
+    ResponseBuilder() : response_(Response()) {}
     ResponseBuilder &
     setHeaders(const Response::header_key key,
                const Response::header_value value)

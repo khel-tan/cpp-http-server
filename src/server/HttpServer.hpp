@@ -33,6 +33,7 @@ class HttpServer : public Server {
     }
 
   protected:
+    const std::string LINE_BREAK = "\r\n";
     const std::unique_ptr<Socket> socket_;
     const std::unique_ptr<RequestParser> parser_;
     std::unordered_map<URI, std::unique_ptr<Handler>,

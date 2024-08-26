@@ -16,18 +16,32 @@ class Request : public Message {
     {
         return uri_;
     }
+    Method
+    getMethod() const
+    {
+        return method_;
+    }
+    std::string
+    getBody() const
+    {
+        return body_;
+    }
+    Version
+    getVersion() const
+    {
+        return version_;
+    }
 
   protected:
     Request(){};
     Method method_;
     URI uri_;
+    std::string body_;
 };
 
 class RequestBuilder {
   public:
-    RequestBuilder() : request_(Request())
-    {
-    }
+    RequestBuilder() : request_(Request()) {}
     RequestBuilder &
     setHeaders(const Request::header_key key,
                const Request::header_value value)
@@ -51,6 +65,12 @@ class RequestBuilder {
     setURI(const URI uri)
     {
         request_.uri_ = uri;
+        return *this;
+    }
+    RequestBuilder &
+    setBody(const std::string body)
+    {
+        request_.body_ = body;
         return *this;
     }
     // TODO: Validation logic
