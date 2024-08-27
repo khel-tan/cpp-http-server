@@ -3,6 +3,7 @@
 #define RESPONSE_HPP_
 
 #include "Message.hpp"
+#include <iostream>
 enum class StatusCode {
     OK = 200,
     BAD_REQUEST = 400,
@@ -31,7 +32,7 @@ class ResponseBuilder {
     setHeaders(const Response::header_key key,
                const Response::header_value value)
     {
-        response_.headers_.insert_or_assign(key, value);
+        response_.setHeaders(key, value);
         return *this;
     }
     ResponseBuilder &

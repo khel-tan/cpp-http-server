@@ -48,9 +48,7 @@ class SQLDatabase {
         int returnCode
             = sqlite3_exec(db_, cmd.c_str(), 0, 0, &errMsg);
 
-        std::cout << "Executed query!" << std::endl;
         if (returnCode != SQLITE_OK) {
-            std::cout << "Error!" << std::endl;
             sqlite3_free(errMsg);
             throw std::runtime_error("Query failed");
         }

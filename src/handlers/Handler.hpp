@@ -7,6 +7,9 @@
 class Handler {
   public:
     virtual Response handleRequest(const Request &) = 0;
+
+  protected:
+    virtual void validateRequest(const Request &) = 0;
 };
 
 #endif // !HANDLER_HPP_

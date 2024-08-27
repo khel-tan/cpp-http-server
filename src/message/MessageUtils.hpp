@@ -1,5 +1,0 @@
-#ifndef MESSAGE_UTILS_HPP_
-
-#define MESSAGE_UTILS_HPP_
-
-#endif // !MESSAGE_UTILS_HPP_

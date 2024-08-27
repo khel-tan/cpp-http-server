@@ -1,4 +1,5 @@
 #include "IterativeParser.hpp"
+#include "../utils/Utils.hpp"
 #include <iostream>
 #include <regex>
 #include <stdexcept>
@@ -20,17 +21,25 @@ IterativeParser::parse()
 
     std::string line;
 
-    // INFO: Works only with "\r" at the moment for insomnia
+    // WARN: stringstream removes \n but http linebreaks are
+    // \r\n That is why we use \r for content separation
+
     while (std::getline(ss, line) && line != "\r") {
-        // TODO: Trim key and value of whitespaces
         std::size_t colonPos = line.find(':');
         std::string key = line.substr(0, colonPos);
         std::string value = line.substr(colonPos + 1);
+        std::cout << "Key : " << key << std::endl;
+
+        trim(key);
+        trim(value);
+        if (key == "" || value == "") {
+            continue;
+        }
 
         builder_.setHeaders(key, value);
     }
     std::string body{};
-    while (std::getline(ss, line)) {
+    while (std::getline(ss, line) && line != "\r") {
         body += line;
     }
     builder_.setBody(body);
@@ -54,7 +63,6 @@ IterativeParser::processRequestLine(
         const auto version = matches[3];
 
         for (const auto &m : matches) {
-            std::cout << "Match : " << m << std::endl;
         }
         builder_.setMethod(parseMethod(method));
         builder_.setURI(URI(uri));

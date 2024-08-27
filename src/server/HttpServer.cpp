@@ -10,11 +10,8 @@ HttpServer::run()
     std::cout << "Server is accepting requests..."
               << std::endl;
     while (true) {
-        std::cout << "Before" << std::endl;
         auto data = socket_->receiveData();
-        std::cout << "After" << std::endl;
         std::string inputStr(data.begin(), data.end());
-        std::cout << "Data : " << inputStr << std::endl;
         // TODO: Properly sanitize the input
         //        if (inputStr.length() == 0) {
         //            break;

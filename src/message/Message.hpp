@@ -6,6 +6,7 @@
  * INFO: Abstract class to consolidate data and operations
  * common to both http requests and responses
  */
+#include <iostream>
 #include <string>
 #include <unordered_map>
 
@@ -37,6 +38,14 @@ class Message {
   protected:
     Version version_;
     Headers headers_;
+    void
+    setHeaders(const header_key &key,
+               const header_value value)
+    {
+        headers_.insert_or_assign(key, value);
+        std::cout << "Headers being set..."
+                  << headers_.size() << std::endl;
+    }
 };
 
 #endif // !MESSAGE_HPP_

@@ -17,5 +17,11 @@ class TestHandler : public Handler {
             .setStatusCode(StatusCode::OK)
             .build();
     }
+
+  protected:
+    void
+    validateRequest(const Request &) override
+    {
+    }
 };
 #endif

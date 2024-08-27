@@ -8,9 +8,7 @@
 #include <string>
 class IterativeParser : public RequestParser {
   public:
-    IterativeParser() : builder_(RequestBuilder())
-    {
-    }
+    IterativeParser() : builder_(RequestBuilder()) {}
     void parse() override;
     void feedInput(std::string input) override;
     Request getRequest() const override;

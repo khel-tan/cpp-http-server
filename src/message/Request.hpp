@@ -46,7 +46,7 @@ class RequestBuilder {
     setHeaders(const Request::header_key key,
                const Request::header_value value)
     {
-        request_.headers_.insert_or_assign(key, value);
+        request_.setHeaders(key, value);
         return *this;
     }
     RequestBuilder &

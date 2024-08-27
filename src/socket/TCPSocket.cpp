@@ -88,8 +88,6 @@ TCPSocket::sendData(const std::string &data)
 
     std::size_t bytesSent
         = send(clientSocket_, data.c_str(), data.size(), 0);
-    std::cout << "Sending : " << bytesSent << std::endl;
-    std::cout << data << std::endl;
     if (bytesSent == -1) {
         throw std::runtime_error(
             "Error sending data to client!");
