@@ -1,22 +1,34 @@
 #include "AddPatientHandler.hpp"
-#include <stdexcept>
+#include "../../library/nlohmann/json.hpp"
 
 Response
 AddPatientHandler::handleRequest(const Request &request)
 {
-    auto builder = Response::getBuilder().setVersion(
-        request.getVersion());
-    if (request.getMethod() == Method::POST) {
-        builder.setStatusCode(StatusCode::OK);
+
+    builder_.setVersion(request.getVersion());
+    if (request.getMethod() != Method::POST) {
+        builder_.setStatusCode(StatusCode::BAD_REQUEST);
     }
     else {
-        builder.setStatusCode(StatusCode::BAD_REQUEST);
-    }
 
-    return builder.build();
+        builder_.setStatusCode(StatusCode::OK);
+    }
+    validateBody(request.getBody());
+
+    return builder_.build();
 }
 
 void
-AddPatientHandler::validateRequest(const Request &req)
+AddPatientHandler::validateRequest(const Request &request)
 {
+}
+void
+AddPatientHandler::validateBody(const std::string &body)
+{
+    using json = nlohmann::json;
+    json data = json::parse(body);
+    auto m
+        = data.get<std::map<std::string, std::string> >();
+    auto patient = SQLiteMapper::createPatient(m);
+    db_->addPatient(patient);
 }

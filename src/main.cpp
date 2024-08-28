@@ -3,13 +3,12 @@
 #include <stdexcept>
 #include <string>
 
-#include "handlers/TestHandler.hpp"
 #include "handlers/hospital/AddPatientHandler.hpp"
 #include "message/URI.hpp"
 #include "parser/IterativeParser.hpp"
 #include "server/HttpServer.hpp"
 #include "services/hospital/HospitalDatabase.hpp"
-#include "services/hospital/models/Patient.hpp"
+#include "services/hospital/models.hpp"
 #include "socket/TCPSocket.hpp"
 
 int parsePort(const char *arg, const int DEFAULT);
@@ -24,22 +23,16 @@ main(int argc, char **argv)
 
     HttpServer server(std::make_unique<TCPSocket>(PORT),
                       std::make_unique<IterativeParser>());
-    server.mapHandler(URI("/algorithms"),
-                      std::make_unique<TestHandler>());
+    auto db = std::make_shared<HospitalDatabase>(
+        "./hospital.db");
     server.mapHandler(
         URI("/hospital/add"),
-        std::make_unique<AddPatientHandler>());
+        std::make_unique<AddPatientHandler>(db));
+
     server.run();
-
-    // auto db = HospitalDatabase("./hospital.db");
-    // db.insertPatient(Patient(0, "Mark"));
-    // db.insertPatient(Patient(1, "Margaret"));
-    // db.insertPatient(Patient(2, "Katherine"));
-    // auto patients = db.getPatients();
-
-    // for (const auto &p : patients) {
-    //     std::cout << p.toString() << std::endl;
-    // }
+    for (const auto &p : db->getPatients()) {
+        std::cout << p.toString() << std::endl;
+    }
 }
 
 int

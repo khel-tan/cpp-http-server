@@ -1,37 +1,18 @@
 #include "HospitalDatabase.hpp"
-#include "models/Patient.hpp"
-#include <stdexcept>
-#include <string>
+#include "models.hpp"
 #include <vector>
 
 void
-HospitalDatabase::insertPatient(const Patient &p) const
+HospitalDatabase::addPatient(const Patient &p)
 {
     const std::string query
-        = "INSERT INTO Patients (id, name) VALUES ("
-          + std::to_string(p.getId()) + ", '" + p.getName()
-          + "');";
+        = "INSERT INTO " + PATIENT_TABLE + " "
+          + mapToQueryArguments(p.convertToMap()) + ";";
     runQuery(query);
 }
 
-void
-HospitalDatabase::reset()
-{
-}
-void
-HospitalDatabase::initialize()
-{
-    // Initialize the tables if not already created
-    const std::string CREATE_PATIENTS_TABLE
-        = "CREATE TABLE IF NOT EXISTS PATIENTS(\
-      id INTEGER PRIMARY KEY,\
-      name TEXT NOT NULL\
-        );";
-    runQuery(CREATE_PATIENTS_TABLE);
-}
-
 std::vector<Patient>
-HospitalDatabase::getPatients() const
+HospitalDatabase::getPatients()
 {
     sqlite3_stmt *statement;
     const char *query = "SELECT * FROM PATIENTS";
@@ -44,12 +25,32 @@ HospitalDatabase::getPatients() const
     }
     while ((returnCode = sqlite3_step(statement))
            == SQLITE_ROW) {
-        int id = sqlite3_column_int(statement, 0);
+        std::string id = (const char *)sqlite3_column_text(
+            statement, 0);
         std::string name
             = (const char *)sqlite3_column_text(statement,
                                                 1);
-        patients.push_back(Patient(id, name));
+
+        std::map<std::string, std::string> patientData{
+            { "id", id }, { "name", name }
+        };
+
+        auto patient
+            = SQLiteMapper::createPatient(patientData);
+        patients.push_back(patient);
     }
     sqlite3_finalize(statement);
     return patients;
+}
+
+void
+HospitalDatabase::initialize()
+{
+    // Initialize the tables if not already created
+    const std::string CREATE_PATIENTS_TABLE
+        = "CREATE TABLE IF NOT EXISTS PATIENTS(\
+      id INTEGER PRIMARY KEY,\
+      name TEXT NOT NULL\
+        );";
+    runQuery(CREATE_PATIENTS_TABLE);
 }

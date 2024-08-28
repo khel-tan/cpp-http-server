@@ -1,25 +1,29 @@
+
 #ifndef SQL_DATABASE_HPP_
 
 #define SQL_DATABASE_HPP_
 
-#include <filesystem>
 #include <iostream>
+#include <map>
+#include <numeric>
+#include <ranges>
 #include <sqlite3.h>
 #include <stdexcept>
-
-/*
- * Abstract class that wraps around C API for sqlite3
- * It provides an implementation of
- */
+#include <string>
 class SQLDatabase {
-  protected:
-    sqlite3 *db_;
-    std::string filePath_;
-    bool
-    fileExists() const
+  public:
+    SQLDatabase() = delete;
+    SQLDatabase(const std::string filePath)
+        : filePath_(filePath)
     {
-        return std::filesystem::exists(filePath_);
+        startConnection();
     }
+    virtual ~SQLDatabase() { closeConnection(); }
+
+  protected:
+    const std::string filePath_;
+    sqlite3 *db_;
+
     void
     closeConnection()
     {
@@ -41,119 +45,48 @@ class SQLDatabase {
                 "Database connection failed!");
         }
     }
+
     void
     runQuery(const std::string &cmd) const
     {
+        std::cout << cmd << std::endl;
         char *errMsg = 0;
         int returnCode
             = sqlite3_exec(db_, cmd.c_str(), 0, 0, &errMsg);
 
         if (returnCode != SQLITE_OK) {
+            std::cout << errMsg << std::endl;
             sqlite3_free(errMsg);
             throw std::runtime_error("Query failed");
         }
     }
+    std::string
+    mapToQueryArguments(
+        const std::map<std::string, std::string> &m)
 
+    {
+        auto parametersFold = [](std::string acc,
+                                 std::string param) {
+            return acc.empty() ? param : acc + ',' + param;
+        };
+        auto argumentsFold = [](const std::string &acc,
+                                const std::string &arg) {
+            auto argWithQuotes = '\'' + arg + '\'';
+            return acc.empty() ? argWithQuotes
+                               : acc + ',' + argWithQuotes;
+        };
+        auto keys = std::views::keys(m);
+        auto values = std::views::values(m);
+        std::string parameters = std::accumulate(
+            keys.begin(), keys.end(), std::string{},
+            parametersFold);
+        std::string arguments
+            = std::accumulate(values.begin(), values.end(),
+                              std::string{}, argumentsFold);
+        std::string query = "(" + parameters + ") VALUES ("
+                            + arguments + ")";
+        return query;
+    }
     virtual void initialize() = 0;
-
-  public:
-    SQLDatabase() = delete;
-    SQLDatabase(const std::string filePath)
-        : filePath_(filePath)
-    {
-        startConnection();
-    }
-    virtual ~SQLDatabase() { closeConnection(); }
-
-    virtual void reset() = 0;
 };
-/*static int
-callback(void *data, int argc, char **argv,
-         char **azColName)
-{
-    for (int i = 0; i < argc; i++) {
-        std::cout << azColName[i] << " = "
-                  << (argv[i] ? argv[i] : "NULL")
-                  << std::endl;
-    }
-    std::cout << std::endl;
-    return 0;
-}
-class SQLDatabase {
-  protected:
-    sqlite3 *db;
-
-  public:
-    SQLDatabase() = delete;
-    SQLDatabase(std::string dbPath) {}
-    ~SQLDatabase() { sqlite3_close(db); }
-    int
-    test()
-    {
-        sqlite3 *db;
-        char *errMessage = 0;
-        int rc;
-        rc = sqlite3_open("./test.db", &db);
-        if (rc) {
-            std::cerr << "Can't open database: "
-                      << sqlite3_errmsg(db) << std::endl;
-            return rc;
-        }
-        else {
-            std::cout << "Opened database successfully"
-                      << std::endl;
-        }
-        const char *createTableSQL
-            = "CREATE TABLE IF NOT EXISTS my_table (id "
-              "INTEGER PRIMARY KEY AUTOINCREMENT, name "
-              "TEXT NOT NULL);";
-        rc = sqlite3_exec(db, createTableSQL, 0, 0,
-                          &errMessage);
-        if (rc != SQLITE_OK) {
-            std::cerr << "SQL error: " << errMessage
-                      << std::endl;
-            sqlite3_free(errMessage);
-        }
-        else {
-            std::cout << "Table created successfully"
-                      << std::endl;
-        }
-
-        // Insert data into the table
-        const char *insertDataSQL
-            = "INSERT INTO my_table (name) VALUES "
-              "('Alice');";
-        rc = sqlite3_exec(db, insertDataSQL, 0, 0,
-                          &errMessage);
-        if (rc != SQLITE_OK) {
-            std::cerr << "SQL error: " << errMessage
-                      << std::endl;
-            sqlite3_free(errMessage);
-        }
-        else {
-            std::cout << "Data inserted successfully"
-                      << std::endl;
-        }
-
-        // Query data from the table
-        const char *selectSQL = "SELECT * FROM my_table;";
-        rc = sqlite3_exec(db, selectSQL, callback, 0,
-                          &errMessage);
-        if (rc != SQLITE_OK) {
-            std::cerr << "SQL error: " << errMessage
-                      << std::endl;
-            sqlite3_free(errMessage);
-        }
-        else {
-            std::cout << "Query executed successfully"
-                      << std::endl;
-        }
-
-        // Close the database connection
-        sqlite3_close(db);
-
-        return 0;
-    }
-};
-*/
-#endif // !SQL_DATABASE_HPP_
+#endif
