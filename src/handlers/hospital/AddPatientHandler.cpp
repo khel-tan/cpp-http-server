@@ -1,4 +1,5 @@
 #include "AddPatientHandler.hpp"
+#include "../../HttpServerExceptions.hpp"
 #include "../../library/nlohmann/json.hpp"
 #include <iostream>
 #include <stdexcept>
@@ -8,12 +9,12 @@ AddPatientHandler::processRequestLine(
     const Request &request)
 {
     if (request.getMethod() != Method::POST) {
-        throw std::invalid_argument(
+        throw InvalidRequest(
             "Invalid method for this endpoint!");
     }
 
     builder_.setVersion(request.getVersion());
-    builder_.setStatusCode(StatusCode::OK);
+    builder_.setStatusCode(StatusCode::CREATED);
 }
 
 void
@@ -35,7 +36,7 @@ AddPatientHandler::processRequestBody(
         db_->addPatient(patient);
     }
     catch (json::exception) {
-        throw std::invalid_argument("Invalid request body");
+        throw InvalidRequestBody("Invalid request body");
     }
 }
 

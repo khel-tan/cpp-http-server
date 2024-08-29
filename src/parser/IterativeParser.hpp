@@ -6,12 +6,22 @@
 #include "RequestParser.hpp"
 #include <regex>
 #include <string>
+/*
+ * INFO: Iterative parser can be fed the input
+ * many times instead of all at once.
+ */
 class IterativeParser : public RequestParser {
   public:
     IterativeParser() : builder_(RequestBuilder()) {}
     void parse() override;
     void feedInput(std::string input) override;
     Request getRequest() const override;
+    void
+    clear() override
+    {
+        input_ = "";
+        builder_ = Request::getBuilder();
+    }
 
   protected:
     const std::regex REQUEST_LINE_PATTERN{

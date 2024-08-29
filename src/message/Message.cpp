@@ -26,6 +26,8 @@ toString(const Method &method)
         return "POST";
     case Method::PUT:
         return "PUT";
+    case Method::PATCH:
+        return "PATCH";
     case Method::DELETE:
         return "DELETE";
     default:
@@ -62,6 +64,9 @@ toMethod(const std::string &input)
     }
     else if (input == "PUT") {
         return Method::PUT;
+    }
+    else if (input == "PATCH") {
+        return Method::PATCH;
     }
     else if (input == "DELETE") {
         return Method::PUT;

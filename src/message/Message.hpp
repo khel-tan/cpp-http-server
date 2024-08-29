@@ -11,13 +11,16 @@
 #include <unordered_map>
 
 enum class Version {
+    UNDEFINED,
     HTTP_1_0,
     HTTP_1_1,
 };
 enum class Method {
+    UNDEFINED,
     GET,
     POST,
     PUT,
+    PATCH,
     DELETE,
 };
 

@@ -2,11 +2,14 @@
 
 #define RESPONSE_HPP_
 
+#include "../HttpServerExceptions.hpp"
 #include "Message.hpp"
-#include "Request.hpp"
 #include <iostream>
+#include <stdexcept>
 enum class StatusCode {
+    UNDEFINED,
     OK = 200,
+    CREATED = 201,
     BAD_REQUEST = 400,
     NOT_FOUND = 404,
 };
@@ -70,6 +73,12 @@ class ResponseBuilder {
     void
     validate() const
     {
+        if (response_.statusCode_ == StatusCode::UNDEFINED
+            || response_.version_ == Version::UNDEFINED) {
+            throw InvalidResponse(
+                "Invalid HTTP Response construction. Some "
+                "mandatory fields are missing");
+        }
     }
     Response
     build() const

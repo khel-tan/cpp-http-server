@@ -34,9 +34,6 @@ main(int argc, char **argv)
         std::make_unique<GetPatientHandler>(db));
 
     server.run();
-    for (const auto &p : db->getPatients()) {
-        std::cout << p.toString() << std::endl;
-    }
 }
 
 int

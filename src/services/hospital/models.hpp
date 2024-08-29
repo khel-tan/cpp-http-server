@@ -14,7 +14,10 @@ class Model {
 class Patient : public Model {
   public:
     Patient() = delete;
-    friend class SQLiteMapper;
+    Patient(const int id, const std::string name)
+        : id_(id), name_(name)
+    {
+    }
 
     std::map<std::string, std::string>
     convertToMap() const override
@@ -22,6 +25,17 @@ class Patient : public Model {
         return std::map<std::string, std::string>{
             { "id", std::to_string(id_) }, { "name", name_ }
         };
+    }
+
+    int
+    getId() const
+    {
+        return id_;
+    }
+    std::string
+    getName() const
+    {
+        return name_;
     }
 
     std::string
@@ -32,10 +46,6 @@ class Patient : public Model {
     }
 
   private:
-    Patient(const int id, const std::string name)
-        : id_(id), name_(name)
-    {
-    }
     const int id_;
     const std::string name_;
 };

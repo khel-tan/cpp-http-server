@@ -2,8 +2,10 @@
 
 #define REQUEST_HPP_
 
+#include "../HttpServerExceptions.hpp"
 #include "Message.hpp"
 #include "URI.hpp"
+#include <stdexcept>
 #include <string>
 class RequestBuilder;
 
@@ -41,8 +43,8 @@ class Request : public Message {
 
   protected:
     Request(){};
-    Method method_;
-    URI uri_;
+    Method method_ = Method::UNDEFINED;
+    URI uri_ = URI("");
 };
 
 /*
@@ -88,6 +90,14 @@ class RequestBuilder {
     void
     validate() const
     {
+        if (request_.uri_.toString() == ""
+            || request_.getMethod() == Method::UNDEFINED
+            || request_.getVersion()
+                   == Version::UNDEFINED) {
+            throw InvalidRequest(
+                "HTTP Request construction has some "
+                "missing mandatory values");
+        }
     }
     Request
     build() const

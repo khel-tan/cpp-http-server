@@ -2,8 +2,11 @@
 
 #define HANDLER_HPP_
 
+#include "../HttpServerExceptions.hpp"
 #include "../message/Request.hpp"
 #include "../message/Response.hpp"
+#include <iostream>
+#include <ostream>
 #include <stdexcept>
 class Handler {
   public:
@@ -17,7 +20,8 @@ class Handler {
             constructResponseBody();
             return builder_.build();
         }
-        catch (std::invalid_argument) {
+        catch (InvalidRequest const &e) {
+            std::cout << e.what() << std::endl;
             return builder_.reset()
                 .setVersion(request.getVersion())
                 .setStatusCode(StatusCode::BAD_REQUEST)

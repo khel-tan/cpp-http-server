@@ -8,6 +8,7 @@ class RequestParser {
     virtual void feedInput(std::string input) = 0;
     virtual void parse() = 0;
     virtual Request getRequest() const = 0;
+    virtual void clear() = 0;
 
   protected:
     Version

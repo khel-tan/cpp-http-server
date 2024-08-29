@@ -17,7 +17,9 @@ class HospitalDatabase : public SQLDatabase {
         initialize();
     }
     void addPatient(const Patient &);
+    void updatePatient(const int id, const Patient &);
     std::vector<Patient> getPatients();
+    void deletePatient(const int id);
 
   protected:
     const std::string PATIENT_TABLE{ "PATIENTS" };

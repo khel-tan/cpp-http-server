@@ -12,13 +12,15 @@ toString(const StatusCode &statusCode)
     switch (statusCode) {
     case StatusCode::OK:
         return "OK";
+    case StatusCode::CREATED:
+        return "CREATED";
     case StatusCode::BAD_REQUEST:
         return "BAD_REQUEST";
     case StatusCode::NOT_FOUND:
         return "NOT FOUND";
     default:
         throw std::invalid_argument(
-            "Statuscode not recognized");
+            "Status Code not recognized");
     }
 }
 

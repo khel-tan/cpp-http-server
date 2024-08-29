@@ -19,6 +19,7 @@ HttpServer::run()
             parser_->parse();
             auto request = parser_->getRequest();
             handleRequest(request);
+            parser_->clear();
             socket_->closeConnection();
         }
     }

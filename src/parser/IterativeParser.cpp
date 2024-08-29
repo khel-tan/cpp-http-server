@@ -1,4 +1,5 @@
 #include "IterativeParser.hpp"
+#include "../HttpServerExceptions.hpp"
 #include "../utils/Utils.hpp"
 #include <iostream>
 #include <regex>
@@ -68,7 +69,6 @@ IterativeParser::processRequestLine(
         builder_.setVersion(parseVersion(version));
     }
     else {
-        throw std::invalid_argument(
-            "Request line is invalid");
+        throw InvalidRequest("Request line is invalid");
     }
 }

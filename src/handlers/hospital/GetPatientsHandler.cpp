@@ -1,4 +1,5 @@
 #include "GetPatientsHandler.hpp"
+#include "../../HttpServerExceptions.hpp"
 #include <stdexcept>
 
 void
@@ -6,7 +7,7 @@ GetPatientHandler::processRequestLine(
     const Request &request)
 {
     if (request.getMethod() != Method::GET) {
-        throw std::invalid_argument(
+        throw InvalidRequest(
             "Invalid method for this endpoint!");
     }
 
@@ -36,7 +37,9 @@ GetPatientHandler::constructResponseBody()
     <body>)";
   for(const auto& p: db_->getPatients())
   {
-      htmlBody += "<h1>" + p.toString() + "</h1>";
+      htmlBody += "<h1>Patient " + std::to_string(p.getId())
+                  + "</h1>";
+      htmlBody += "<span>Name: " + p.getName() + "</span>";
   }
   // clang-format off
   htmlBody += R"(</body></html>)";

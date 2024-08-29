@@ -43,7 +43,6 @@ TCPSocket::~TCPSocket()
     //  The binding is not released when the socket is
     //  destructed
     closeSocket();
-    std::cout << "Closing" << std::endl;
 }
 
 TCPSocket::TCPSocket(TCPSocket &&other)

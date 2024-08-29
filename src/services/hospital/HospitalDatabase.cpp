@@ -1,5 +1,6 @@
 #include "HospitalDatabase.hpp"
 #include "models.hpp"
+#include <string>
 #include <vector>
 
 void
@@ -11,15 +12,34 @@ HospitalDatabase::addPatient(const Patient &p)
     runQuery(query);
 }
 
+void
+HospitalDatabase::updatePatient(const int id,
+                                const Patient &p)
+{
+    const std::string query
+        = "UPDATE " + PATIENT_TABLE + " SET name="
+          + p.getName() + " WHERE id=" + std::to_string(id);
+    runQuery(query);
+}
+
+void
+HospitalDatabase::deletePatient(const int id)
+{
+    const std::string query
+        = "DELETE FROM " + PATIENT_TABLE
+          + " WHERE id=" + std::to_string(id);
+}
+
 std::vector<Patient>
 HospitalDatabase::getPatients()
 {
     sqlite3_stmt *statement;
-    const char *query = "SELECT * FROM PATIENTS";
+    const std::string query
+        = "SELECT * FROM " + PATIENT_TABLE;
 
     std::vector<Patient> patients;
-    int returnCode = sqlite3_prepare_v2(db_, query, -1,
-                                        &statement, NULL);
+    int returnCode = sqlite3_prepare_v2(
+        db_, query.c_str(), -1, &statement, NULL);
     if (returnCode != SQLITE_OK) {
         throw std::runtime_error("Query failed");
     }
