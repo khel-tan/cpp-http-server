@@ -63,6 +63,14 @@ TCPSocket::acceptConnection()
     }
 }
 
+void
+TCPSocket::closeConnection()
+{
+    if (clientSocket_ != -1) {
+        close(clientSocket_);
+    }
+}
+
 std::string
 TCPSocket::receiveData()
 {

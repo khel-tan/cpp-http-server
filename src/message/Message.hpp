@@ -34,17 +34,17 @@ class Message {
     using Headers
         = std::unordered_map<header_key, header_value>;
     virtual ~Message() = default;
+    virtual std::string toTransmittableString() const = 0;
 
   protected:
     Version version_;
     Headers headers_;
+    std::string body_;
     void
     setHeaders(const header_key &key,
-               const header_value value)
+               const header_value &value)
     {
         headers_.insert_or_assign(key, value);
-        std::cout << "Headers being set..."
-                  << headers_.size() << std::endl;
     }
 };
 

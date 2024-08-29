@@ -18,3 +18,18 @@ Request::toString() const
                          uri_.toString(),
                          ::toString(version_));
 }
+
+std::string
+Request::toTransmittableString() const
+{
+    std::string messageHeaders{};
+    for (const auto &h : headers_) {
+        messageHeaders
+            += h.first + ": " + h.second + "\r\n";
+    }
+    return std::format("{} {} {}", ::toString(method_),
+                       uri_.toString(),
+                       ::toString(version_))
+           + "\r\n" + messageHeaders + "\r\n" + body_
+           + "\r\n" + "\r\n";
+}

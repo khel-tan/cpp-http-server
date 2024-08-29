@@ -1,5 +1,6 @@
 #include "Utils.hpp"
 #include <algorithm>
+
 void
 ltrim(std::string &s)
 {

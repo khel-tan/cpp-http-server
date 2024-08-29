@@ -3,32 +3,24 @@
 #include <iostream>
 #include <stdexcept>
 #include <string>
+#include <sys/socket.h>
 void
 HttpServer::run()
 {
-    socket_->acceptConnection();
     std::cout << "Server is accepting requests..."
               << std::endl;
     while (true) {
+        socket_->acceptConnection();
         auto data = socket_->receiveData();
         std::string inputStr(data.begin(), data.end());
-        // TODO: Properly sanitize the input
-        //        if (inputStr.length() == 0) {
-        //            break;
-        //        }
-        //
-        //        if (inputStr == "exit\r\n") {
-        //            break;
-        //        }
+
         if (inputStr.length() != 0) {
             parser_->feedInput(inputStr);
             parser_->parse();
             auto request = parser_->getRequest();
-            std::cout << request.toString() << std::endl;
             handleRequest(request);
-            return;
+            socket_->closeConnection();
         }
-        // auto request = parser_->getRequest();
     }
 }
 
@@ -49,7 +41,7 @@ HttpServer::handleRequest(const Request &request)
     if (requestHandlers_.contains(request.getURI())) {
         auto response = requestHandlers_[request.getURI()]
                             ->handleRequest(request);
-        socket_->sendData(response.toString() + LINE_BREAK);
+        socket_->sendData(response.toTransmittableString());
     }
     else {
         throw std::invalid_argument(

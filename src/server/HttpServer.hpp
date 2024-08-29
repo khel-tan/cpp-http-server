@@ -13,7 +13,16 @@
 #include <utility>
 
 /*
- * TODO: Write responsibilities for this class
+ * INFO:
+ * HTTP Server handles management of resources required to
+ * transform an HTTP request string into a request object,
+ * pass said object to some handlers and obtain some
+ * response string,
+ * send back the above string over the network,
+ * and do error handling for all of the above.
+ *
+ * Its dependencies are provided through Socket and
+ * RequestParser interfaces.
  */
 class HttpServer : public Server {
   public:
@@ -33,7 +42,6 @@ class HttpServer : public Server {
     }
 
   protected:
-    const std::string LINE_BREAK = "\r\n";
     const std::unique_ptr<Socket> socket_;
     const std::unique_ptr<RequestParser> parser_;
     std::unordered_map<URI, std::unique_ptr<Handler>,

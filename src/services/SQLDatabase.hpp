@@ -42,22 +42,25 @@ class SQLDatabase {
 
         if (returnCode != 0) {
             throw std::runtime_error(
-                "Database connection failed!");
+                "Database connection to " + filePath_
+                + " failed!");
         }
     }
 
+    // TODO: sqlite3_exec has security issues. Make it
+    // safer.
     void
     runQuery(const std::string &cmd) const
     {
-        std::cout << cmd << std::endl;
-        char *errMsg = 0;
+        char *errMsg = nullptr;
         int returnCode
             = sqlite3_exec(db_, cmd.c_str(), 0, 0, &errMsg);
 
         if (returnCode != SQLITE_OK) {
             std::cout << errMsg << std::endl;
             sqlite3_free(errMsg);
-            throw std::runtime_error("Query failed");
+            throw std::runtime_error("Query failed : "
+                                     + cmd);
         }
     }
     std::string
@@ -65,8 +68,8 @@ class SQLDatabase {
         const std::map<std::string, std::string> &m)
 
     {
-        auto parametersFold = [](std::string acc,
-                                 std::string param) {
+        auto parametersFold = [](const std::string &acc,
+                                 const std::string &param) {
             return acc.empty() ? param : acc + ',' + param;
         };
         auto argumentsFold = [](const std::string &acc,

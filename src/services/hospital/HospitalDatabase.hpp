@@ -19,18 +19,6 @@ class HospitalDatabase : public SQLDatabase {
     void addPatient(const Patient &);
     std::vector<Patient> getPatients();
 
-    void
-    test()
-    {
-        std::map<std::string, std::string> m{
-            { "id", "125" },
-            { "name", "mark" },
-            { "status", "alive" }
-        };
-        auto test = mapToQueryArguments(m);
-        std::cout << test << std::endl;
-    }
-
   protected:
     const std::string PATIENT_TABLE{ "PATIENTS" };
     void initialize() override;

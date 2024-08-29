@@ -28,7 +28,6 @@ IterativeParser::parse()
         std::size_t colonPos = line.find(':');
         std::string key = line.substr(0, colonPos);
         std::string value = line.substr(colonPos + 1);
-        std::cout << "Key : " << key << std::endl;
 
         trim(key);
         trim(value);

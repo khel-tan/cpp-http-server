@@ -12,7 +12,8 @@ toString(const Version &version)
         return "HTTP/1.1";
     default:
         throw std::invalid_argument(
-            "Http version not recognized!");
+            "Conversion from HTTP version to string "
+            "failed. Unknown version!");
     }
 }
 std::string
@@ -29,7 +30,8 @@ toString(const Method &method)
         return "DELETE";
     default:
         throw std::invalid_argument(
-            "Http method not recognized!");
+            "Conversion from HTTP method to string failed. "
+            "Unknown method!");
     }
 }
 

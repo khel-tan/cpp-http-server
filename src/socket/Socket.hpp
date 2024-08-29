@@ -10,6 +10,7 @@ class Socket {
   public:
     virtual ~Socket() = default;
     virtual void acceptConnection() = 0;
+    virtual void closeConnection() = 0;
     virtual std::string receiveData() = 0;
     virtual void sendData(const std::string &data) = 0;
     virtual void closeSocket() = 0;

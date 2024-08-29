@@ -12,8 +12,9 @@
 class URI {
   public:
     // TODO: This class will be safer if the default
-    // constructor is deleted NOTE: Default initialization
-    // of request depends on this constructor
+    // constructor is deleted
+    // NOTE: Default initialization
+    // of the Request class depends on this constructor
     URI()
         : path_(""){
 

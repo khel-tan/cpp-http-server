@@ -16,6 +16,7 @@ class TCPSocket : public Socket {
     // TODO: Define move assignment
     // TCPSocket &operator=(TCPSocket &&);
     void acceptConnection() override;
+    void closeConnection() override;
     std::string receiveData() override;
     void sendData(const std::string &data) override;
     void closeSocket() override;

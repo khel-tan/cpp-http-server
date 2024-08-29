@@ -1,14 +1,13 @@
-#ifndef ADD_PATIENT_HANDLER_HPP_
-
-#define ADD_PATIENT_HANDLER_HPP_
-#include "../../services/hospital/HospitalDatabase.hpp"
+#ifndef GET_PATIENT_HANDLER_HPP_
+#define GET_PATIENT_HANDLER_HPP_
 
 #include "HospitalDBHandler.hpp"
 #include <memory>
-class AddPatientHandler : public HospitalDBHandler {
+
+class GetPatientHandler : public HospitalDBHandler {
   public:
-    AddPatientHandler() = delete;
-    AddPatientHandler(std::shared_ptr<HospitalDatabase> db)
+    GetPatientHandler() = delete;
+    GetPatientHandler(std::shared_ptr<HospitalDatabase> db)
         : HospitalDBHandler(db)
     {
     }
@@ -21,5 +20,4 @@ class AddPatientHandler : public HospitalDBHandler {
     processRequestBody(const std::string &body) override;
     void constructResponseBody() override;
 };
-
-#endif //
+#endif

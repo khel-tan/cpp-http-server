@@ -6,6 +6,11 @@
 #include "URI.hpp"
 #include <string>
 class RequestBuilder;
+
+/*
+ * INFO: Represents all HTTP requests.
+ * Can be built only through its builder interface!
+ */
 class Request : public Message {
   public:
     friend class RequestBuilder;
@@ -32,13 +37,19 @@ class Request : public Message {
         return version_;
     }
 
+    std::string toTransmittableString() const override;
+
   protected:
     Request(){};
     Method method_;
     URI uri_;
-    std::string body_;
 };
 
+/*
+ * INFO: Simplifies construction logic of Request.
+ * When build() is called, it also performs validation of
+ * the request
+ */
 class RequestBuilder {
   public:
     RequestBuilder() : request_(Request()) {}

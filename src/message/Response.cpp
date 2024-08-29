@@ -37,7 +37,28 @@ Response::getBuilder()
 std::string
 Response::toString() const
 {
-    return std::format("{0} {1} {2}", ::toString(version_),
+    return std::format("{0} {1} {2}\n{3}",
+                       ::toString(version_),
                        ::toInt(statusCode_),
-                       ::toString(statusCode_));
+                       ::toString(statusCode_), body_);
+}
+
+std::string
+Response::toTransmittableString() const
+{
+    std::string messageHeaders{};
+    for (const auto &h : headers_) {
+        messageHeaders
+            += h.first + ": " + h.second + "\r\n";
+    }
+
+    // clang-format off
+    return std::format("{} {} {}", ::toString(version_),
+                       ::toInt(statusCode_),
+                       ::toString(statusCode_))
+           + "\r\n"
+           + messageHeaders + "\r\n"
+           + body_
+           + "\r\n\r\n";
+    // clang-format on
 }
