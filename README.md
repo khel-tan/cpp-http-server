@@ -3,6 +3,7 @@
 - [How to navigate the project](#navigation)
   - [Overview](#overview)
 - [How to run](#how-to-run)
+- [Libraries used](#Libraries-used)
 
 ## Features
 
@@ -62,4 +63,5 @@ For testing the hospital database, you can use an API testing client such as Pos
 
 `echo -e "DELETE /hospital/patients/delete HTTP/1.1\r\nHost : Phone\r\n\r\n{\"id\": \"125\"}\r\n"| nc localhost [PORT]`
 
-
+## Libraries used
+At present, the only 3rd party library used is [Nlohmann's JSON parser](https://github.com/nlohmann/json).
