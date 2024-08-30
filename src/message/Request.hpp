@@ -17,7 +17,6 @@ class Request : public Message {
   public:
     friend class RequestBuilder;
     static RequestBuilder getBuilder();
-    std::string toString() const;
     const URI &
     getURI() const
     {
@@ -56,8 +55,8 @@ class RequestBuilder {
   public:
     RequestBuilder() : request_(Request()) {}
     RequestBuilder &
-    setHeaders(const Request::header_key key,
-               const Request::header_value value)
+    setHeaders(const Request::header_key &key,
+               const Request::header_value &value)
     {
         request_.setHeaders(key, value);
         return *this;
@@ -86,17 +85,22 @@ class RequestBuilder {
         request_.body_ = body;
         return *this;
     }
-    // TODO: Validation logic
     void
     validate() const
     {
-        if (request_.uri_.toString() == ""
-            || request_.getMethod() == Method::UNDEFINED
-            || request_.getVersion()
-                   == Version::UNDEFINED) {
-            throw InvalidRequest(
-                "HTTP Request construction has some "
-                "missing mandatory values");
+        if (request_.uri_.toString().empty()) {
+            throw invalid_request("Request validation "
+                                  "failed: URI is missing");
+        }
+        if (request_.getMethod() == Method::UNDEFINED) {
+            throw invalid_request(
+                "Request validation failed: Method is "
+                "missing");
+        }
+        if (request_.getVersion() == Version::UNDEFINED) {
+            throw invalid_request(
+                "Request validation failed: Version is "
+                "missing");
         }
     }
     Request

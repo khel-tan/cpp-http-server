@@ -40,6 +40,7 @@ class Message {
     virtual std::string toTransmittableString() const = 0;
 
   protected:
+    constexpr static std::string LINE_BREAK{ "\r\n" };
     Version version_;
     Headers headers_;
     std::string body_;

@@ -4,14 +4,13 @@
 
 #include "../HttpServerExceptions.hpp"
 #include "Message.hpp"
-#include <iostream>
-#include <stdexcept>
 enum class StatusCode {
     UNDEFINED,
     OK = 200,
     CREATED = 201,
     BAD_REQUEST = 400,
     NOT_FOUND = 404,
+    INTERNAL_SERVER_ERROR = 500,
 };
 
 std::string toString(const StatusCode &);
@@ -28,7 +27,6 @@ class Response : public Message {
   public:
     friend class ResponseBuilder;
     static ResponseBuilder getBuilder();
-    std::string toString() const;
     virtual std::string
     toTransmittableString() const override;
 
@@ -73,11 +71,16 @@ class ResponseBuilder {
     void
     validate() const
     {
-        if (response_.statusCode_ == StatusCode::UNDEFINED
-            || response_.version_ == Version::UNDEFINED) {
-            throw InvalidResponse(
-                "Invalid HTTP Response construction. Some "
-                "mandatory fields are missing");
+        if (response_.statusCode_
+            == StatusCode::UNDEFINED) {
+            throw invalid_response(
+                "HTTP Response validation failed: Status "
+                "code is missing");
+        }
+        if (response_.version_ == Version::UNDEFINED) {
+            throw invalid_response(
+                "HTTP Response validation failed: Version "
+                "is missing");
         }
     }
     Response

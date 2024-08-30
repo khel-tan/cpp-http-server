@@ -20,6 +20,7 @@ class IterativeParser : public RequestParser {
     clear() override
     {
         input_ = "";
+        // The builder must also be reset as it is stateful
         builder_ = Request::getBuilder();
     }
 

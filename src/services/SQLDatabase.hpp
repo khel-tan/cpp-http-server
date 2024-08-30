@@ -3,12 +3,12 @@
 
 #define SQL_DATABASE_HPP_
 
+#include "../HttpServerExceptions.hpp"
 #include <iostream>
 #include <map>
 #include <numeric>
 #include <ranges>
 #include <sqlite3.h>
-#include <stdexcept>
 #include <string>
 class SQLDatabase {
   public:
@@ -57,15 +57,13 @@ class SQLDatabase {
             = sqlite3_exec(db_, cmd.c_str(), 0, 0, &errMsg);
 
         if (returnCode != SQLITE_OK) {
-            std::cout << errMsg << std::endl;
             sqlite3_free(errMsg);
-            throw std::runtime_error("Query failed : "
-                                     + cmd);
+            throw database_error("Query failed : " + cmd);
         }
     }
     std::string
     mapToQueryArguments(
-        const std::map<std::string, std::string> &m)
+        const std::map<std::string, std::string> &data)
 
     {
         auto parametersFold = [](const std::string &acc,
@@ -78,8 +76,8 @@ class SQLDatabase {
             return acc.empty() ? argWithQuotes
                                : acc + ',' + argWithQuotes;
         };
-        auto keys = std::views::keys(m);
-        auto values = std::views::values(m);
+        auto keys = std::views::keys(data);
+        auto values = std::views::values(data);
         std::string parameters = std::accumulate(
             keys.begin(), keys.end(), std::string{},
             parametersFold);

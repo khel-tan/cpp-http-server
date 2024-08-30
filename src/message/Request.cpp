@@ -11,25 +11,19 @@ Request::getBuilder()
 }
 
 std::string
-Request::toString() const
-{
-    return "Request Object\n"
-           + std::format("{0} {1} {2}", ::toString(method_),
-                         uri_.toString(),
-                         ::toString(version_));
-}
-
-std::string
 Request::toTransmittableString() const
 {
     std::string messageHeaders{};
     for (const auto &h : headers_) {
         messageHeaders
-            += h.first + ": " + h.second + "\r\n";
+            += h.first + ": " + h.second + LINE_BREAK;
     }
-    return std::format("{} {} {}", ::toString(method_),
-                       uri_.toString(),
-                       ::toString(version_))
-           + "\r\n" + messageHeaders + "\r\n" + body_
-           + "\r\n" + "\r\n";
+    auto result
+        = std::format("{} {} {}", ::toString(method_),
+                      uri_.toString(), ::toString(version_))
+          + LINE_BREAK + messageHeaders + LINE_BREAK;
+    if (!body_.empty()) {
+        result += body_ + LINE_BREAK;
+    }
+    return result + LINE_BREAK;
 }

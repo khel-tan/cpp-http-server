@@ -35,6 +35,9 @@ class HttpServer : public Server {
     {
     }
     void run() override;
+    // Maps HTTP Request handlers from URI objects
+    // We move the pointers to ensure that only we own the
+    // handling service
     void
     mapHandler(const URI &u, std::unique_ptr<Handler> &&h)
     {
@@ -47,7 +50,6 @@ class HttpServer : public Server {
     std::unordered_map<URI, std::unique_ptr<Handler>,
                        URI::Hash, URI::Equality>
         requestHandlers_;
-    void sanitizeString(std::string &str);
     void handleRequest(const Request &);
 };
 

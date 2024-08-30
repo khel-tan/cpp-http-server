@@ -11,7 +11,6 @@
 #include "parser/IterativeParser.hpp"
 #include "server/HttpServer.hpp"
 #include "services/hospital/HospitalDatabase.hpp"
-#include "services/hospital/models.hpp"
 #include "socket/TCPSocket.hpp"
 
 int parsePort(const char *arg, const int DEFAULT);
@@ -19,7 +18,7 @@ int parsePort(const char *arg, const int DEFAULT);
 int
 main(int argc, char **argv)
 {
-    const int DEFAULT_PORT = 5100;
+    constexpr int DEFAULT_PORT = 5100;
     const int PORT = argc > 1
                          ? parsePort(argv[1], DEFAULT_PORT)
                          : DEFAULT_PORT;
@@ -29,16 +28,16 @@ main(int argc, char **argv)
     auto db = std::make_shared<HospitalDatabase>(
         "./hospital.db");
     server.mapHandler(
-        URI("/hospital/add"),
-        std::make_unique<AddPatientHandler>(db));
-    server.mapHandler(
         URI("/hospital/patients"),
         std::make_unique<GetPatientHandler>(db));
     server.mapHandler(
-        URI("/hospital/update"),
+        URI("/hospital/patients/add"),
+        std::make_unique<AddPatientHandler>(db));
+    server.mapHandler(
+        URI("/hospital/patients/update"),
         std::make_unique<UpdatePatientHandler>(db));
     server.mapHandler(
-        URI("/hospital/delete"),
+        URI("/hospital/patients/delete"),
         std::make_unique<DeletePatientHandler>(db));
 
     server.run();

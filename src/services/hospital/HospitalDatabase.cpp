@@ -43,7 +43,8 @@ HospitalDatabase::getPatients()
     int returnCode = sqlite3_prepare_v2(
         db_, query.c_str(), -1, &statement, NULL);
     if (returnCode != SQLITE_OK) {
-        throw std::runtime_error("Query failed");
+        throw database_error("Error getting patient list : "
+                             "Query to Database failed");
     }
     while ((returnCode = sqlite3_step(statement))
            == SQLITE_ROW) {
@@ -53,6 +54,8 @@ HospitalDatabase::getPatients()
             = (const char *)sqlite3_column_text(statement,
                                                 1);
 
+        // Convert the SQL data to map and then map it to a
+        // Patient object
         std::map<std::string, std::string> patientData{
             { "id", id }, { "name", name }
         };

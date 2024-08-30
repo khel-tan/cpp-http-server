@@ -1,48 +1,48 @@
 #ifndef HTTP_SERVER_EXCEPTIONS_HPP_
 
 #define HTTP_SERVER_EXCEPTIONS_HPP_
-#include <exception>
-#include <locale>
+#include <stdexcept>
 #include <string>
-#include <system_error>
 
-class InvalidMessage : public std::exception {
-  protected:
-    std::string message_;
+class invalid_message : public std::runtime_error {
 
   public:
-    InvalidMessage(const std::string &message)
-        : message_(message)
-    {
-    }
-
-    const char *
-    what() const noexcept override
-    {
-        return message_.c_str();
-    }
-};
-
-class InvalidRequest : public InvalidMessage {
-  public:
-    InvalidRequest(const std::string &message)
-        : InvalidMessage(message)
+    invalid_message(const std::string &message)
+        : std::runtime_error(message)
     {
     }
 };
 
-class InvalidRequestBody : public InvalidRequest {
+class invalid_request : public invalid_message {
   public:
-    InvalidRequestBody(const std::string &message)
-        : InvalidRequest(message)
+    invalid_request(const std::string &message)
+        : invalid_message(message)
     {
     }
 };
 
-class InvalidResponse : public InvalidMessage {
+// The body of the request is invalid
+class invalid_request_body : public invalid_request {
   public:
-    InvalidResponse(const std::string &message)
-        : InvalidMessage(message)
+    invalid_request_body(const std::string &message)
+        : invalid_request(message)
+    {
+    }
+};
+
+// Whatever response object we have on hand is invalid
+class invalid_response : public invalid_message {
+  public:
+    invalid_response(const std::string &message)
+        : invalid_message(message)
+    {
+    }
+};
+
+class database_error : public std::runtime_error {
+  public:
+    database_error(const std::string &message)
+        : std::runtime_error(message)
     {
     }
 };

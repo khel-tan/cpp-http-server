@@ -8,6 +8,7 @@
 void
 IterativeParser::feedInput(std::string input)
 {
+    // IDEA: Is there a more efficient way?
     input_ += input;
 }
 
@@ -30,8 +31,11 @@ IterativeParser::parse()
         std::string key = line.substr(0, colonPos);
         std::string value = line.substr(colonPos + 1);
 
+        // Trim whitespace
         trim(key);
         trim(value);
+        // NOTE: Malformed headers might indicate bigger
+        // problems
         if (key == "" || value == "") {
             continue;
         }
@@ -59,6 +63,8 @@ IterativeParser::processRequestLine(
     if (std::regex_match(requestLine, matches,
                          REQUEST_LINE_PATTERN)) {
         const auto method = matches[1];
+        // TODO: What about invalid URI values and edge
+        // cases?
         const auto uri = matches[2];
         const auto version = matches[3];
 
@@ -69,6 +75,6 @@ IterativeParser::processRequestLine(
         builder_.setVersion(parseVersion(version));
     }
     else {
-        throw InvalidRequest("Request line is invalid");
+        throw invalid_request("Request line is invalid");
     }
 }

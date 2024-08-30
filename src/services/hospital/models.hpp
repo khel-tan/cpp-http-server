@@ -2,9 +2,10 @@
 
 #define MODELS_HPP_
 
+#include "../../HttpServerExceptions.hpp"
 #include <map>
-#include <stdexcept>
 #include <string>
+// Abstract Model interface
 class Model {
   public:
     virtual std::map<std::string, std::string>
@@ -50,6 +51,8 @@ class Patient : public Model {
     const std::string name_;
 };
 
+// Parses std::map and attempts to map the contents to
+// Database models
 class SQLiteMapper {
   public:
     static Patient
@@ -59,9 +62,9 @@ class SQLiteMapper {
         // Validation
         if (rowData.find("id") == rowData.cend()
             && rowData.find("name") == rowData.cend()) {
-            throw std::invalid_argument(
-                "SQL row has incomplete data for patient "
-                "type");
+            throw database_error(
+                "Conversion from SQL row to Patient object "
+                "failed. Row has incomplete columns.");
         }
 
         // Conversions

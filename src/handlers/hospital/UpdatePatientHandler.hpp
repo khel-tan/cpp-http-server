@@ -20,7 +20,7 @@ class UpdatePatientHandler : public HospitalDBHandler {
     processRequestLine(const Request &request) override
     {
         if (request.getMethod() != Method::PATCH) {
-            throw InvalidRequest(
+            throw invalid_request(
                 "Only Patch requests are accepted!");
         }
 
@@ -35,26 +35,15 @@ class UpdatePatientHandler : public HospitalDBHandler {
     void
     processRequestBody(const std::string &body) override
     {
-        using json = nlohmann::json;
-        try {
-            json data = json::parse(body);
-            auto m = data.get<
-                std::map<std::string, std::string> >();
-
-            if (!m.contains("id")) {
-                throw InvalidRequestBody(
-                    "Update request does not contain "
-                    "patient id");
-            }
-
-            auto patient = SQLiteMapper::createPatient(m);
-            db_->updatePatient(std::stoi(m.at("id")),
-                               patient);
+        auto m = parseBody(body);
+        if (!m.contains("id")) {
+            throw invalid_request_body(
+                "Update request does not contain "
+                "patient id");
         }
-        catch (json::exception) {
-            throw InvalidRequestBody(
-                "Invalid request body");
-        }
+
+        auto patient = SQLiteMapper::createPatient(m);
+        db_->updatePatient(std::stoi(m.at("id")), patient);
     }
     void
     constructResponseBody() override

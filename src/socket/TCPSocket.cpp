@@ -1,8 +1,6 @@
 #include "TCPSocket.hpp"
-#include <algorithm>
 #include <cstddef>
 #include <cstdint>
-#include <iostream>
 #include <netinet/in.h>
 #include <stdexcept>
 #include <sys/socket.h>
@@ -33,15 +31,16 @@ TCPSocket::TCPSocket(std::uint16_t port)
     if (listen(serverSocket_, 1) == -1) {
         closeSocket();
         throw std::runtime_error(
-            "Error listening on the socket!");
+            "Cannot listen through the socket!");
     }
 }
 
 TCPSocket::~TCPSocket()
 {
-    // BUG: Socket does not close properly
-    //  The binding is not released when the socket is
-    //  destructed
+    // INFO: On Linux at least, the OS keeps the port
+    // unavailable
+    //  for some time after closing it.
+    //  There is no bug in the program regarding that.
     closeSocket();
 }
 
@@ -51,6 +50,18 @@ TCPSocket::TCPSocket(TCPSocket &&other)
 {
     other.serverSocket_ = -1;
     other.clientSocket_ = -1;
+}
+TCPSocket &
+TCPSocket::operator=(TCPSocket &&other)
+{
+    // Self-assignment check
+    if (this != &other) {
+        this->serverSocket_ = other.serverSocket_;
+        other.serverSocket_ = -1;
+        this->clientSocket_ = other.clientSocket_;
+        other.clientSocket_ = -1;
+    }
+    return *this;
 }
 void
 TCPSocket::acceptConnection()

@@ -13,16 +13,7 @@ class TCPSocket : public Socket {
     TCPSocket(const TCPSocket &other) = delete;
     TCPSocket &operator=(const TCPSocket &) = delete;
     TCPSocket(TCPSocket &&);
-    // TODO: Define move assignment
-    TCPSocket &
-    operator=(TCPSocket &&other)
-    {
-        this->serverSocket_ = other.serverSocket_;
-        other.serverSocket_ = -1;
-        this->clientSocket_ = other.clientSocket_;
-        other.clientSocket_ = -1;
-        return *this;
-    }
+    TCPSocket &operator=(TCPSocket &&other);
     void acceptConnection() override;
     void closeConnection() override;
     std::string receiveData() override;

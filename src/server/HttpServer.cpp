@@ -1,5 +1,6 @@
 #include "HttpServer.hpp"
 #include <algorithm>
+#include <exception>
 #include <iostream>
 #include <stdexcept>
 #include <string>
@@ -10,30 +11,24 @@ HttpServer::run()
     std::cout << "Server is accepting requests..."
               << std::endl;
     while (true) {
-        socket_->acceptConnection();
-        auto data = socket_->receiveData();
-        std::string inputStr(data.begin(), data.end());
+        try {
+            socket_->acceptConnection();
+            auto data = socket_->receiveData();
+            std::string inputStr(data.begin(), data.end());
 
-        if (inputStr.length() != 0) {
-            parser_->feedInput(inputStr);
-            parser_->parse();
-            auto request = parser_->getRequest();
-            handleRequest(request);
-            parser_->clear();
-            socket_->closeConnection();
+            if (inputStr.length() != 0) {
+                parser_->feedInput(inputStr);
+                parser_->parse();
+                auto request = parser_->getRequest();
+                handleRequest(request);
+                parser_->clear();
+                socket_->closeConnection();
+            }
+        }
+        catch (const std::exception &e) {
+            std::cerr << e.what() << std::endl;
         }
     }
-}
-
-void
-HttpServer::sanitizeString(std::string &str)
-{
-    str.erase(std::remove_if(str.begin(), str.end(),
-                             [](const char c) {
-                                 return c == '\r'
-                                        || c == '\n';
-                             }),
-              str.cend());
 }
 
 void
