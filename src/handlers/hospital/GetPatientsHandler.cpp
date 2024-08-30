@@ -1,6 +1,7 @@
 #include "GetPatientsHandler.hpp"
 #include "../../HttpServerExceptions.hpp"
 #include <stdexcept>
+#include <string>
 
 void
 GetPatientHandler::processRequestLine(
@@ -45,6 +46,8 @@ GetPatientHandler::constructResponseBody()
   htmlBody += R"(</body></html>)";
 
   builder_.setBody(htmlBody);
+  builder_.setHeaders("Content-Length", std::to_string(htmlBody.size()));
+  builder_.setHeaders("Content-Type", "text/html");
 }
 
 

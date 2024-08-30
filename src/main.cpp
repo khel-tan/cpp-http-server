@@ -4,7 +4,9 @@
 #include <string>
 
 #include "handlers/hospital/AddPatientHandler.hpp"
+#include "handlers/hospital/DeletePatientHandler.hpp"
 #include "handlers/hospital/GetPatientsHandler.hpp"
+#include "handlers/hospital/UpdatePatientHandler.hpp"
 #include "message/URI.hpp"
 #include "parser/IterativeParser.hpp"
 #include "server/HttpServer.hpp"
@@ -32,6 +34,12 @@ main(int argc, char **argv)
     server.mapHandler(
         URI("/hospital/patients"),
         std::make_unique<GetPatientHandler>(db));
+    server.mapHandler(
+        URI("/hospital/update"),
+        std::make_unique<UpdatePatientHandler>(db));
+    server.mapHandler(
+        URI("/hospital/delete"),
+        std::make_unique<DeletePatientHandler>(db));
 
     server.run();
 }

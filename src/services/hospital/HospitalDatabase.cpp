@@ -17,8 +17,9 @@ HospitalDatabase::updatePatient(const int id,
                                 const Patient &p)
 {
     const std::string query
-        = "UPDATE " + PATIENT_TABLE + " SET name="
-          + p.getName() + " WHERE id=" + std::to_string(id);
+        = "UPDATE " + PATIENT_TABLE + " SET name='"
+          + p.getName()
+          + "' WHERE id=" + std::to_string(id);
     runQuery(query);
 }
 
@@ -28,6 +29,7 @@ HospitalDatabase::deletePatient(const int id)
     const std::string query
         = "DELETE FROM " + PATIENT_TABLE
           + " WHERE id=" + std::to_string(id);
+    runQuery(query);
 }
 
 std::vector<Patient>

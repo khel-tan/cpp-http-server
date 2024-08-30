@@ -69,7 +69,7 @@ toMethod(const std::string &input)
         return Method::PATCH;
     }
     else if (input == "DELETE") {
-        return Method::PUT;
+        return Method::DELETE;
     }
     else {
         throw std::invalid_argument(std::format(
