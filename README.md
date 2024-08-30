@@ -37,6 +37,29 @@ Moreover, to demonstrate the functionality of the server, I have added a minimal
 
 If you are on Linux, there is a build script in the `bin` subdirectory.
 Simply run `bin/run.sh` from the root of the project.
-On a sidenote, you can also run `bin/count-lines.sh` to see that the number of lines of code is around 1.6k-1.7k.
+You can add an argument to the above command to specify the port at which the server listens. The default is 5100.
 
 If you are unable to do the above, you can just build from `CMakeLists.txt` at the root.
+
+There is a simple Hospital Database running on top of the server infrastructure. To test it, simply run the application and send HTTP requests to the `localhost:[PORT]`. If localhost does not work, try `0.0.0.0:[PORT]`.
+
+The following endpoints are supported at the moment.
+- /hospital/patients : GET request
+- /hospital/patients/add : POST request with {"id" : "some string", "name": "some name"} as the body
+- /hospital/update : PATCH request with the body template as above
+- /hospital/delete : DELETE request with {"id" : "some string"}
+
+Currently, you can pass only strings for JSON values. This means that you cannot pass {"id" : 15} but {"id" : "15"}. If you do the former, the server will treat it as a malformed request.
+
+### Examples
+For testing the hospital database, you can use an API testing client such as Postman or Insomnia but passing the output through something like netcat is also viable. See the shell commands below for some examples.
+
+`echo -e "GET /hospital/patients HTTP/1.1\r\nHost : Phone\r\n\r\n"| nc localhost [PORT]`
+
+`echo -e "POST /hospital/patients/add HTTP/1.1\r\nHost : Phone\r\n\r\n{\"id\": \"125\", \"name\":\"Jack\"}\r\n"| nc localhost [PORT]`
+
+`echo -e "PATCH /hospital/patients/update HTTP/1.1\r\nHost : Phone\r\n\r\n{\"id\": \"125\", \"name\":\"JackButCooler\"}\r\n"| nc localhost [PORT]`
+
+`echo -e "DELETE /hospital/patients/delete HTTP/1.1\r\nHost : Phone\r\n\r\n{\"id\": \"125\"}\r\n"| nc localhost [PORT]`
+
+
