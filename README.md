@@ -2,13 +2,13 @@
 
 ## Table of Contents
 - [Implemented features](#features)
-- [How to navigate the project] (#how-to-navigate-the-project)
+- [How to navigate the project] (#navigation)
   + [Overview](#overview)
 - [How to run](#how-to-run)
 ## Features
 
 
-## How to navigate the project
+## Navigation
 ### Overview
 The flow of the program is as follows.
 
@@ -20,17 +20,17 @@ In this method, HttpServer directs the data flow from its network socket to the 
 The server is dependent on 3 interfaces - Socket, RequestParser and Handler.
 In addition, the entire flow of data is dependent on the HTTP Message/Request/Response classes.
 
-#### Socket
+### Socket
 Socket manages the inflow and outflow of data over the network and provides a nice wrapper interface using std::string. TCPSocket, the implementation I used uses the C API from socket.h to set up the server socket, listen, connect to a client socket, and receive or transmit data streams.
 
-#### RequestParser
+### RequestParser
 Request parser receives some string input and builds a (HTTP) Request object from it. The implementation I have provided - Iterative parser - parses the request line, headers and the body, and builds the Request.
 
 
-#### Handler
+### Handler
 A Handler receives a (HTTP) Request object as its input and returns an HTTP Response object.
 
-#### HTTP Message/Request/Response classes
+### HTTP Message/Request/Response classes
 Both Request and Response classes inherit the abstract Message class which contains features common to both. Instances of both classes are accessible only through their builder interface which is exposed through the getBuilder() methods. In addition to fluent construction, the builder interface provides validation of Request objects so that for example, we do not create a response with no status code.
 Status codes, request types and HTTP versions are encapsulated in their respective enum classes.
 
