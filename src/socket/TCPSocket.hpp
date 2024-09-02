@@ -5,6 +5,10 @@
 #include "Socket.hpp"
 #include <cstdint>
 #include <string>
+/**
+ * @brief Sends and receives data over the network in TCP
+ * streams
+ */
 class TCPSocket : public Socket {
   public:
     TCPSocket() = delete;

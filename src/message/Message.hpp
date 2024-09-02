@@ -66,16 +66,22 @@ class Message {
     /**
      * @brief This method transforms an HTTP message to a
      * string that can be trasmitted over the network.
+     *
+     * @return a string transmittable over the network
      */
     virtual std::string toTransmittableString() const = 0;
 
   protected:
+    // HTTP messages use \r\n for indicating a newline
     constexpr static std::string LINE_BREAK{ "\r\n" };
     Version version_;
     Headers headers_;
     std::string body_;
     /**
      * @brief This method sets HTTP headers.
+     *
+     * @param key header name
+     * @param value value of the header
      */
     void
     setHeaders(const header_key &key,

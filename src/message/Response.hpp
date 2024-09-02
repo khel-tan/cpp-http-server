@@ -4,6 +4,10 @@
 
 #include "../HttpServerExceptions.hpp"
 #include "Message.hpp"
+
+/**
+ * @brief Enum class representing HTTP status codes
+ */
 enum class StatusCode {
     UNDEFINED,
     OK = 200,
@@ -13,19 +17,33 @@ enum class StatusCode {
     INTERNAL_SERVER_ERROR = 500,
 };
 
+/**
+ * @brief Converts a StatusCode object to a string
+ */
 std::string toString(const StatusCode &);
+
+/**
+ * @brief Casts a StatusCode object to its corresponding
+ * integer code
+ */
 int toInt(const StatusCode &);
 
 class ResponseBuilder;
 
-/*
- * INFO: Represents all HTTP responses
+/**
+ * @brief Represents all HTTP responses
  * The constructor is private and it is meant to be build
  * through its builder interface.
  */
 class Response : public Message {
   public:
     friend class ResponseBuilder;
+    /**
+     * @brief Gets a ResponseBuilder instance
+     *
+     * This is the only entry point to constructing a
+     * Response object
+     */
     static ResponseBuilder getBuilder();
     virtual std::string
     toTransmittableString() const override;
@@ -35,8 +53,8 @@ class Response : public Message {
     StatusCode statusCode_;
 };
 
-/*
- * INFO: Builder to simplify the construction.
+/**
+ * @brief Builder to simplify the construction.
  * Before build, validation logic is performed to ensure
  * that we have a valid response
  */
@@ -68,6 +86,11 @@ class ResponseBuilder {
         response_.body_ = body;
         return *this;
     }
+    /**
+     * @brief Validate the response until how it has been
+     * built thus far and throws an error if mandatory
+     * fields are missing
+     */
     void
     validate() const
     {
@@ -83,12 +106,18 @@ class ResponseBuilder {
                 "is missing");
         }
     }
+    /**
+     * @brief validates the response and returns it if valid
+     */
     Response
     build() const
     {
         validate();
         return response_;
     }
+    /**
+     * @brief Reset the construction process
+     */
     ResponseBuilder &
     reset()
     {

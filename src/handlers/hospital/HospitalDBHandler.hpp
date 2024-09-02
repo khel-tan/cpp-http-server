@@ -13,6 +13,12 @@
  */
 class HospitalDBHandler : public Handler {
   public:
+    /**
+     * @brief Constructs a HospitalDBHandler from a
+     * shared pointer to the database
+     *
+     * @param db shared pointer to the Hospital Database
+     */
     HospitalDBHandler(std::shared_ptr<HospitalDatabase> db)
         : db_(db)
     {

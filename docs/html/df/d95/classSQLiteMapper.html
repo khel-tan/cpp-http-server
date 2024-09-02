@@ -86,13 +86,43 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a00ebc070130fda99b13baeca2ab67cd7" id="r_a00ebc070130fda99b13baeca2ab67cd7"><td class="memItemLeft" align="right" valign="top"><a id="a00ebc070130fda99b13baeca2ab67cd7" name="a00ebc070130fda99b13baeca2ab67cd7"></a>
-static <a class="el" href="../../d2/de8/classPatient.html">Patient</a>&#160;</td><td class="memItemRight" valign="bottom"><b>createPatient</b> (const std::map&lt; std::string, std::string &gt; &amp;rowData)</td></tr>
+<tr class="memitem:a00ebc070130fda99b13baeca2ab67cd7" id="r_a00ebc070130fda99b13baeca2ab67cd7"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d2/de8/classPatient.html">Patient</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a00ebc070130fda99b13baeca2ab67cd7">createPatient</a> (const std::map&lt; std::string, std::string &gt; &amp;rowData)</td></tr>
+<tr class="memdesc:a00ebc070130fda99b13baeca2ab67cd7"><td class="mdescLeft">&#160;</td><td class="mdescRight">create a patient from a key-value map  <br /></td></tr>
 <tr class="separator:a00ebc070130fda99b13baeca2ab67cd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Utility class for mapping std::map to an instance of <a class="el" href="../../d6/d18/classModel.html" title="Abstract class that defines the basic structure of every SQL row entry.">Model</a>. </p>
-</div><hr/>The documentation for this class was generated from the following file:<ul>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a00ebc070130fda99b13baeca2ab67cd7" name="a00ebc070130fda99b13baeca2ab67cd7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00ebc070130fda99b13baeca2ab67cd7">&#9670;&#160;</a></span>createPatient()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="../../d2/de8/classPatient.html">Patient</a> SQLiteMapper::createPatient </td>
+          <td>(</td>
+          <td class="paramtype">const std::map&lt; std::string, std::string &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>rowData</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>create a patient from a key-value map </p>
+<p>It throws an error if all the keys we need to make <a class="el" href="../../d2/de8/classPatient.html" title="Represents the encapsulated data of a patient.">Patient</a> are not present.</p>
+<dl class="section return"><dt>Returns</dt><dd>a <a class="el" href="../../d2/de8/classPatient.html" title="Represents the encapsulated data of a patient.">Patient</a> object </dd></dl>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/services/hospital/<a class="el" href="../../d0/d16/models_8hpp_source.html">models.hpp</a></li>
 </ul>
 </div><!-- contents -->

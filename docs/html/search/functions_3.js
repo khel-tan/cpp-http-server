@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['handlerequest_0',['handleRequest',['../d4/d22/classHandler.html#a0c5652b2dcd3df46303090436612a128',1,'Handler']]]
+  ['deletepatient_0',['deletePatient',['../d4/d72/classHospitalDatabase.html#a2253db8f422e7a8f251520fb4f5b601e',1,'HospitalDatabase']]]
 ];

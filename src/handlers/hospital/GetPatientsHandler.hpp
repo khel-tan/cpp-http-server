@@ -4,29 +4,22 @@
 #include "HospitalDBHandler.hpp"
 #include <memory>
 
+/**
+ * @brief Returns all the patient entries of the hospital
+ */
 class GetPatientHandler : public HospitalDBHandler {
   public:
     GetPatientHandler() = delete;
     GetPatientHandler(std::shared_ptr<HospitalDatabase> db)
         : HospitalDBHandler(db)
-    { /**
-       * @brief Processes an HTTP Request object and returns
-       * a Response object.
-       *
-       * This method handles the entire request processing,
-       * including request line parsing, header processing,
-       * and response construction. It also handles
-       * exceptions that might be thrown during the process.
-       *
-       * @param request The HTTP request to process.
-       * @return A Response object based on the processed
-       * request.
-       */
+    {
     }
 
   protected:
     /**
      * @brief ensures that the method is GET
+     *
+     * @param request request to be processed
      */
     void
     processRequestLine(const Request &request) override

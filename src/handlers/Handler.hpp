@@ -7,7 +7,7 @@
 #include "../message/Response.hpp"
 #include <iostream>
 
-/*
+/**
  * @brief Abstract class for handling HTTP requests and
  * outputting a Response object
  */
@@ -76,19 +76,24 @@ class Handler {
      * @brief Processes the request line and checks if the
      * method and the HTTP version and the URI are
      * appropriate
+     *
+     * @param request request to process
      */
-    virtual void processRequestLine(const Request &) = 0;
+    virtual void processRequestLine(const Request &request)
+        = 0;
     /**
      * @brief Processes headers of the request
      *
-     *
+     * @param request request to process
      */
-    virtual void processHeaders(const Request &) = 0;
+    virtual void processHeaders(const Request &request) = 0;
     /**
      * @brief Processes the body of the request
      *
      * This is more relevant for requests that intend to
      * create or modify server-side resources.
+     *
+     * @param body the body of the HTTP request
      */
     virtual void processRequestBody(const std::string &body)
         = 0;

@@ -79,6 +79,11 @@ $(function() {
   <div class="headertitle"><div class="title">DeletePatientHandler Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Deletes a patient entry by id.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../d4/d13/DeletePatientHandler_8hpp_source.html">DeletePatientHandler.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for DeletePatientHandler:</div>
 <div class="dyncontent">
@@ -86,7 +91,7 @@ Inheritance diagram for DeletePatientHandler:</div>
   <img src="../../dc/da8/classDeletePatientHandler.png" usemap="#DeletePatientHandler_map" alt=""/>
   <map id="DeletePatientHandler_map" name="DeletePatientHandler_map">
 <area href="../../d4/d94/classHospitalDBHandler.html" title="This class ensures that all non-abstract handler of the hospital database inherit the pointer to the ..." alt="HospitalDBHandler" shape="rect" coords="0,56,131,80"/>
-<area href="../../d4/d22/classHandler.html" alt="Handler" shape="rect" coords="0,0,131,24"/>
+<area href="../../d4/d22/classHandler.html" title="Abstract class for handling HTTP requests and outputting a Response object." alt="Handler" shape="rect" coords="0,0,131,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -101,7 +106,7 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ad6f8445db20e2826f6fba9e1b9452d57 inherit pub_methods_classHospitalDBHandler"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classHandler"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classHandler')"><img src="../../closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="../../d4/d22/classHandler.html">Handler</a></td></tr>
 <tr class="memitem:a0c5652b2dcd3df46303090436612a128 inherit pub_methods_classHandler" id="r_a0c5652b2dcd3df46303090436612a128"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="../../db/d35/classResponse.html">Response</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d22/classHandler.html#a0c5652b2dcd3df46303090436612a128">handleRequest</a> (const <a class="el" href="../../d9/dbd/classRequest.html">Request</a> &amp;request)</td></tr>
-<tr class="memdesc:a0c5652b2dcd3df46303090436612a128 inherit pub_methods_classHandler"><td class="mdescLeft">&#160;</td><td class="mdescRight">Processes an HTTP <a class="el" href="../../d9/dbd/classRequest.html">Request</a> object and returns a <a class="el" href="../../db/d35/classResponse.html">Response</a> object.  <br /></td></tr>
+<tr class="memdesc:a0c5652b2dcd3df46303090436612a128 inherit pub_methods_classHandler"><td class="mdescLeft">&#160;</td><td class="mdescRight">Processes an HTTP <a class="el" href="../../d9/dbd/classRequest.html" title="This class represents all HTTP requests. It can be built only through its builder interface!">Request</a> object and returns a <a class="el" href="../../db/d35/classResponse.html" title="Represents all HTTP responses The constructor is private and it is meant to be build through its buil...">Response</a> object.  <br /></td></tr>
 <tr class="separator:a0c5652b2dcd3df46303090436612a128 inherit pub_methods_classHandler"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
@@ -116,7 +121,7 @@ Protected Member Functions</h2></td></tr>
 <tr class="memdesc:a6f4c895869f6e2b7a050db57c6056159"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the request body is a JSON and has an id field. If so, we update the corresponding entry in the database.  <br /></td></tr>
 <tr class="separator:a6f4c895869f6e2b7a050db57c6056159"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2c9f5daecf0aa9b527b375735269ec40" id="r_a2c9f5daecf0aa9b527b375735269ec40"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2c9f5daecf0aa9b527b375735269ec40">constructResponseBody</a> () override</td></tr>
-<tr class="memdesc:a2c9f5daecf0aa9b527b375735269ec40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs <a class="el" href="../../db/d35/classResponse.html">Response</a> Body if appropriate.  <br /></td></tr>
+<tr class="memdesc:a2c9f5daecf0aa9b527b375735269ec40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs <a class="el" href="../../db/d35/classResponse.html" title="Represents all HTTP responses The constructor is private and it is meant to be build through its buil...">Response</a> Body if appropriate.  <br /></td></tr>
 <tr class="separator:a2c9f5daecf0aa9b527b375735269ec40"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classHospitalDBHandler"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_methods_classHospitalDBHandler')"><img src="../../closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="../../d4/d94/classHospitalDBHandler.html">HospitalDBHandler</a></td></tr>
 <tr class="memitem:a92f24e81921aa8405bfa500032a307eb inherit pro_methods_classHospitalDBHandler" id="r_a92f24e81921aa8405bfa500032a307eb"><td class="memItemLeft" align="right" valign="top">std::map&lt; std::string, std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d94/classHospitalDBHandler.html#a92f24e81921aa8405bfa500032a307eb">parseBody</a> (const std::string &amp;body)</td></tr>
@@ -132,10 +137,12 @@ std::shared_ptr&lt; <a class="el" href="../../d4/d72/classHospitalDatabase.html"
 <tr class="inherit_header pro_attribs_classHandler"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_attribs_classHandler')"><img src="../../closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="../../d4/d22/classHandler.html">Handler</a></td></tr>
 <tr class="memitem:a432bd068754307c10cfa806cef555fcb inherit pro_attribs_classHandler" id="r_a432bd068754307c10cfa806cef555fcb"><td class="memItemLeft" align="right" valign="top">
 <a class="el" href="../../d5/d42/classResponseBuilder.html">ResponseBuilder</a>&#160;</td><td class="memItemRight" valign="bottom"><b>builder_</b> { Response::getBuilder() }</td></tr>
-<tr class="memdesc:a432bd068754307c10cfa806cef555fcb inherit pro_attribs_classHandler"><td class="mdescLeft">&#160;</td><td class="mdescRight">The instance's own <a class="el" href="../../db/d35/classResponse.html">Response</a> builder instance. <br /></td></tr>
+<tr class="memdesc:a432bd068754307c10cfa806cef555fcb inherit pro_attribs_classHandler"><td class="mdescLeft">&#160;</td><td class="mdescRight">The instance's own <a class="el" href="../../db/d35/classResponse.html" title="Represents all HTTP responses The constructor is private and it is meant to be build through its buil...">Response</a> builder instance. <br /></td></tr>
 <tr class="separator:a432bd068754307c10cfa806cef555fcb inherit pro_attribs_classHandler"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Deletes a patient entry by id. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a2c9f5daecf0aa9b527b375735269ec40" name="a2c9f5daecf0aa9b527b375735269ec40"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2c9f5daecf0aa9b527b375735269ec40">&#9670;&#160;</a></span>constructResponseBody()</h2>
 
@@ -159,7 +166,7 @@ std::shared_ptr&lt; <a class="el" href="../../d4/d72/classHospitalDatabase.html"
 </table>
 </div><div class="memdoc">
 
-<p>Constructs <a class="el" href="../../db/d35/classResponse.html">Response</a> Body if appropriate. </p>
+<p>Constructs <a class="el" href="../../db/d35/classResponse.html" title="Represents all HTTP responses The constructor is private and it is meant to be build through its buil...">Response</a> Body if appropriate. </p>
 <p>Contrary to <a class="el" href="#a221657f7a3af8e2cfb51a1fb64d7c2cb" title="Processes headers of the request.">processHeaders()</a>, this method will be empty for handlers that concern letting clients view resources in readonly mode </p>
 
 <p>Implements <a class="el" href="../../d4/d22/classHandler.html#a1cfdb34f37343570898b1a2de7a41e51">Handler</a>.</p>

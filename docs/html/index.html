@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.10.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Http Server: Main Page</title>
+<title>Http Server: CPP HTTP Server</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -71,10 +71,68 @@ $(function() {
 </div>
 </div>
 
-<div class="header">
-  <div class="headertitle"><div class="title">Http Server Documentation</div></div>
+<div><div class="header">
+  <div class="headertitle"><div class="title">CPP HTTP <a class="el" href="db/d00/classServer.html" title="Abstract server with run() performing some service.">Server</a> </div></div>
 </div><!--header-->
 <div class="contents">
+<div class="textblock"><p><a class="anchor" id="md_README"></a> </p>
+<h1><a class="anchor" id="autotoc_md1"></a>
+Table of Contents</h1>
+<ul>
+<li>Implemented features</li>
+<li>How to navigate the project<ul>
+<li>Overview</li>
+</ul>
+</li>
+<li>How to run</li>
+<li>Libraries used</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md2"></a>
+Features</h1>
+<h1><a class="anchor" id="autotoc_md3"></a>
+Navigation</h1>
+<h2><a class="anchor" id="autotoc_md4"></a>
+Overview</h2>
+<p>The flow of the program is as follows.</p>
+<p>In <code>main.cpp</code>, an instance of the HTTP server is created and its dependencies are injected. Afterwards, we map <a class="el" href="d8/d69/classURI.html" title="The URI object currently contains only the path. It implements equality and a hash function so that i...">URI</a> objects to their corresponding HTTP request handlers so that they are handled appropriately.</p>
+<p>The server has one main method - <code>run()</code>. In this method, <a class="el" href="dd/dab/classHttpServer.html" title="A server that provides HTTP request handling services.">HttpServer</a> directs the data flow from its network socket to the request parser and then redirects the transmittable data string of the <a class="el" href="db/d35/classResponse.html" title="Represents all HTTP responses The constructor is private and it is meant to be build through its buil...">Response</a> object provided by the corresponding handler over the socket.</p>
+<p>The server is dependent on 3 interfaces - <a class="el" href="d4/d33/classSocket.html" title="Generic socket that wraps around the low level C API so that the rest of our code work with Modern CP...">Socket</a>, <a class="el" href="d0/dd8/classRequestParser.html" title="Abstract interface for parsing text input into HTTP Request objects.">RequestParser</a> and <a class="el" href="d4/d22/classHandler.html" title="Abstract class for handling HTTP requests and outputting a Response object.">Handler</a>. In addition, the entire flow of data is dependent on the HTTP Message/Request/Response classes.</p>
+<h2><a class="anchor" id="autotoc_md5"></a>
+Socket</h2>
+<p><a class="el" href="d4/d33/classSocket.html" title="Generic socket that wraps around the low level C API so that the rest of our code work with Modern CP...">Socket</a> manages the inflow and outflow of data over the network and provides a nice wrapper interface using std::string. <a class="el" href="dd/d10/classTCPSocket.html" title="Sends and receives data over the network in TCP streams.">TCPSocket</a>, the implementation I used uses the C API from socket.h to set up the server socket, listen, connect to a client socket, and receive or transmit data streams.</p>
+<h2><a class="anchor" id="autotoc_md6"></a>
+RequestParser</h2>
+<p><a class="el" href="d9/dbd/classRequest.html" title="This class represents all HTTP requests. It can be built only through its builder interface!">Request</a> parser receives some string input and builds a (HTTP) <a class="el" href="d9/dbd/classRequest.html" title="This class represents all HTTP requests. It can be built only through its builder interface!">Request</a> object from it. The implementation I have provided - Iterative parser - parses the request line, headers and the body, and builds the <a class="el" href="d9/dbd/classRequest.html" title="This class represents all HTTP requests. It can be built only through its builder interface!">Request</a>.</p>
+<h2><a class="anchor" id="autotoc_md7"></a>
+Handler</h2>
+<p>A <a class="el" href="d4/d22/classHandler.html" title="Abstract class for handling HTTP requests and outputting a Response object.">Handler</a> receives a (HTTP) <a class="el" href="d9/dbd/classRequest.html" title="This class represents all HTTP requests. It can be built only through its builder interface!">Request</a> object as its input and returns an HTTP <a class="el" href="db/d35/classResponse.html" title="Represents all HTTP responses The constructor is private and it is meant to be build through its buil...">Response</a> object.</p>
+<h2><a class="anchor" id="autotoc_md8"></a>
+HTTP Message/Request/Response classes</h2>
+<p>Both <a class="el" href="d9/dbd/classRequest.html" title="This class represents all HTTP requests. It can be built only through its builder interface!">Request</a> and <a class="el" href="db/d35/classResponse.html" title="Represents all HTTP responses The constructor is private and it is meant to be build through its buil...">Response</a> classes inherit the abstract <a class="el" href="d6/d28/classMessage.html" title="Abstract base class for grouping together common properties and behaviours between HTTP requests and ...">Message</a> class which contains features common to both. Instances of both classes are accessible only through their builder interface which is exposed through the getBuilder() methods. In addition to fluent construction, the builder interface provides validation of <a class="el" href="d9/dbd/classRequest.html" title="This class represents all HTTP requests. It can be built only through its builder interface!">Request</a> objects so that for example, we do not create a response with no status code. Status codes, request types and HTTP versions are encapsulated in their respective enum classes.</p>
+<p>Moreover, to demonstrate the functionality of the server, I have added a minimal hospital list of records of patients. It is dependent on <a class="el" href="d4/d72/classHospitalDatabase.html" title="Wrapper class that handle requests to the SQLite3 database and wraps it in an API that avoids unsafe ...">HospitalDatabase</a> which inherits from <a class="el" href="d7/ddf/classSQLDatabase.html" title="Abstract basis for Databases using SQLite3.">SQLDatabase</a>. It essentially encapsulates the C API of SQLite3 so that the users of the class can simply call methods such as <code>getPatients()</code> instead of doing memory management or writing queries.</p>
+<h1><a class="anchor" id="autotoc_md9"></a>
+How to run</h1>
+<p>If you are on Linux, there is a build script in the <code>bin</code> subdirectory. Simply run <code>bin/run.sh</code> from the root of the project. You can add an argument to the above command to specify the port at which the server listens. The default is 5100.</p>
+<p>If you are unable to do the above, you can just build from <code>CMakeLists.txt</code> at the root.</p>
+<p>There is a simple Hospital Database running on top of the server infrastructure. To test it, simply run the application and send HTTP requests to the <code>localhost:[PORT]</code>. If localhost does not work, try <code>0.0.0.0:[PORT]</code>.</p>
+<p>The following endpoints are supported at the moment.</p><ul>
+<li>/hospital/patients : GET request</li>
+<li>/hospital/patients/add : POST request with {"id" : "some string", "name": "some name"} as the body</li>
+<li>/hospital/update : PATCH request with the body template as above</li>
+<li>/hospital/delete : DELETE request with {"id" : "some string"}</li>
+</ul>
+<p>Currently, you can pass only strings for JSON values. This means that you cannot pass {"id" : 15} but {"id" : "15"}. If you do the former, the server will treat it as a malformed request.</p>
+<h2><a class="anchor" id="autotoc_md10"></a>
+Examples</h2>
+<p>For testing the hospital database, you can use an API testing client such as Postman or Insomnia but passing the output through something like netcat is also viable. See the shell commands below for some examples.</p>
+<p><code>echo -e "GET /hospital/patients HTTP/1.1\r\nHost : Phone\r\n\r\n"| nc localhost [PORT]</code></p>
+<p><code>echo -e "POST /hospital/patients/add HTTP/1.1\r\nHost : Phone\r\n\r\n{\"id\": \"125\", \"name\":\"Jack\"}\r\n"| nc localhost [PORT]</code></p>
+<p><code>echo -e "PATCH /hospital/patients/update HTTP/1.1\r\nHost : Phone\r\n\r\n{\"id\": \"125\", \"name\":\"JackButCooler\"}\r\n"| nc localhost [PORT]</code></p>
+<p><code>echo -e "DELETE /hospital/patients/delete HTTP/1.1\r\nHost : Phone\r\n\r\n{\"id\": \"125\"}\r\n"| nc localhost [PORT]</code></p>
+<h1><a class="anchor" id="autotoc_md11"></a>
+Libraries used</h1>
+<p>At present, the only 3rd party library used is <a href="https://github.com/nlohmann/json">Nlohmann's JSON parser</a>. </p>
+</div></div><!-- PageDoc -->
 <a href="doxygen_crawl.html"/>
 </div><!-- contents -->
 <!-- start footer part -->

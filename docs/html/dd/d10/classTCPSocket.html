@@ -80,13 +80,18 @@ $(function() {
   <div class="headertitle"><div class="title">TCPSocket Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Sends and receives data over the network in TCP streams.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../d6/dfa/TCPSocket_8hpp_source.html">TCPSocket.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for TCPSocket:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="../../dd/d10/classTCPSocket.png" usemap="#TCPSocket_map" alt=""/>
   <map id="TCPSocket_map" name="TCPSocket_map">
-<area href="../../d4/d33/classSocket.html" alt="Socket" shape="rect" coords="0,0,74,24"/>
+<area href="../../d4/d33/classSocket.html" title="Generic socket that wraps around the low level C API so that the rest of our code work with Modern CP..." alt="Socket" shape="rect" coords="0,0,74,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -141,7 +146,9 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>serverSocket_</b> = -1
 int&#160;</td><td class="memItemRight" valign="bottom"><b>clientSocket_</b> = -1</td></tr>
 <tr class="separator:a2bbfc20e94e7ec8e8831b388731823cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Sends and receives data over the network in TCP streams. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a524643de505e2cb650c61f09f40da2a5" name="a524643de505e2cb650c61f09f40da2a5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a524643de505e2cb650c61f09f40da2a5">&#9670;&#160;</a></span>acceptConnection()</h2>
 
@@ -253,6 +260,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>clientSocket_</b> = -1
 </div><div class="memdoc">
 
 <p>Receives data in the buffer from the server-client connection. </p>
+<dl class="section return"><dt>Returns</dt><dd>the char array of received data converted into a std::string </dd></dl>
 
 <p>Implements <a class="el" href="../../d4/d33/classSocket.html#a2e700ff446c7f8a691702289f442bb9a">Socket</a>.</p>
 
@@ -282,6 +290,12 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>clientSocket_</b> = -1
 </div><div class="memdoc">
 
 <p>Sends data to the connected client. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>the data to be sent to the client </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p>Implements <a class="el" href="../../d4/d33/classSocket.html#a65a35e7e2d32e16c34ab70fd2e070024">Socket</a>.</p>
 

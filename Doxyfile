@@ -2852,3 +2852,6 @@ MSCGEN_TOOL            =
 # command).
 
 MSCFILE_DIRS           =
+
+
+USE_MDFILE_AS_MAINPAGE = ./README.md

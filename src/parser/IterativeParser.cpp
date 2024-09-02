@@ -1,9 +1,7 @@
 #include "IterativeParser.hpp"
 #include "../HttpServerExceptions.hpp"
 #include "../utils/Utils.hpp"
-#include <iostream>
 #include <regex>
-#include <stdexcept>
 
 void
 IterativeParser::feedInput(std::string input)
@@ -70,9 +68,9 @@ IterativeParser::processRequestLine(
 
         for (const auto &m : matches) {
         }
-        builder_.setMethod(parseMethod(method));
+        builder_.setMethod(toMethod(method));
         builder_.setURI(URI(uri));
-        builder_.setVersion(parseVersion(version));
+        builder_.setVersion(toVersion(version));
     }
     else {
         throw invalid_request("Request line is invalid");

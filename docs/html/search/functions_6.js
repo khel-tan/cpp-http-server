@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['receivedata_0',['receiveData',['../d4/d33/classSocket.html#a2e700ff446c7f8a691702289f442bb9a',1,'Socket::receiveData()'],['../dd/d10/classTCPSocket.html#a42ca7ab55845ec1a06d14faacfd3b76b',1,'TCPSocket::receiveData()']]],
-  ['runquery_1',['runQuery',['../d7/ddf/classSQLDatabase.html#ac0f71b89c299a5231fe65966671c878a',1,'SQLDatabase']]]
+  ['handlerequest_0',['handleRequest',['../d4/d22/classHandler.html#a0c5652b2dcd3df46303090436612a128',1,'Handler::handleRequest()'],['../dd/dab/classHttpServer.html#a447ff6d122cfd9b6c133b392201643c6',1,'HttpServer::handleRequest()']]],
+  ['hospitaldatabase_1',['HospitalDatabase',['../d4/d72/classHospitalDatabase.html#a103f9988ad9e22dbd69fbe9b0504c038',1,'HospitalDatabase']]],
+  ['httpserver_2',['HttpServer',['../dd/dab/classHttpServer.html#a1f1384e2920ce1da486e636e90ffc14e',1,'HttpServer']]]
 ];

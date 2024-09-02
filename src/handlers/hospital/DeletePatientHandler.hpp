@@ -3,10 +3,12 @@
 
 #define DELETE_PATIENT_HANLDER_HPP_
 
-#include "../../library/nlohmann/json.hpp"
 #include "HospitalDBHandler.hpp"
 #include <string>
 
+/**
+ * @brief Deletes a patient entry by id
+ */
 class DeletePatientHandler : public HospitalDBHandler {
 
   public:
@@ -20,6 +22,7 @@ class DeletePatientHandler : public HospitalDBHandler {
   protected:
     /**
      * @brief Ensures that we have only DELETE requests
+     * @param request request to be processed
      */
     void
     processRequestLine(const Request &request) override

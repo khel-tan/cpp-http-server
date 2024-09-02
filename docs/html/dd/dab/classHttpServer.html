@@ -80,31 +80,38 @@ $(function() {
   <div class="headertitle"><div class="title">HttpServer Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>A server that provides HTTP request handling services.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../d2/d73/HttpServer_8hpp_source.html">HttpServer.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for HttpServer:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="../../dd/dab/classHttpServer.png" usemap="#HttpServer_map" alt=""/>
   <map id="HttpServer_map" name="HttpServer_map">
-<area href="../../db/d00/classServer.html" alt="Server" shape="rect" coords="0,0,73,24"/>
+<area href="../../db/d00/classServer.html" title="Abstract server with run() performing some service." alt="Server" shape="rect" coords="0,0,73,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a1f1384e2920ce1da486e636e90ffc14e" id="r_a1f1384e2920ce1da486e636e90ffc14e"><td class="memItemLeft" align="right" valign="top"><a id="a1f1384e2920ce1da486e636e90ffc14e" name="a1f1384e2920ce1da486e636e90ffc14e"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>HttpServer</b> (std::unique_ptr&lt; <a class="el" href="../../d4/d33/classSocket.html">Socket</a> &gt; &amp;&amp;sock, std::unique_ptr&lt; <a class="el" href="../../d0/dd8/classRequestParser.html">RequestParser</a> &gt; &amp;&amp;parser)</td></tr>
+<tr class="memitem:a1f1384e2920ce1da486e636e90ffc14e" id="r_a1f1384e2920ce1da486e636e90ffc14e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1f1384e2920ce1da486e636e90ffc14e">HttpServer</a> (std::unique_ptr&lt; <a class="el" href="../../d4/d33/classSocket.html">Socket</a> &gt; &amp;&amp;sock, std::unique_ptr&lt; <a class="el" href="../../d0/dd8/classRequestParser.html">RequestParser</a> &gt; &amp;&amp;parser)</td></tr>
+<tr class="memdesc:a1f1384e2920ce1da486e636e90ffc14e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructors HTTPServer from a pointer to a socket and a parser.  <br /></td></tr>
 <tr class="separator:a1f1384e2920ce1da486e636e90ffc14e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7802af224348b510cb9eaebca84216c9" id="r_a7802af224348b510cb9eaebca84216c9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7802af224348b510cb9eaebca84216c9">run</a> () override</td></tr>
+<tr class="memdesc:a7802af224348b510cb9eaebca84216c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start providing whatever services that we are supposed to provide.  <br /></td></tr>
 <tr class="separator:a7802af224348b510cb9eaebca84216c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa59f8158cc29d4962e79d1f4748db986" id="r_aa59f8158cc29d4962e79d1f4748db986"><td class="memItemLeft" align="right" valign="top"><a id="aa59f8158cc29d4962e79d1f4748db986" name="aa59f8158cc29d4962e79d1f4748db986"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>mapHandler</b> (const <a class="el" href="../../d8/d69/classURI.html">URI</a> &amp;u, std::unique_ptr&lt; <a class="el" href="../../d4/d22/classHandler.html">Handler</a> &gt; &amp;&amp;h)</td></tr>
-<tr class="separator:aa59f8158cc29d4962e79d1f4748db986"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49a4e7c964d4698ae12d490bce05779f" id="r_a49a4e7c964d4698ae12d490bce05779f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a49a4e7c964d4698ae12d490bce05779f">mapHandler</a> (const <a class="el" href="../../d8/d69/classURI.html">URI</a> &amp;uri, std::unique_ptr&lt; <a class="el" href="../../d4/d22/classHandler.html">Handler</a> &gt; &amp;&amp;handler)</td></tr>
+<tr class="memdesc:a49a4e7c964d4698ae12d490bce05779f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maps HTTP <a class="el" href="../../d9/dbd/classRequest.html" title="This class represents all HTTP requests. It can be built only through its builder interface!">Request</a> handlers from <a class="el" href="../../d8/d69/classURI.html" title="The URI object currently contains only the path. It implements equality and a hash function so that i...">URI</a> objects.  <br /></td></tr>
+<tr class="separator:a49a4e7c964d4698ae12d490bce05779f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:a447ff6d122cfd9b6c133b392201643c6" id="r_a447ff6d122cfd9b6c133b392201643c6"><td class="memItemLeft" align="right" valign="top"><a id="a447ff6d122cfd9b6c133b392201643c6" name="a447ff6d122cfd9b6c133b392201643c6"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>handleRequest</b> (const <a class="el" href="../../d9/dbd/classRequest.html">Request</a> &amp;)</td></tr>
+<tr class="memdesc:a447ff6d122cfd9b6c133b392201643c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decide what to do with the request object we got from the parser. <br /></td></tr>
 <tr class="separator:a447ff6d122cfd9b6c133b392201643c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
@@ -119,7 +126,90 @@ const std::unique_ptr&lt; <a class="el" href="../../d0/dd8/classRequestParser.ht
 std::unordered_map&lt; <a class="el" href="../../d8/d69/classURI.html">URI</a>, std::unique_ptr&lt; <a class="el" href="../../d4/d22/classHandler.html">Handler</a> &gt;, <a class="el" href="../../d3/da7/structURI_1_1Hash.html">URI::Hash</a>, <a class="el" href="../../d6/dcc/structURI_1_1Equality.html">URI::Equality</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>requestHandlers_</b></td></tr>
 <tr class="separator:ab6c79ecb9298714a1e570aa808db4791"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A server that provides HTTP request handling services. </p>
+<p>HTTP <a class="el" href="../../db/d00/classServer.html" title="Abstract server with run() performing some service.">Server</a> handles management of resources required to transform an HTTP request string into a request object, pass said object to some handlers and obtain some response string, send back the above string over the network, and do error handling for all of the above.</p>
+<p>Its dependencies are provided through <a class="el" href="../../d4/d33/classSocket.html" title="Generic socket that wraps around the low level C API so that the rest of our code work with Modern CP...">Socket</a> and <a class="el" href="../../d0/dd8/classRequestParser.html" title="Abstract interface for parsing text input into HTTP Request objects.">RequestParser</a> interfaces. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a1f1384e2920ce1da486e636e90ffc14e" name="a1f1384e2920ce1da486e636e90ffc14e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f1384e2920ce1da486e636e90ffc14e">&#9670;&#160;</a></span>HttpServer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">HttpServer::HttpServer </td>
+          <td>(</td>
+          <td class="paramtype">std::unique_ptr&lt; <a class="el" href="../../d4/d33/classSocket.html">Socket</a> &gt; &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>sock</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::unique_ptr&lt; <a class="el" href="../../d0/dd8/classRequestParser.html">RequestParser</a> &gt; &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>parser</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructors HTTPServer from a pointer to a socket and a parser. </p>
+<p>Dependency injection is used to make the <a class="el" href="../../dd/dab/classHttpServer.html" title="A server that provides HTTP request handling services.">HttpServer</a> dependent only on the interface and not the implementations. Unique pointers are used as it does not make sense to share a network socket or a parser.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sock</td><td>unique pointer to a network socket </td></tr>
+    <tr><td class="paramname">parser</td><td>unique pointer to a http request parser </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a49a4e7c964d4698ae12d490bce05779f" name="a49a4e7c964d4698ae12d490bce05779f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49a4e7c964d4698ae12d490bce05779f">&#9670;&#160;</a></span>mapHandler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void HttpServer::mapHandler </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d8/d69/classURI.html">URI</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>uri</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::unique_ptr&lt; <a class="el" href="../../d4/d22/classHandler.html">Handler</a> &gt; &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>handler</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Maps HTTP <a class="el" href="../../d9/dbd/classRequest.html" title="This class represents all HTTP requests. It can be built only through its builder interface!">Request</a> handlers from <a class="el" href="../../d8/d69/classURI.html" title="The URI object currently contains only the path. It implements equality and a hash function so that i...">URI</a> objects. </p>
+<p>We move the pointers to ensure that only we own the handling service</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">uri</td><td>The <a class="el" href="../../d8/d69/classURI.html" title="The URI object currently contains only the path. It implements equality and a hash function so that i...">URI</a> that we want to handle </td></tr>
+    <tr><td class="paramname">handler</td><td>The handler service </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a7802af224348b510cb9eaebca84216c9" name="a7802af224348b510cb9eaebca84216c9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7802af224348b510cb9eaebca84216c9">&#9670;&#160;</a></span>run()</h2>
 
@@ -143,7 +233,9 @@ std::unordered_map&lt; <a class="el" href="../../d8/d69/classURI.html">URI</a>, 
 </table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="../../db/d00/classServer.html">Server</a>.</p>
+<p>Start providing whatever services that we are supposed to provide. </p>
+
+<p>Implements <a class="el" href="../../db/d00/classServer.html#a2aa16b19aac606e71575c65fc62d065e">Server</a>.</p>
 
 </div>
 </div>

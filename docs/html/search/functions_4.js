@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['maptoqueryarguments_0',['mapToQueryArguments',['../d7/ddf/classSQLDatabase.html#acfa0158aeab39c698fc695796c991bba',1,'SQLDatabase']]]
+  ['feedinput_0',['feedInput',['../d9/de9/classIterativeParser.html#af32c90521e3a0b2a1355ffdc40c69a58',1,'IterativeParser::feedInput()'],['../d0/dd8/classRequestParser.html#a3abe13e24753e0920ef3096316608747',1,'RequestParser::feedInput()']]]
 ];

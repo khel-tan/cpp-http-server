@@ -2,9 +2,12 @@
 
 #define UPDATE_PATIENT_HANLDER_HPP_
 
-#include "../../library/nlohmann/json.hpp"
 #include "HospitalDBHandler.hpp"
 
+/**
+ * @brief Searches for a patient entry by id and updates the
+ * contents
+ */
 class UpdatePatientHandler : public HospitalDBHandler {
 
   public:

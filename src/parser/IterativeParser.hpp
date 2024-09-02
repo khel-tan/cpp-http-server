@@ -6,8 +6,8 @@
 #include "RequestParser.hpp"
 #include <regex>
 #include <string>
-/*
- * INFO: Iterative parser can be fed the input
+/**
+ * @brief Iterative parser can be fed the input
  * many times instead of all at once.
  */
 class IterativeParser : public RequestParser {
@@ -25,6 +25,10 @@ class IterativeParser : public RequestParser {
     }
 
   protected:
+    /*
+     * Regex pattern specifying the structure of a
+     * request line
+     */
     const std::regex REQUEST_LINE_PATTERN{
         // NOTE: The \r\n at the end can throw off regex and
         // can be hard to debug
@@ -35,6 +39,10 @@ class IterativeParser : public RequestParser {
     std::string input_{};
     RequestBuilder builder_;
 
+    /**
+     * @brief processes request line and gives information
+     * to builder_
+     */
     void processRequestLine(const std::string &);
 };
 

@@ -2,9 +2,10 @@
 #define SOCKET_HPP_
 #include <string>
 
-/*
- * Generic socket that wraps around the low level C API so
- * that the rest of our code work with Modern CPP constructs
+/**
+ * @brief Generic socket that wraps around the low level C
+ * API so that the rest of our code work with Modern CPP
+ * constructs
  */
 class Socket {
   public:
@@ -22,10 +23,15 @@ class Socket {
     /**
      * @brief Receives data in the buffer from the
      * server-client connection
+     *
+     * @return the char array of received data converted
+     * into a std::string
      */
     virtual std::string receiveData() = 0;
     /**
      * @brief Sends data to the connected client
+     *
+     * @param data the data to be sent to the client
      */
     virtual void sendData(const std::string &data) = 0;
 

@@ -10,7 +10,9 @@
 #include <sqlite3.h>
 #include <string>
 /**
- * @brief This class is the abstract basis for all SQL
+ * @brief Abstract basis for Databases using SQLite3
+ *
+ * This class is the abstract basis for all SQL
  * Database classes. It provides implementations for running
  * simple queries, opening and closing of database
  * connections and utility functions so that derived classes
@@ -19,6 +21,11 @@
 class SQLDatabase {
   public:
     SQLDatabase() = delete;
+
+    /**
+     * @brief constructor to be called by derived classes
+     * @param filePath the path to the database file
+     */
     SQLDatabase(const std::string filePath)
         : filePath_(filePath)
     {

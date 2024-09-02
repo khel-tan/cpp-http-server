@@ -2,12 +2,16 @@
 
 #define SERVER_HPP_
 
-/*
- * Abstract server with run() performing some service
+/**
+ * @brief Abstract server with run() performing some service
  */
 class Server {
   public:
     virtual ~Server() = default;
+    /**
+     * @brief Start providing whatever services that we are
+     * supposed to provide
+     */
     virtual void run() = 0;
 };
 

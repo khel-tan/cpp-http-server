@@ -11,8 +11,15 @@
  */
 class Model {
   public:
+    /**
+     * @brief Converts model object to a key-value map of
+     * its properties
+     */
     virtual std::map<std::string, std::string>
     convertToMap() const = 0;
+    /**
+     * @brief converts the instance to a printable string
+     */
     virtual std::string toString() const = 0;
 };
 /**
@@ -21,11 +28,16 @@ class Model {
 class Patient : public Model {
   public:
     Patient() = delete;
+    /**
+     * @brief Constructor to initialize all members of
+     * Patient
+     * @param id identifier number of the patient
+     * @param name name of the patient
+     */
     Patient(const int id, const std::string name)
         : id_(id), name_(name)
     {
     }
-
     std::map<std::string, std::string>
     convertToMap() const override
     {
@@ -34,11 +46,17 @@ class Patient : public Model {
         };
     }
 
+    /**
+     * @brief Gets patient id
+     */
     int
     getId() const
     {
         return id_;
     }
+    /**
+     * @brief Gets patient name
+     */
     std::string
     getName() const
     {
@@ -65,6 +83,14 @@ class Patient : public Model {
  */
 class SQLiteMapper {
   public:
+    /**
+     * @brief create a patient from a key-value map
+     *
+     * It throws an error if all the keys we need to make
+     * Patient are not present.
+     *
+     * @return a Patient object
+     */
     static Patient
     createPatient(
         const std::map<std::string, std::string> &rowData)

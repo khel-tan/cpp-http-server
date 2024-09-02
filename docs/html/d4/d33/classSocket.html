@@ -78,13 +78,18 @@ $(function() {
   <div class="headertitle"><div class="title">Socket Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Generic socket that wraps around the low level C API so that the rest of our code work with Modern CPP constructs.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../dd/df5/Socket_8hpp_source.html">Socket.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Socket:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="../../d4/d33/classSocket.png" usemap="#Socket_map" alt=""/>
   <map id="Socket_map" name="Socket_map">
-<area href="../../dd/d10/classTCPSocket.html" alt="TCPSocket" shape="rect" coords="0,56,74,80"/>
+<area href="../../dd/d10/classTCPSocket.html" title="Sends and receives data over the network in TCP streams." alt="TCPSocket" shape="rect" coords="0,56,74,80"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -106,7 +111,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a19e0311e13c7e23856b57b4f9d4b93d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Closes the client connection, shuts down the server socket and cleans up.  <br /></td></tr>
 <tr class="separator:a19e0311e13c7e23856b57b4f9d4b93d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Generic socket that wraps around the low level C API so that the rest of our code work with Modern CPP constructs. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="af5c9bbc204dee2c4d7980af5347aa3c5" name="af5c9bbc204dee2c4d7980af5347aa3c5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af5c9bbc204dee2c4d7980af5347aa3c5">&#9670;&#160;</a></span>acceptConnection()</h2>
 
@@ -218,6 +225,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Receives data in the buffer from the server-client connection. </p>
+<dl class="section return"><dt>Returns</dt><dd>the char array of received data converted into a std::string </dd></dl>
 
 <p>Implemented in <a class="el" href="../../dd/d10/classTCPSocket.html#a42ca7ab55845ec1a06d14faacfd3b76b">TCPSocket</a>.</p>
 
@@ -247,6 +255,12 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Sends data to the connected client. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>the data to be sent to the client </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p>Implemented in <a class="el" href="../../dd/d10/classTCPSocket.html#a791eb393508a7cef740760c207795a65">TCPSocket</a>.</p>
 

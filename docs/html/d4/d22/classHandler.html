@@ -80,6 +80,11 @@ $(function() {
   <div class="headertitle"><div class="title">Handler Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Abstract class for handling HTTP requests and outputting a <a class="el" href="../../db/d35/classResponse.html" title="Represents all HTTP responses The constructor is private and it is meant to be build through its buil...">Response</a> object.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../da/ddd/Handler_8hpp_source.html">Handler.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Handler:</div>
 <div class="dyncontent">
@@ -88,22 +93,22 @@ Inheritance diagram for Handler:</div>
   <map id="Handler_map" name="Handler_map">
 <area href="../../d4/d94/classHospitalDBHandler.html" title="This class ensures that all non-abstract handler of the hospital database inherit the pointer to the ..." alt="HospitalDBHandler" shape="rect" coords="216,56,350,80"/>
 <area href="../../d5/df0/classAddPatientHandler.html" title="Handles the addition of a single patient together with name and id." alt="AddPatientHandler" shape="rect" coords="0,112,134,136"/>
-<area href="../../dc/da8/classDeletePatientHandler.html" alt="DeletePatientHandler" shape="rect" coords="144,112,278,136"/>
-<area href="../../d8/d3a/classGetPatientHandler.html" alt="GetPatientHandler" shape="rect" coords="288,112,422,136"/>
-<area href="../../d7/de0/classUpdatePatientHandler.html" alt="UpdatePatientHandler" shape="rect" coords="432,112,566,136"/>
+<area href="../../dc/da8/classDeletePatientHandler.html" title="Deletes a patient entry by id." alt="DeletePatientHandler" shape="rect" coords="144,112,278,136"/>
+<area href="../../d8/d3a/classGetPatientHandler.html" title="Returns all the patient entries of the hospital." alt="GetPatientHandler" shape="rect" coords="288,112,422,136"/>
+<area href="../../d7/de0/classUpdatePatientHandler.html" title="Searches for a patient entry by id and updates the contents." alt="UpdatePatientHandler" shape="rect" coords="432,112,566,136"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a0c5652b2dcd3df46303090436612a128" id="r_a0c5652b2dcd3df46303090436612a128"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="../../db/d35/classResponse.html">Response</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0c5652b2dcd3df46303090436612a128">handleRequest</a> (const <a class="el" href="../../d9/dbd/classRequest.html">Request</a> &amp;request)</td></tr>
-<tr class="memdesc:a0c5652b2dcd3df46303090436612a128"><td class="mdescLeft">&#160;</td><td class="mdescRight">Processes an HTTP <a class="el" href="../../d9/dbd/classRequest.html">Request</a> object and returns a <a class="el" href="../../db/d35/classResponse.html">Response</a> object.  <br /></td></tr>
+<tr class="memdesc:a0c5652b2dcd3df46303090436612a128"><td class="mdescLeft">&#160;</td><td class="mdescRight">Processes an HTTP <a class="el" href="../../d9/dbd/classRequest.html" title="This class represents all HTTP requests. It can be built only through its builder interface!">Request</a> object and returns a <a class="el" href="../../db/d35/classResponse.html" title="Represents all HTTP responses The constructor is private and it is meant to be build through its buil...">Response</a> object.  <br /></td></tr>
 <tr class="separator:a0c5652b2dcd3df46303090436612a128"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:ac683bcc2caee9e98e0e52e9b273df810" id="r_ac683bcc2caee9e98e0e52e9b273df810"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac683bcc2caee9e98e0e52e9b273df810">processRequestLine</a> (const <a class="el" href="../../d9/dbd/classRequest.html">Request</a> &amp;)=0</td></tr>
-<tr class="memdesc:ac683bcc2caee9e98e0e52e9b273df810"><td class="mdescLeft">&#160;</td><td class="mdescRight">Processes the request line and checks if the method and the HTTP version and the <a class="el" href="../../d8/d69/classURI.html">URI</a> are appropriate.  <br /></td></tr>
+<tr class="memdesc:ac683bcc2caee9e98e0e52e9b273df810"><td class="mdescLeft">&#160;</td><td class="mdescRight">Processes the request line and checks if the method and the HTTP version and the <a class="el" href="../../d8/d69/classURI.html" title="The URI object currently contains only the path. It implements equality and a hash function so that i...">URI</a> are appropriate.  <br /></td></tr>
 <tr class="separator:ac683bcc2caee9e98e0e52e9b273df810"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af5db5928df25eaa0f712fbf3baf76cb7" id="r_af5db5928df25eaa0f712fbf3baf76cb7"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af5db5928df25eaa0f712fbf3baf76cb7">processHeaders</a> (const <a class="el" href="../../d9/dbd/classRequest.html">Request</a> &amp;)=0</td></tr>
 <tr class="memdesc:af5db5928df25eaa0f712fbf3baf76cb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Processes headers of the request.  <br /></td></tr>
@@ -112,17 +117,19 @@ Protected Member Functions</h2></td></tr>
 <tr class="memdesc:af11662c60e2cf0ef49b05eae362c8558"><td class="mdescLeft">&#160;</td><td class="mdescRight">Processes the body of the request.  <br /></td></tr>
 <tr class="separator:af11662c60e2cf0ef49b05eae362c8558"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1cfdb34f37343570898b1a2de7a41e51" id="r_a1cfdb34f37343570898b1a2de7a41e51"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1cfdb34f37343570898b1a2de7a41e51">constructResponseBody</a> ()=0</td></tr>
-<tr class="memdesc:a1cfdb34f37343570898b1a2de7a41e51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs <a class="el" href="../../db/d35/classResponse.html">Response</a> Body if appropriate.  <br /></td></tr>
+<tr class="memdesc:a1cfdb34f37343570898b1a2de7a41e51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs <a class="el" href="../../db/d35/classResponse.html" title="Represents all HTTP responses The constructor is private and it is meant to be build through its buil...">Response</a> Body if appropriate.  <br /></td></tr>
 <tr class="separator:a1cfdb34f37343570898b1a2de7a41e51"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:a432bd068754307c10cfa806cef555fcb" id="r_a432bd068754307c10cfa806cef555fcb"><td class="memItemLeft" align="right" valign="top"><a id="a432bd068754307c10cfa806cef555fcb" name="a432bd068754307c10cfa806cef555fcb"></a>
 <a class="el" href="../../d5/d42/classResponseBuilder.html">ResponseBuilder</a>&#160;</td><td class="memItemRight" valign="bottom"><b>builder_</b> { Response::getBuilder() }</td></tr>
-<tr class="memdesc:a432bd068754307c10cfa806cef555fcb"><td class="mdescLeft">&#160;</td><td class="mdescRight">The instance's own <a class="el" href="../../db/d35/classResponse.html">Response</a> builder instance. <br /></td></tr>
+<tr class="memdesc:a432bd068754307c10cfa806cef555fcb"><td class="mdescLeft">&#160;</td><td class="mdescRight">The instance's own <a class="el" href="../../db/d35/classResponse.html" title="Represents all HTTP responses The constructor is private and it is meant to be build through its buil...">Response</a> builder instance. <br /></td></tr>
 <tr class="separator:a432bd068754307c10cfa806cef555fcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Abstract class for handling HTTP requests and outputting a <a class="el" href="../../db/d35/classResponse.html" title="Represents all HTTP responses The constructor is private and it is meant to be build through its buil...">Response</a> object. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a1cfdb34f37343570898b1a2de7a41e51" name="a1cfdb34f37343570898b1a2de7a41e51"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1cfdb34f37343570898b1a2de7a41e51">&#9670;&#160;</a></span>constructResponseBody()</h2>
 
@@ -146,7 +153,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Constructs <a class="el" href="../../db/d35/classResponse.html">Response</a> Body if appropriate. </p>
+<p>Constructs <a class="el" href="../../db/d35/classResponse.html" title="Represents all HTTP responses The constructor is private and it is meant to be build through its buil...">Response</a> Body if appropriate. </p>
 <p>Contrary to <a class="el" href="#af5db5928df25eaa0f712fbf3baf76cb7" title="Processes headers of the request.">processHeaders()</a>, this method will be empty for handlers that concern letting clients view resources in readonly mode </p>
 
 <p>Implemented in <a class="el" href="../../d5/df0/classAddPatientHandler.html#af4f4aaa1c5499e80975a01d2991ee9db">AddPatientHandler</a>, <a class="el" href="../../dc/da8/classDeletePatientHandler.html#a2c9f5daecf0aa9b527b375735269ec40">DeletePatientHandler</a>, <a class="el" href="../../d8/d3a/classGetPatientHandler.html#a5be8fe582d9155ea2376ee9d3de59e4b">GetPatientHandler</a>, and <a class="el" href="../../d7/de0/classUpdatePatientHandler.html#a49fab5ed71941f86a5662973d4a32aad">UpdatePatientHandler</a>.</p>
@@ -176,7 +183,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Processes an HTTP <a class="el" href="../../d9/dbd/classRequest.html">Request</a> object and returns a <a class="el" href="../../db/d35/classResponse.html">Response</a> object. </p>
+<p>Processes an HTTP <a class="el" href="../../d9/dbd/classRequest.html" title="This class represents all HTTP requests. It can be built only through its builder interface!">Request</a> object and returns a <a class="el" href="../../db/d35/classResponse.html" title="Represents all HTTP responses The constructor is private and it is meant to be build through its buil...">Response</a> object. </p>
 <p>This method handles the entire request processing including request lines, headers and response construction. It also handles exceptions thrown and outputs an appropriate response.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -184,7 +191,7 @@ Protected Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../db/d35/classResponse.html">Response</a> object based on the processed request. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="../../db/d35/classResponse.html" title="Represents all HTTP responses The constructor is private and it is meant to be build through its buil...">Response</a> object based on the processed request. </dd></dl>
 
 </div>
 </div>
@@ -270,7 +277,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Processes the request line and checks if the method and the HTTP version and the <a class="el" href="../../d8/d69/classURI.html">URI</a> are appropriate. </p>
+<p>Processes the request line and checks if the method and the HTTP version and the <a class="el" href="../../d8/d69/classURI.html" title="The URI object currently contains only the path. It implements equality and a hash function so that i...">URI</a> are appropriate. </p>
 
 <p>Implemented in <a class="el" href="../../d5/df0/classAddPatientHandler.html#a75bccd06dc902b64768a32d59b154891">AddPatientHandler</a>, <a class="el" href="../../dc/da8/classDeletePatientHandler.html#aeaaba13ebf1bcddd7047cb0d80116127">DeletePatientHandler</a>, <a class="el" href="../../d8/d3a/classGetPatientHandler.html#a31d63295dafd52cce359b4b09f5a94b7">GetPatientHandler</a>, and <a class="el" href="../../d7/de0/classUpdatePatientHandler.html#a6c2c71b168f220fd66820ab1d0a656e7">UpdatePatientHandler</a>.</p>
 

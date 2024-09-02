@@ -43,6 +43,11 @@ main(int argc, char **argv)
     server.run();
 }
 
+/**
+ * @brief parses port from arguments. If invalid, returns a
+ * default port specified at compile time.
+ * @return Port number
+ */
 int
 parsePort(const char *arg, const int DEFAULT)
 {

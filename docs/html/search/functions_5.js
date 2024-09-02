@@ -1,7 +1,12 @@
 var searchData=
 [
-  ['parsebody_0',['parseBody',['../d4/d94/classHospitalDBHandler.html#a92f24e81921aa8405bfa500032a307eb',1,'HospitalDBHandler']]],
-  ['processheaders_1',['processHeaders',['../d4/d22/classHandler.html#af5db5928df25eaa0f712fbf3baf76cb7',1,'Handler::processHeaders()'],['../d5/df0/classAddPatientHandler.html#a0dda9cf8663b409b93b1b0e773382309',1,'AddPatientHandler::processHeaders()'],['../dc/da8/classDeletePatientHandler.html#a221657f7a3af8e2cfb51a1fb64d7c2cb',1,'DeletePatientHandler::processHeaders()'],['../d8/d3a/classGetPatientHandler.html#a4a8dad28927168f7d21ad0be0974e71c',1,'GetPatientHandler::processHeaders()'],['../d7/de0/classUpdatePatientHandler.html#ab8ceab34526d4996d09b2d769c721cf3',1,'UpdatePatientHandler::processHeaders()']]],
-  ['processrequestbody_2',['processRequestBody',['../d4/d22/classHandler.html#af11662c60e2cf0ef49b05eae362c8558',1,'Handler::processRequestBody()'],['../d5/df0/classAddPatientHandler.html#a29d18ad981baeaa3a1d111c14f7418d5',1,'AddPatientHandler::processRequestBody()'],['../dc/da8/classDeletePatientHandler.html#a6f4c895869f6e2b7a050db57c6056159',1,'DeletePatientHandler::processRequestBody()'],['../d8/d3a/classGetPatientHandler.html#a50cf5a954020dd6356d8740fab996443',1,'GetPatientHandler::processRequestBody()'],['../d7/de0/classUpdatePatientHandler.html#ae63ce398ff8c58171d9930961c9bab0d',1,'UpdatePatientHandler::processRequestBody()']]],
-  ['processrequestline_3',['processRequestLine',['../d4/d22/classHandler.html#ac683bcc2caee9e98e0e52e9b273df810',1,'Handler::processRequestLine()'],['../d5/df0/classAddPatientHandler.html#a75bccd06dc902b64768a32d59b154891',1,'AddPatientHandler::processRequestLine()'],['../dc/da8/classDeletePatientHandler.html#aeaaba13ebf1bcddd7047cb0d80116127',1,'DeletePatientHandler::processRequestLine()'],['../d8/d3a/classGetPatientHandler.html#a31d63295dafd52cce359b4b09f5a94b7',1,'GetPatientHandler::processRequestLine()'],['../d7/de0/classUpdatePatientHandler.html#a6c2c71b168f220fd66820ab1d0a656e7',1,'UpdatePatientHandler::processRequestLine()']]]
+  ['getbody_0',['getBody',['../d9/dbd/classRequest.html#af35561f2ae37bffa9dab02aba8d83052',1,'Request']]],
+  ['getbuilder_1',['getBuilder',['../d9/dbd/classRequest.html#ab3620317d1332adaa54deaecadfc47e7',1,'Request']]],
+  ['getid_2',['getId',['../d2/de8/classPatient.html#aefced9042f034bd90fdb081fe8a81feb',1,'Patient']]],
+  ['getmethod_3',['getMethod',['../d9/dbd/classRequest.html#a86a826b9bbc03b496dc296ff3a8b9c54',1,'Request']]],
+  ['getname_4',['getName',['../d2/de8/classPatient.html#aa6a097e225a1fafdb3f172d83302cf9c',1,'Patient']]],
+  ['getpatients_5',['getPatients',['../d4/d72/classHospitalDatabase.html#a372d92c3a372c05fcdd63dcf3ab015b4',1,'HospitalDatabase']]],
+  ['getrequest_6',['getRequest',['../d9/de9/classIterativeParser.html#ab3313aa934831ce58517b2450988d2dc',1,'IterativeParser::getRequest()'],['../d0/dd8/classRequestParser.html#ad3dfec7a3cbf533c414939d2d5c503ba',1,'RequestParser::getRequest()']]],
+  ['geturi_7',['getURI',['../d9/dbd/classRequest.html#aaa50ffc5dc2b2d3b661cafa9003e9a23',1,'Request']]],
+  ['getversion_8',['getVersion',['../d9/dbd/classRequest.html#aaf6456d8b1683b25dc185d9e96a657b2',1,'Request']]]
 ];

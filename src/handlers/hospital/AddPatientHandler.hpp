@@ -22,6 +22,7 @@ class AddPatientHandler : public HospitalDBHandler {
   protected:
     /**
      * @brief Ensures that we accept only POST requests
+     * @param request request to be processed
      */
     void
     processRequestLine(const Request &request) override
@@ -37,6 +38,7 @@ class AddPatientHandler : public HospitalDBHandler {
     }
     /**
      * @brief irrelevant for this class
+     * @param request request to be processed
      */
     void
     processHeaders(const Request &) override
@@ -47,6 +49,8 @@ class AddPatientHandler : public HospitalDBHandler {
      * @brief parses id and patient data from the request
      * body and calls SQLiteMapper to create a patient
      * instance
+     *
+     * @param body the body of the HTTP request
      */
     void
     processRequestBody(const std::string &body) override

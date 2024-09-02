@@ -13,6 +13,12 @@
 class HospitalDatabase : public SQLDatabase {
   public:
     HospitalDatabase() = delete;
+    /**
+     * @brief constructs database from a file path
+     *
+     * It delegates the initialization of the file path to
+     * the base class constructor
+     */
     HospitalDatabase(const std::string filePath)
         : SQLDatabase(filePath)
     {

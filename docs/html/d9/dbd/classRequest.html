@@ -81,6 +81,11 @@ $(function() {
   <div class="headertitle"><div class="title">Request Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>This class represents all HTTP requests. It can be built only through its builder interface!  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../d3/d8f/Request_8hpp_source.html">Request.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Request:</div>
 <div class="dyncontent">
@@ -95,15 +100,19 @@ Inheritance diagram for Request:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aaa50ffc5dc2b2d3b661cafa9003e9a23" id="r_aaa50ffc5dc2b2d3b661cafa9003e9a23"><td class="memItemLeft" align="right" valign="top"><a id="aaa50ffc5dc2b2d3b661cafa9003e9a23" name="aaa50ffc5dc2b2d3b661cafa9003e9a23"></a>
 const <a class="el" href="../../d8/d69/classURI.html">URI</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getURI</b> () const</td></tr>
+<tr class="memdesc:aaa50ffc5dc2b2d3b661cafa9003e9a23"><td class="mdescLeft">&#160;</td><td class="mdescRight">constant getter for <a class="el" href="../../d8/d69/classURI.html" title="The URI object currently contains only the path. It implements equality and a hash function so that i...">URI</a> <br /></td></tr>
 <tr class="separator:aaa50ffc5dc2b2d3b661cafa9003e9a23"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a86a826b9bbc03b496dc296ff3a8b9c54" id="r_a86a826b9bbc03b496dc296ff3a8b9c54"><td class="memItemLeft" align="right" valign="top"><a id="a86a826b9bbc03b496dc296ff3a8b9c54" name="a86a826b9bbc03b496dc296ff3a8b9c54"></a>
 Method&#160;</td><td class="memItemRight" valign="bottom"><b>getMethod</b> () const</td></tr>
+<tr class="memdesc:a86a826b9bbc03b496dc296ff3a8b9c54"><td class="mdescLeft">&#160;</td><td class="mdescRight">constant getter for method <br /></td></tr>
 <tr class="separator:a86a826b9bbc03b496dc296ff3a8b9c54"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af35561f2ae37bffa9dab02aba8d83052" id="r_af35561f2ae37bffa9dab02aba8d83052"><td class="memItemLeft" align="right" valign="top"><a id="af35561f2ae37bffa9dab02aba8d83052" name="af35561f2ae37bffa9dab02aba8d83052"></a>
 std::string&#160;</td><td class="memItemRight" valign="bottom"><b>getBody</b> () const</td></tr>
+<tr class="memdesc:af35561f2ae37bffa9dab02aba8d83052"><td class="mdescLeft">&#160;</td><td class="mdescRight">constant getter for request body <br /></td></tr>
 <tr class="separator:af35561f2ae37bffa9dab02aba8d83052"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaf6456d8b1683b25dc185d9e96a657b2" id="r_aaf6456d8b1683b25dc185d9e96a657b2"><td class="memItemLeft" align="right" valign="top"><a id="aaf6456d8b1683b25dc185d9e96a657b2" name="aaf6456d8b1683b25dc185d9e96a657b2"></a>
 Version&#160;</td><td class="memItemRight" valign="bottom"><b>getVersion</b> () const</td></tr>
+<tr class="memdesc:aaf6456d8b1683b25dc185d9e96a657b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">constant getter for version <br /></td></tr>
 <tr class="separator:aaf6456d8b1683b25dc185d9e96a657b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4b6fcb3dea76682fb862d66af1ebe79a" id="r_a4b6fcb3dea76682fb862d66af1ebe79a"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4b6fcb3dea76682fb862d66af1ebe79a">toTransmittableString</a> () const override</td></tr>
 <tr class="memdesc:a4b6fcb3dea76682fb862d66af1ebe79a"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method transforms an HTTP message to a string that can be trasmitted over the network.  <br /></td></tr>
@@ -113,6 +122,7 @@ Version&#160;</td><td class="memItemRight" valign="bottom"><b>getVersion</b> () 
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:ab3620317d1332adaa54deaecadfc47e7" id="r_ab3620317d1332adaa54deaecadfc47e7"><td class="memItemLeft" align="right" valign="top"><a id="ab3620317d1332adaa54deaecadfc47e7" name="ab3620317d1332adaa54deaecadfc47e7"></a>
 static <a class="el" href="../../df/ddd/classRequestBuilder.html">RequestBuilder</a>&#160;</td><td class="memItemRight" valign="bottom"><b>getBuilder</b> ()</td></tr>
+<tr class="memdesc:ab3620317d1332adaa54deaecadfc47e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">The only starting point for building a <a class="el" href="../../d9/dbd/classRequest.html" title="This class represents all HTTP requests. It can be built only through its builder interface!">Request</a> object. <br /></td></tr>
 <tr class="separator:ab3620317d1332adaa54deaecadfc47e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
@@ -162,7 +172,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>setHeaders</b> (const
 static constexpr std::string&#160;</td><td class="memItemRight" valign="bottom"><b>LINE_BREAK</b> { &quot;\r\n&quot; }</td></tr>
 <tr class="separator:a0806608ce9249729bb601765f644eca1 inherit pro_static_attribs_classMessage"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>This class represents all HTTP requests. It can be built only through its builder interface! </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a4b6fcb3dea76682fb862d66af1ebe79a" name="a4b6fcb3dea76682fb862d66af1ebe79a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4b6fcb3dea76682fb862d66af1ebe79a">&#9670;&#160;</a></span>toTransmittableString()</h2>
 

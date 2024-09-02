@@ -8,29 +8,46 @@
 #include <string>
 class RequestBuilder;
 
-/*
+/**
  * @brief This class represents all HTTP requests.
  * It can be built only through its builder interface!
  */
 class Request : public Message {
   public:
     friend class RequestBuilder;
+    /**
+     * @brief The only starting point for building a Request
+     * object
+     *
+     */
     static RequestBuilder getBuilder();
+    /**
+     * @brief constant getter for URI
+     */
     const URI &
     getURI() const
     {
         return uri_;
     }
+    /**
+     * @brief constant getter for method
+     */
     Method
     getMethod() const
     {
         return method_;
     }
+    /**
+     * @brief constant getter for request body
+     */
     std::string
     getBody() const
     {
         return body_;
     }
+    /**
+     * @brief constant getter for version
+     */
     Version
     getVersion() const
     {
@@ -45,8 +62,8 @@ class Request : public Message {
     URI uri_ = URI("");
 };
 
-/*
- * INFO: Simplifies construction logic of Request.
+/**
+ * @brief Simplifies construction logic of Request.
  * When build() is called, it also performs validation of
  * the request
  */
@@ -84,6 +101,10 @@ class RequestBuilder {
         request_.body_ = body;
         return *this;
     }
+    /**
+     * @brief Ensures that our request object has all
+     * mandatory fields
+     */
     void
     validate() const
     {
@@ -102,6 +123,10 @@ class RequestBuilder {
                 "missing");
         }
     }
+    /**
+     * @brief Validate and build the request as far as we
+     * have constructed
+     */
     Request
     build() const
     {
