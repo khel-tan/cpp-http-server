@@ -118,9 +118,8 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:acdad99a84fc95e81cecc604020a815b9" id="r_acdad99a84fc95e81cecc604020a815b9"><td class="memItemLeft" align="right" valign="top"><a id="acdad99a84fc95e81cecc604020a815b9" name="acdad99a84fc95e81cecc604020a815b9"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setHeaders</b> (const header_key &amp;key, const header_value &amp;value)</td></tr>
-<tr class="memdesc:acdad99a84fc95e81cecc604020a815b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method sets HTTP headers. <br /></td></tr>
+<tr class="memitem:acdad99a84fc95e81cecc604020a815b9" id="r_acdad99a84fc95e81cecc604020a815b9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acdad99a84fc95e81cecc604020a815b9">setHeaders</a> (const header_key &amp;key, const header_value &amp;value)</td></tr>
+<tr class="memdesc:acdad99a84fc95e81cecc604020a815b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method sets HTTP headers.  <br /></td></tr>
 <tr class="separator:acdad99a84fc95e81cecc604020a815b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
@@ -144,6 +143,44 @@ static constexpr std::string&#160;</td><td class="memItemRight" valign="bottom">
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Abstract base class for grouping together common properties and behaviours between HTTP requests and responses. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="acdad99a84fc95e81cecc604020a815b9" name="acdad99a84fc95e81cecc604020a815b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acdad99a84fc95e81cecc604020a815b9">&#9670;&#160;</a></span>setHeaders()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Message::setHeaders </td>
+          <td>(</td>
+          <td class="paramtype">const header_key &amp;</td>          <td class="paramname"><span class="paramname"><em>key</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const header_value &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>This method sets HTTP headers. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>header name </td></tr>
+    <tr><td class="paramname">value</td><td>value of the header </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="acecf6b92cef9396a3cf48b033b3e7f28" name="acecf6b92cef9396a3cf48b033b3e7f28"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acecf6b92cef9396a3cf48b033b3e7f28">&#9670;&#160;</a></span>toTransmittableString()</h2>
 
@@ -168,6 +205,7 @@ static constexpr std::string&#160;</td><td class="memItemRight" valign="bottom">
 </div><div class="memdoc">
 
 <p>This method transforms an HTTP message to a string that can be trasmitted over the network. </p>
+<dl class="section return"><dt>Returns</dt><dd>a string transmittable over the network </dd></dl>
 
 <p>Implemented in <a class="el" href="../../d9/dbd/classRequest.html#a4b6fcb3dea76682fb862d66af1ebe79a">Request</a>, and <a class="el" href="../../db/d35/classResponse.html#ab60332870ba01715bc1c242c33cc14bc">Response</a>.</p>
 

@@ -104,8 +104,8 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:ae09c276da9e34e83c43447596889bb87" id="r_ae09c276da9e34e83c43447596889bb87"><td class="memItemLeft" align="right" valign="top"><a id="ae09c276da9e34e83c43447596889bb87" name="ae09c276da9e34e83c43447596889bb87"></a>
-static <a class="el" href="../../d5/d42/classResponseBuilder.html">ResponseBuilder</a>&#160;</td><td class="memItemRight" valign="bottom"><b>getBuilder</b> ()</td></tr>
+<tr class="memitem:ae09c276da9e34e83c43447596889bb87" id="r_ae09c276da9e34e83c43447596889bb87"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d5/d42/classResponseBuilder.html">ResponseBuilder</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae09c276da9e34e83c43447596889bb87">getBuilder</a> ()</td></tr>
+<tr class="memdesc:ae09c276da9e34e83c43447596889bb87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a <a class="el" href="../../d5/d42/classResponseBuilder.html" title="Builder to simplify the construction. Before build, validation logic is performed to ensure that we h...">ResponseBuilder</a> instance.  <br /></td></tr>
 <tr class="separator:ae09c276da9e34e83c43447596889bb87"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
@@ -143,9 +143,8 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>header_value</b> = s
 using&#160;</td><td class="memItemRight" valign="bottom"><b>Headers</b> = std::unordered_map&lt;header_key, header_value&gt;</td></tr>
 <tr class="separator:ab0294a61c9451cd4b88955d2e2f7946c inherit pub_types_classMessage"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classMessage"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_methods_classMessage')"><img src="../../closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="../../d6/d28/classMessage.html">Message</a></td></tr>
-<tr class="memitem:acdad99a84fc95e81cecc604020a815b9 inherit pro_methods_classMessage" id="r_acdad99a84fc95e81cecc604020a815b9"><td class="memItemLeft" align="right" valign="top">
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setHeaders</b> (const header_key &amp;key, const header_value &amp;value)</td></tr>
-<tr class="memdesc:acdad99a84fc95e81cecc604020a815b9 inherit pro_methods_classMessage"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method sets HTTP headers. <br /></td></tr>
+<tr class="memitem:acdad99a84fc95e81cecc604020a815b9 inherit pro_methods_classMessage" id="r_acdad99a84fc95e81cecc604020a815b9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d28/classMessage.html#acdad99a84fc95e81cecc604020a815b9">setHeaders</a> (const header_key &amp;key, const header_value &amp;value)</td></tr>
+<tr class="memdesc:acdad99a84fc95e81cecc604020a815b9 inherit pro_methods_classMessage"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method sets HTTP headers.  <br /></td></tr>
 <tr class="separator:acdad99a84fc95e81cecc604020a815b9 inherit pro_methods_classMessage"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_static_attribs_classMessage"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_static_attribs_classMessage')"><img src="../../closed.png" alt="-"/>&#160;Static Protected Attributes inherited from <a class="el" href="../../d6/d28/classMessage.html">Message</a></td></tr>
 <tr class="memitem:a0806608ce9249729bb601765f644eca1 inherit pro_static_attribs_classMessage" id="r_a0806608ce9249729bb601765f644eca1"><td class="memItemLeft" align="right" valign="top">
@@ -155,6 +154,34 @@ static constexpr std::string&#160;</td><td class="memItemRight" valign="bottom">
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Represents all HTTP responses The constructor is private and it is meant to be build through its builder interface. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="ae09c276da9e34e83c43447596889bb87" name="ae09c276da9e34e83c43447596889bb87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae09c276da9e34e83c43447596889bb87">&#9670;&#160;</a></span>getBuilder()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d5/d42/classResponseBuilder.html">ResponseBuilder</a> Response::getBuilder </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets a <a class="el" href="../../d5/d42/classResponseBuilder.html" title="Builder to simplify the construction. Before build, validation logic is performed to ensure that we h...">ResponseBuilder</a> instance. </p>
+<p>This is the only entry point to constructing a <a class="el" href="../../db/d35/classResponse.html" title="Represents all HTTP responses The constructor is private and it is meant to be build through its buil...">Response</a> object </p>
+
+</div>
+</div>
 <a id="ab60332870ba01715bc1c242c33cc14bc" name="ab60332870ba01715bc1c242c33cc14bc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab60332870ba01715bc1c242c33cc14bc">&#9670;&#160;</a></span>toTransmittableString()</h2>
 
@@ -179,6 +206,7 @@ static constexpr std::string&#160;</td><td class="memItemRight" valign="bottom">
 </div><div class="memdoc">
 
 <p>This method transforms an HTTP message to a string that can be trasmitted over the network. </p>
+<dl class="section return"><dt>Returns</dt><dd>a string transmittable over the network </dd></dl>
 
 <p>Implements <a class="el" href="../../d6/d28/classMessage.html#acecf6b92cef9396a3cf48b033b3e7f28">Message</a>.</p>
 

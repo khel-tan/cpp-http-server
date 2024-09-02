@@ -1,0 +1,6 @@
+var searchData=
+[
+  ['tostring_0',['toString',['../d8/d69/classURI.html#a45410af57b3fec82f30b5d3f4e19fdb0',1,'URI::toString()'],['../d6/d18/classModel.html#a5aa9ae386f1f53ddf5a6a95a6f56377f',1,'Model::toString()'],['../d2/de8/classPatient.html#aebef1c85fb3929cf8a167fc03943d04e',1,'Patient::toString()']]],
+  ['totransmittablestring_1',['toTransmittableString',['../d6/d28/classMessage.html#acecf6b92cef9396a3cf48b033b3e7f28',1,'Message::toTransmittableString()'],['../d9/dbd/classRequest.html#a4b6fcb3dea76682fb862d66af1ebe79a',1,'Request::toTransmittableString()'],['../db/d35/classResponse.html#ab60332870ba01715bc1c242c33cc14bc',1,'Response::toTransmittableString()']]],
+  ['trim_2',['trim',['../d7/d09/Utils_8hpp.html#ac81e8ace8f8b6d4c09572038c5d48cf4',1,'Utils.cpp']]]
+];

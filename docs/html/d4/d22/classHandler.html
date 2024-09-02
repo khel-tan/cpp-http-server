@@ -107,12 +107,12 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:ac683bcc2caee9e98e0e52e9b273df810" id="r_ac683bcc2caee9e98e0e52e9b273df810"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac683bcc2caee9e98e0e52e9b273df810">processRequestLine</a> (const <a class="el" href="../../d9/dbd/classRequest.html">Request</a> &amp;)=0</td></tr>
-<tr class="memdesc:ac683bcc2caee9e98e0e52e9b273df810"><td class="mdescLeft">&#160;</td><td class="mdescRight">Processes the request line and checks if the method and the HTTP version and the <a class="el" href="../../d8/d69/classURI.html" title="The URI object currently contains only the path. It implements equality and a hash function so that i...">URI</a> are appropriate.  <br /></td></tr>
-<tr class="separator:ac683bcc2caee9e98e0e52e9b273df810"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af5db5928df25eaa0f712fbf3baf76cb7" id="r_af5db5928df25eaa0f712fbf3baf76cb7"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af5db5928df25eaa0f712fbf3baf76cb7">processHeaders</a> (const <a class="el" href="../../d9/dbd/classRequest.html">Request</a> &amp;)=0</td></tr>
-<tr class="memdesc:af5db5928df25eaa0f712fbf3baf76cb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Processes headers of the request.  <br /></td></tr>
-<tr class="separator:af5db5928df25eaa0f712fbf3baf76cb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7bd74d92fd78e50a09ab6fa22bc6cc51" id="r_a7bd74d92fd78e50a09ab6fa22bc6cc51"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7bd74d92fd78e50a09ab6fa22bc6cc51">processRequestLine</a> (const <a class="el" href="../../d9/dbd/classRequest.html">Request</a> &amp;request)=0</td></tr>
+<tr class="memdesc:a7bd74d92fd78e50a09ab6fa22bc6cc51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Processes the request line and checks if the method and the HTTP version and the <a class="el" href="../../d8/d69/classURI.html" title="The URI object currently contains only the path. It implements equality and a hash function so that i...">URI</a> are appropriate.  <br /></td></tr>
+<tr class="separator:a7bd74d92fd78e50a09ab6fa22bc6cc51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab49251f6721d32519d501922a5a031e0" id="r_ab49251f6721d32519d501922a5a031e0"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab49251f6721d32519d501922a5a031e0">processHeaders</a> (const <a class="el" href="../../d9/dbd/classRequest.html">Request</a> &amp;request)=0</td></tr>
+<tr class="memdesc:ab49251f6721d32519d501922a5a031e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Processes headers of the request.  <br /></td></tr>
+<tr class="separator:ab49251f6721d32519d501922a5a031e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af11662c60e2cf0ef49b05eae362c8558" id="r_af11662c60e2cf0ef49b05eae362c8558"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af11662c60e2cf0ef49b05eae362c8558">processRequestBody</a> (const std::string &amp;body)=0</td></tr>
 <tr class="memdesc:af11662c60e2cf0ef49b05eae362c8558"><td class="mdescLeft">&#160;</td><td class="mdescRight">Processes the body of the request.  <br /></td></tr>
 <tr class="separator:af11662c60e2cf0ef49b05eae362c8558"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -123,7 +123,7 @@ Protected Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:a432bd068754307c10cfa806cef555fcb" id="r_a432bd068754307c10cfa806cef555fcb"><td class="memItemLeft" align="right" valign="top"><a id="a432bd068754307c10cfa806cef555fcb" name="a432bd068754307c10cfa806cef555fcb"></a>
-<a class="el" href="../../d5/d42/classResponseBuilder.html">ResponseBuilder</a>&#160;</td><td class="memItemRight" valign="bottom"><b>builder_</b> { Response::getBuilder() }</td></tr>
+<a class="el" href="../../d5/d42/classResponseBuilder.html">ResponseBuilder</a>&#160;</td><td class="memItemRight" valign="bottom"><b>builder_</b> { <a class="el" href="../../db/d35/classResponse.html#ae09c276da9e34e83c43447596889bb87">Response::getBuilder</a>() }</td></tr>
 <tr class="memdesc:a432bd068754307c10cfa806cef555fcb"><td class="mdescLeft">&#160;</td><td class="mdescRight">The instance's own <a class="el" href="../../db/d35/classResponse.html" title="Represents all HTTP responses The constructor is private and it is meant to be build through its buil...">Response</a> builder instance. <br /></td></tr>
 <tr class="separator:a432bd068754307c10cfa806cef555fcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -154,7 +154,7 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Constructs <a class="el" href="../../db/d35/classResponse.html" title="Represents all HTTP responses The constructor is private and it is meant to be build through its buil...">Response</a> Body if appropriate. </p>
-<p>Contrary to <a class="el" href="#af5db5928df25eaa0f712fbf3baf76cb7" title="Processes headers of the request.">processHeaders()</a>, this method will be empty for handlers that concern letting clients view resources in readonly mode </p>
+<p>Contrary to <a class="el" href="#ab49251f6721d32519d501922a5a031e0" title="Processes headers of the request.">processHeaders()</a>, this method will be empty for handlers that concern letting clients view resources in readonly mode </p>
 
 <p>Implemented in <a class="el" href="../../d5/df0/classAddPatientHandler.html#af4f4aaa1c5499e80975a01d2991ee9db">AddPatientHandler</a>, <a class="el" href="../../dc/da8/classDeletePatientHandler.html#a2c9f5daecf0aa9b527b375735269ec40">DeletePatientHandler</a>, <a class="el" href="../../d8/d3a/classGetPatientHandler.html#a5be8fe582d9155ea2376ee9d3de59e4b">GetPatientHandler</a>, and <a class="el" href="../../d7/de0/classUpdatePatientHandler.html#a49fab5ed71941f86a5662973d4a32aad">UpdatePatientHandler</a>.</p>
 
@@ -195,8 +195,8 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="af5db5928df25eaa0f712fbf3baf76cb7" name="af5db5928df25eaa0f712fbf3baf76cb7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af5db5928df25eaa0f712fbf3baf76cb7">&#9670;&#160;</a></span>processHeaders()</h2>
+<a id="ab49251f6721d32519d501922a5a031e0" name="ab49251f6721d32519d501922a5a031e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab49251f6721d32519d501922a5a031e0">&#9670;&#160;</a></span>processHeaders()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -207,7 +207,7 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="memname">virtual void Handler::processHeaders </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="../../d9/dbd/classRequest.html">Request</a> &amp;</td>          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td class="paramtype">const <a class="el" href="../../d9/dbd/classRequest.html">Request</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>request</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -219,6 +219,12 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Processes headers of the request. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">request</td><td>request to process </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p>Implemented in <a class="el" href="../../d5/df0/classAddPatientHandler.html#a0dda9cf8663b409b93b1b0e773382309">AddPatientHandler</a>, <a class="el" href="../../dc/da8/classDeletePatientHandler.html#a221657f7a3af8e2cfb51a1fb64d7c2cb">DeletePatientHandler</a>, <a class="el" href="../../d8/d3a/classGetPatientHandler.html#a4a8dad28927168f7d21ad0be0974e71c">GetPatientHandler</a>, and <a class="el" href="../../d7/de0/classUpdatePatientHandler.html#ab8ceab34526d4996d09b2d769c721cf3">UpdatePatientHandler</a>.</p>
 
@@ -248,14 +254,20 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Processes the body of the request. </p>
-<p>This is more relevant for requests that intend to create or modify server-side resources. </p>
+<p>This is more relevant for requests that intend to create or modify server-side resources.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">body</td><td>the body of the HTTP request </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p>Implemented in <a class="el" href="../../d5/df0/classAddPatientHandler.html#a29d18ad981baeaa3a1d111c14f7418d5">AddPatientHandler</a>, <a class="el" href="../../dc/da8/classDeletePatientHandler.html#a6f4c895869f6e2b7a050db57c6056159">DeletePatientHandler</a>, <a class="el" href="../../d8/d3a/classGetPatientHandler.html#a50cf5a954020dd6356d8740fab996443">GetPatientHandler</a>, and <a class="el" href="../../d7/de0/classUpdatePatientHandler.html#ae63ce398ff8c58171d9930961c9bab0d">UpdatePatientHandler</a>.</p>
 
 </div>
 </div>
-<a id="ac683bcc2caee9e98e0e52e9b273df810" name="ac683bcc2caee9e98e0e52e9b273df810"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac683bcc2caee9e98e0e52e9b273df810">&#9670;&#160;</a></span>processRequestLine()</h2>
+<a id="a7bd74d92fd78e50a09ab6fa22bc6cc51" name="a7bd74d92fd78e50a09ab6fa22bc6cc51"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7bd74d92fd78e50a09ab6fa22bc6cc51">&#9670;&#160;</a></span>processRequestLine()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -266,7 +278,7 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="memname">virtual void Handler::processRequestLine </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="../../d9/dbd/classRequest.html">Request</a> &amp;</td>          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td class="paramtype">const <a class="el" href="../../d9/dbd/classRequest.html">Request</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>request</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -278,6 +290,12 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Processes the request line and checks if the method and the HTTP version and the <a class="el" href="../../d8/d69/classURI.html" title="The URI object currently contains only the path. It implements equality and a hash function so that i...">URI</a> are appropriate. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">request</td><td>request to process </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p>Implemented in <a class="el" href="../../d5/df0/classAddPatientHandler.html#a75bccd06dc902b64768a32d59b154891">AddPatientHandler</a>, <a class="el" href="../../dc/da8/classDeletePatientHandler.html#aeaaba13ebf1bcddd7047cb0d80116127">DeletePatientHandler</a>, <a class="el" href="../../d8/d3a/classGetPatientHandler.html#a31d63295dafd52cce359b4b09f5a94b7">GetPatientHandler</a>, and <a class="el" href="../../d7/de0/classUpdatePatientHandler.html#a6c2c71b168f220fd66820ab1d0a656e7">UpdatePatientHandler</a>.</p>
 
