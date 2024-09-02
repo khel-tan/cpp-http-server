@@ -16,6 +16,9 @@ class UpdatePatientHandler : public HospitalDBHandler {
     }
 
   protected:
+    /**
+     * @brief Ensures that the request type is PATCH
+     */
     void
     processRequestLine(const Request &request) override
     {
@@ -27,11 +30,19 @@ class UpdatePatientHandler : public HospitalDBHandler {
         builder_.setVersion(request.getVersion());
         builder_.setStatusCode(StatusCode::OK);
     }
+    /**
+     * @brief We do nothing here
+     */
     void
     processHeaders(const Request &request) override
     {
     }
 
+    /**
+     * @brief Ensures that the body is JSON and has an id
+     * to identify the patient data. If valid, we update the
+     * data.
+     */
     void
     processRequestBody(const std::string &body) override
     {
@@ -45,6 +56,10 @@ class UpdatePatientHandler : public HospitalDBHandler {
         auto patient = SQLiteMapper::createPatient(m);
         db_->updatePatient(std::stoi(m.at("id")), patient);
     }
+    /**
+     * @brief PATCH requests needs no data back hence no
+     * body
+     */
     void
     constructResponseBody() override
     {

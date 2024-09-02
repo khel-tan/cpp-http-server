@@ -28,7 +28,7 @@ main(int argc, char **argv)
     auto db = std::make_shared<HospitalDatabase>(
         "./hospital.db");
     server.mapHandler(
-        URI("/hospital/patients"),
+        URI("/hospital/patients/list"),
         std::make_unique<GetPatientHandler>(db));
     server.mapHandler(
         URI("/hospital/patients/add"),

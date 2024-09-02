@@ -9,15 +9,30 @@
 class Socket {
   public:
     virtual ~Socket() = default;
-    
-    //Accept connection from client
+
+    /**
+     * @brief Accepts connection from the client attempt at
+     * the port that we are listening at
+     */
     virtual void acceptConnection() = 0;
-    //Close connection with current client
+    /**
+     * @brief Closes the client connection and cleans up
+     */
     virtual void closeConnection() = 0;
+    /**
+     * @brief Receives data in the buffer from the
+     * server-client connection
+     */
     virtual std::string receiveData() = 0;
+    /**
+     * @brief Sends data to the connected client
+     */
     virtual void sendData(const std::string &data) = 0;
 
-    //Shut down server soket and clean up
+    /**
+     * @brief Closes the client connection, shuts down the
+     * server socket and cleans up
+     */
     virtual void closeSocket() = 0;
 };
 #endif // !SOCKET_HPP_

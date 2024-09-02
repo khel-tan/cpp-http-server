@@ -9,10 +9,25 @@ class GetPatientHandler : public HospitalDBHandler {
     GetPatientHandler() = delete;
     GetPatientHandler(std::shared_ptr<HospitalDatabase> db)
         : HospitalDBHandler(db)
-    {
+    { /**
+       * @brief Processes an HTTP Request object and returns
+       * a Response object.
+       *
+       * This method handles the entire request processing,
+       * including request line parsing, header processing,
+       * and response construction. It also handles
+       * exceptions that might be thrown during the process.
+       *
+       * @param request The HTTP request to process.
+       * @return A Response object based on the processed
+       * request.
+       */
     }
 
   protected:
+    /**
+     * @brief ensures that the method is GET
+     */
     void
     processRequestLine(const Request &request) override
     {
@@ -34,6 +49,11 @@ class GetPatientHandler : public HospitalDBHandler {
     processRequestBody(const std::string &body) override
     {
     }
+    /**
+     * @brief Constructs a short HTML file listing
+     * each patient with their id and name and then sets
+     * headers associated with content
+     */
     void
     constructResponseBody() override
     {
@@ -46,7 +66,7 @@ class GetPatientHandler : public HospitalDBHandler {
         <body>)";
       for(const auto& p: db_->getPatients())
       {
-          htmlBody += "<h1>Patient "
+          htmlBody += "<h1>Patient"
                       + std::to_string(p.getId()) + "</h1>";
           htmlBody
               += "<span>Name: " + p.getName() + "</span>";

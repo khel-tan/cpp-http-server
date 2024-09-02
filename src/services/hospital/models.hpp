@@ -5,13 +5,19 @@
 #include "../../HttpServerExceptions.hpp"
 #include <map>
 #include <string>
-// Abstract Model interface
+/**
+ * @brief Abstract class that defines the basic structure of
+ * every SQL row entry
+ */
 class Model {
   public:
     virtual std::map<std::string, std::string>
     convertToMap() const = 0;
     virtual std::string toString() const = 0;
 };
+/**
+ * @brief Represents the encapsulated data of a patient
+ */
 class Patient : public Model {
   public:
     Patient() = delete;
@@ -53,6 +59,10 @@ class Patient : public Model {
 
 // Parses std::map and attempts to map the contents to
 // Database models
+/**
+ * @brief Utility class for mapping std::map to
+ * an instance of Model
+ */
 class SQLiteMapper {
   public:
     static Patient
@@ -73,8 +83,6 @@ class SQLiteMapper {
 
         return Patient(id, name);
     }
-
-  private:
 };
 
 #endif // !MODELS_HPP_

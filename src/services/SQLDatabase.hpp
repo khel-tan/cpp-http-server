@@ -4,12 +4,18 @@
 #define SQL_DATABASE_HPP_
 
 #include "../HttpServerExceptions.hpp"
-#include <iostream>
 #include <map>
 #include <numeric>
 #include <ranges>
 #include <sqlite3.h>
 #include <string>
+/**
+ * @brief This class is the abstract basis for all SQL
+ * Database classes. It provides implementations for running
+ * simple queries, opening and closing of database
+ * connections and utility functions so that derived classes
+ * can focus more on specific functionality.
+ */
 class SQLDatabase {
   public:
     SQLDatabase() = delete;
@@ -24,6 +30,10 @@ class SQLDatabase {
     const std::string filePath_;
     sqlite3 *db_;
 
+    /**
+     * @brief closes the SQLite3 connection and cleans up
+     * resources
+     */
     void
     closeConnection()
     {
@@ -33,6 +43,10 @@ class SQLDatabase {
 
     // WARN: This method interacts with the C API and is
     // potentially unsafe!
+    /**
+     * @brief Opens a connection with the local SQL database
+     * and creates a new one if it does not exist.
+     */
     void
     startConnection()
     {
@@ -49,6 +63,11 @@ class SQLDatabase {
 
     // TODO: sqlite3_exec has security issues. Make it
     // safer.
+    /**
+     * @brief Utility method for running simple queries.
+     * Derived classes are expected to implement anything
+     * beyond by themselves.
+     */
     void
     runQuery(const std::string &cmd) const
     {
@@ -61,6 +80,10 @@ class SQLDatabase {
             throw database_error("Query failed : " + cmd);
         }
     }
+    /**
+     * @brief Converts a map object to the argument part of
+     * an SQL query
+     */
     std::string
     mapToQueryArguments(
         const std::map<std::string, std::string> &data)

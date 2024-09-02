@@ -5,13 +5,12 @@
 #include "../HttpServerExceptions.hpp"
 #include "Message.hpp"
 #include "URI.hpp"
-#include <stdexcept>
 #include <string>
 class RequestBuilder;
 
 /*
- * INFO: Represents all HTTP requests.
- * Can be built only through its builder interface!
+ * @brief This class represents all HTTP requests.
+ * It can be built only through its builder interface!
  */
 class Request : public Message {
   public:

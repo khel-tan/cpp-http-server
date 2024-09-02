@@ -8,11 +8,24 @@
 #include <iostream>
 
 /*
- * Abstract class for handling HTTP requests and
+ * @brief Abstract class for handling HTTP requests and
  * outputting a Response object
  */
 class Handler {
   public:
+    /**
+     * @brief Processes an HTTP Request object and returns a
+     * Response object.
+     *
+     * This method handles the entire request processing
+     * including request lines, headers and response
+     * construction. It also handles exceptions thrown and
+     * outputs an appropriate response.
+     *
+     * @param request The HTTP request to process.
+     * @return A Response object based on the processed
+     * request.
+     */
     virtual Response
     handleRequest(const Request &request)
     {
@@ -52,14 +65,40 @@ class Handler {
     };
 
   protected:
+    /**
+     * @brief The instance's own Response builder instance
+     */
     ResponseBuilder builder_{ Response::getBuilder() };
     // The following 4 methods plus maybe some extra ones
     // are called in handleRequest. Each method
     // incrementally gives more info to builder_
+    /**
+     * @brief Processes the request line and checks if the
+     * method and the HTTP version and the URI are
+     * appropriate
+     */
     virtual void processRequestLine(const Request &) = 0;
+    /**
+     * @brief Processes headers of the request
+     *
+     *
+     */
     virtual void processHeaders(const Request &) = 0;
+    /**
+     * @brief Processes the body of the request
+     *
+     * This is more relevant for requests that intend to
+     * create or modify server-side resources.
+     */
     virtual void processRequestBody(const std::string &body)
         = 0;
+    /**
+     * @brief Constructs Response Body if appropriate
+     *
+     * Contrary to processHeaders(), this method will be
+     * empty for handlers that concern letting clients view
+     * resources in readonly mode
+     */
     virtual void constructResponseBody() = 0;
 };
 

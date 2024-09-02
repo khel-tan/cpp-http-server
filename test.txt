@@ -1,0 +1,7 @@
+echo -e "GET /hospital/patients HTTP/1.1\r\n"
+
+echo -e "POST /hospital/patients/add HTTP/1.1\r\nHost : phone/1.1.1.1\r\n\r\n{\"id\":\"123\",\"name\": \"Susan\"}"
+
+echo -e "PATCH /hospital/patients/update HTTP/1.1\r\nHost : phone/1.1.1.1\r\n\r\n{\"id\":\"123\", \"name\": \"Susana\"}\r\n"
+
+echo -e "DELETE /hospital/patients/delete HTTP/1.1\r\nHost : phone/1.1.1.1\r\n\r\n\{\"id\" : \"123\:"}\r\n"

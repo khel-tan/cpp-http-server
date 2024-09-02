@@ -18,6 +18,9 @@ class DeletePatientHandler : public HospitalDBHandler {
     }
 
   protected:
+    /**
+     * @brief Ensures that we have only DELETE requests
+     */
     void
     processRequestLine(const Request &request) override
     {
@@ -34,6 +37,11 @@ class DeletePatientHandler : public HospitalDBHandler {
     {
     }
 
+    /**
+     * @brief Checks if the request body is a JSON and
+     * has an id field. If so, we update the corresponding
+     * entry in the database
+     */
     void
     processRequestBody(const std::string &body) override
     {
